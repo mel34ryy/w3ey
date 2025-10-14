@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.planet {
+  position: relative;
+  left: -8%;
+  top: 25%;
+  animation: bounce 3s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-45px);
+  }
+}
+
+.bg-babyblue {
+  background-color: #e7effc;
+}
+
+.paragraph {
+  width: fit-content;
+  color: #024585;
+}
+
+h1 {
+  max-width: 520px;
+  font-size: 58px !important;
+  color: #082a5e !important;
+}
+
+h1 span {
+  color: #024585 !important;
+}
+
+/*hover effect on buttons*/
+
+.hero .buttons > button {
+  background-color: #024585 !important;
+  color: #f1f4f9 !important;
+  transition: all 0.5s;
+  font-size: 20px;
+}
+
+.hero .buttons > button:hover {
+  background-color: #082a5e !important;
+}
+
+.lead {
+  color: #024585 !important;
+}
+
+.hero .buttons .icon {
+  color: #024585 !important;
+}
+
+.hero .buttons .content p {
+  color: #024585 !important;
+}
+
+.hero .buttons .content button {
+  color: #082a5e !important;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.hero .photo {
+  position: relative;
+}
+
+.hero .photo .boxes .first-box {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  background-color: #fff !important;
+}
+
+.hero .photo .boxes .first-box .first {
+  background-color: #12bb6a !important;
+  color: #fff !important;
+  width: 18px;
+  height: 18px;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px 0 #12bb6a;
+  margin-bottom: 10px;
+}
+
+.hero .photo .boxes .first-box span {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+}
+
+.hero .photo .boxes .second-box {
+  position: absolute;
+  top: 65%;
+  left: 75%;
+  background-color: #fff !important;
+  width: 180px;
+}
+
+.hero .photo .boxes .second-box .second {
+  background-color: #8121fb !important;
+  color: #fff !important;
+  width: 18px;
+  height: 18px;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px 0 #8121fb;
+  margin-bottom: 10px;
+}
+
+.hero .photo .boxes .second-box span {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+}
+
+.highlight-text {
+  position: relative;
+}
+
+.highlight-text::after {
+  content: url("../assets/images/row.svg");
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .hero .intro {
+    margin-bottom: 2rem;
+  }
+
+  .hero .photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero .photo .boxes .first-box,
+  .hero .photo .boxes .second-box {
+    position: absolute;
+    transform: scale(0.8);
+  }
+
+  .hero .photo .boxes .first-box {
+    top: 45%;
+    left: 20%;
+  }
+
+  .hero .photo .boxes .second-box {
+    top: 70%;
+    left: 65%;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 36px !important;
+  }
+
+  .lead {
+    font-size: 16px !important;
+  }
+
+  .hero .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero .photo .boxes .first-box,
+  .hero .photo .boxes .second-box {
+    transform: scale(0.7);
+  }
+
+  .hero .photo .boxes .first-box {
+    top: 40%;
+    left: 18%;
+  }
+
+  .hero .photo .boxes .second-box {
+    top: 72%;
+    left: 60%;
+  }
+}
+
+.icons-carousel img {
+  filter: grayscale(1);
+  transition: all 0.5s;
+  opacity: 0.6;
+}
+
+.icons-carousel img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.about {
+  width: 1000px !important;
+  margin: auto;
+}
+
+@media (max-width: 576px) {
+  .about {
+    width: fit-content !important;
+    text-align: center;
+  }
+}
+
+.about .photo .img {
+  position: relative;
+}
+
+/*changes here important*/
+
+.about .photo .img::before {
+  content: "";
+  background-image: url("../assets/images/grid.svg"),
+    url("../assets/images/circle.svg");
+  position: absolute;
+  background-repeat: no-repeat, no-repeat;
+  top: 0;
+  left: 45%;
+  z-index: -1;
+}
+
+.about .photo .img::after {
+  content: url("../../public/images/about2.png");
+  position: absolute;
+  left: -25%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.about h2 {
+  font-size: 36px !important;
+  font-weight: 600 !important;
+  color: #082a5e !important;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.about .highlight-text {
+  color: #024585 !important;
+}
+
+.about .highlight-text::after {
+  width: 120px !important;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about .content .paragraph p {
+  color: #39557e !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.about .icons {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 16px;
+}
+
+.about .icons .icon {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+}
+
+.about .icons .icon:first-of-type::before,
+.about .icons .icon:last-of-type::before {
+  content: url("../assets/images/about-icon1.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+.about .icons .icon:first-of-type:hover::before,
+.about .icons .icon:last-of-type:hover::before {
+  transform: translateY(-8px);
+}
+
+.about .icons .icon:nth-of-type(2)::before {
+  content: url("../assets/images/about-icon2.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+.about .icons .icon:nth-of-type(2):hover::before {
+  transform: translateY(-8px);
+}
+
+.about .icons .icon:nth-of-type(3)::before {
+  content: url("../assets/images/about-icon3.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+.about .icons .icon:nth-of-type(3):hover::before {
+  transform: translateY(-8px);
+}
+
+.about .icons .icon:nth-of-type(4)::before {
+  content: url("../assets/images/about-icon4.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+.about .icons .icon:nth-of-type(4):hover::before {
+  transform: translateY(-8px);
+}
+
+.about .content button {
+  background-color: #024585 !important;
+  color: #f1f4f9 !important;
+  transition: all 0.5s;
+}
+
+.about .content button:hover {
+  background-color: #082a5e !important;
+}
