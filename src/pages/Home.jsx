@@ -15,6 +15,8 @@ import {
   faFilm,
   faPenRuler,
   faCakeCandles,
+  faShareNodes,
+  faCalendar,
 } from "@fortawesome/free-solid-svg-icons";
 import hero from "../assets/images/hero.svg";
 import planet from "../assets/images/planet.svg";
@@ -26,6 +28,12 @@ import icon02 from "../assets/images/about-icon02.svg";
 import icon03 from "../assets/images/about-icon03.svg";
 import icon04 from "../assets/images/about-icon04.svg";
 import icon05 from "../assets/images/about-icon05.svg";
+import instructor1 from "../assets/images/instructor01.jpg";
+import instructor2 from "../assets/images/instructor02.jpeg";
+import instructor3 from "../assets/images/instructor03.jpg";
+import instructor4 from "../assets/images/instructor04.jpg";
+import sub from "../assets/images/subscribe.png";
+import Footer from "../components/layout/Footer";
 
 export default function Home({ onToggle }) {
   return (
@@ -710,6 +718,243 @@ export default function Home({ onToggle }) {
             </div>
           </div>
         </section>
+        <section className="instructors my-5">
+          <div className="container">
+            <div className="header row align-items-center">
+              <div className="text col-lg-8 col-md-7">
+                <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
+                  Our Qualified People Matter
+                </p>
+                <h2 className="mb-4 mt-3">
+                  Top <span className="highlight-text">Class </span>Instructor
+                </h2>
+                <p>
+                  At W3ey, we carefully select our teachers — Not just for their
+                  qualifications, but for their ability to teach with heart and
+                  build trust from the very first class.
+                </p>
+              </div>
+              <div className="button mb-3 col-lg-4 col-md-5 text-lg-end text-center mt-3 mt-md-0">
+                <button className="px-3 py-2 text-uppercase rounded-2">
+                  all instructors{" "}
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="right-arrow"
+                  />
+                </button>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-6 col-md-3">
+                <div className="card h-100">
+                  <img
+                    src={instructor1}
+                    className="card-img-top"
+                    alt="instructor"
+                  />
+                  <div className="card-body d-flex align-items-center justify-content-between">
+                    <div className="text d-flex flex-column gap-2">
+                      <p className="card-text m-0">Academic Director</p>
+                      <h5 className="card-title">Aya Habashy</h5>
+                    </div>
+                    <div className="button">
+                      <FontAwesomeIcon icon={faShareNodes} className="share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 col-md-3">
+                <div className="card h-100">
+                  <img
+                    src={instructor2}
+                    className="card-img-top"
+                    alt="instructor"
+                  />
+                  <div className="card-body d-flex align-items-center justify-content-between">
+                    <div className="text d-flex flex-column gap-2">
+                      <p className="card-text m-0">English Coordinator</p>
+                      <h5 className="card-title">Nahla Fotouh El Ashry</h5>
+                    </div>
+                    <div className="button">
+                      <FontAwesomeIcon icon={faShareNodes} className="share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 col-md-3">
+                <div className="card h-100">
+                  <img
+                    src={instructor3}
+                    className="card-img-top"
+                    alt="instructor"
+                  />
+                  <div className="card-body d-flex align-items-center justify-content-between">
+                    <div className="text d-flex flex-column gap-2">
+                      <p className="card-text m-0">Math Coordinator</p>
+                      <h5 className="card-title">Mona Abdelazeez</h5>
+                    </div>
+                    <div className="button">
+                      <FontAwesomeIcon icon={faShareNodes} className="share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 col-md-3">
+                <div className="card h-100">
+                  <img
+                    src={instructor4}
+                    className="card-img-top"
+                    alt="instructor"
+                  />
+                  <div className="card-body d-flex align-items-center justify-content-between">
+                    <div className="text d-flex flex-column gap-2">
+                      <p className="card-text m-0">Science Coordinator</p>
+                      <h5 className="card-title">Asmaa Saad</h5>
+                    </div>
+                    <div className="button">
+                      <FontAwesomeIcon icon={faShareNodes} className="share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="jobs mt-5 row flex-column flex-lg-row justify-content-between align-items-center mx-auto p-5 rounded-2 text-white">
+              <div className="col-lg-3">
+                <h2 className="fs-1">
+                  Join us &<span> Share</span> Your Expertise
+                </h2>
+              </div>
+              <div className="col-lg-6">
+                <p className="lead">
+                  At W3ey, we're always looking for passionate educators who
+                  believe in modern learning and are ready to deliver
+                  exceptional online teaching experiences.
+                </p>
+              </div>
+              <div className="col-lg-3">
+                <button className="text-uppercase px-2 py-2 rounded-2">
+                  become an instructor{" "}
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="right-arrow"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="blog">
+          <div className="container">
+            <div className="header text-center">
+              <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto">
+                Always Smart To Hear News
+              </p>
+              <h2 className="mb-4 mt-3">
+                Latest <span className="highlight-text"> News </span>& Blog
+              </h2>
+              <p className="w-50 mx-auto">
+                Stay Updated with Everything W3ey Here, you’ll find the latest
+                from W3ey — events, articles, and updates that shape your
+                child’s learning journey.
+              </p>
+            </div>
+            <div className="row">
+              <div className="col-md-4">
+                <div className="card mb-4 h-100">
+                  <img
+                    className="card-img-top"
+                    src="/images/featured01.png"
+                    alt="Card"
+                  />
+                  <div className="card-body">
+                    <div className="btn">
+                      <button className="btn rounded-5 px-3 py-1">
+                        English
+                      </button>
+                    </div>
+                    <h5 className="card-title">
+                      <a className="text-decoration-none" href="#">
+                        How Do W3ey's Interactive Clubs Help Shape Student
+                        Personality?
+                      </a>
+                    </h5>
+                    <div className="card-content d-flex gap-2 align-items-center">
+                      <FontAwesomeIcon icon={faCalendar} />
+                      <span>May 25, 2025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4 h-100">
+                  <img
+                    className="card-img-top"
+                    src="/images/featured01.png"
+                    alt="Card"
+                  />
+                  <div className="card-body">
+                    <div className="btn">
+                      <button className="btn rounded-5 px-3 py-1">
+                        English
+                      </button>
+                    </div>
+                    <h5 className="card-title">
+                      <a className="text-decoration-none" href="#">
+                        Is Egyptian Online Education the Right Choice for Your
+                        Child Abroad?
+                      </a>
+                    </h5>
+                    <div className="card-content d-flex gap-2 align-items-center">
+                      <FontAwesomeIcon icon={faCalendar} />
+                      <span>June 22, 2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4 h-100">
+                  <img
+                    className="card-img-top"
+                    src="/images/featured01.png"
+                    alt="Card"
+                  />
+                  <div className="card-body">
+                    <div className="btn">
+                      <button className="btn rounded-5 px-3 py-1">
+                        English
+                      </button>
+                    </div>
+                    <h5 className="card-title">
+                      <a className="text-decoration-none" href="#">
+                        Why W3ey is One of the Best Online Schools for Egyptian
+                        Students Abroad ?
+                      </a>
+                    </h5>
+                    <div className="card-content d-flex gap-2 align-items-center">
+                      <FontAwesomeIcon icon={faCalendar} />
+                      <span>June 22, 2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="mail container my-5">
+          <div className="row align-items-center justify-content-between gx-3">
+            <div className="join col-12 col-md-5 text-md-start text-center mb-3 mb-md-0">
+              <h4>Let’s Join To Our Newsletters</h4>
+              <img src={sub} alt="join" className="img-fluid" />
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="subscribe-box d-flex w-100">
+                <input type="email" placeholder="Enter your email*" />
+                <button type="button">SUBSCRIBE NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
       </div>
     </>
   );

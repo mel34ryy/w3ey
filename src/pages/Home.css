@@ -585,3 +585,198 @@ h1 span {
     height: 30px;
   }
 }
+
+.instructors .header p:last-of-type,
+.blog .header p:last-of-type {
+  color: #39557e;
+}
+
+.instructors .header .button button,
+.instructors .jobs button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .instructors .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+.instructors .jobs {
+  max-width: 1100px;
+  background-color: #024585;
+  background-image: url("../assets/images/jobs-bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.instructors .jobs .lead {
+  color: unset !important;
+}
+
+.instructors .header .text h2 {
+  font-size: 36px !important;
+  font-weight: 600 !important;
+  color: #082a5e !important;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.instructors .header .text .highlight-text {
+  color: #024585 !important;
+}
+
+.instructors .header .text .highlight-text::after {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.instructors .header .button button {
+  color: #082a5e;
+  background-color: transparent;
+  border: 1px solid #024585;
+  transition: all 0.5s;
+}
+
+.instructors .header .button button:hover {
+  background-color: #082a5e;
+  color: #e7effc;
+}
+
+.instructors .header .button button .right-arrow {
+  transition: all 0.5s;
+}
+
+.instructors .header .button button:hover .right-arrow {
+  transform: translateX(8px);
+}
+
+.blog .card .btn button {
+  color: #082a5e;
+  background-color: #e7effc;
+}
+
+.blog .card .btn button:hover {
+  background-color: #082a5e;
+  color: #e7effc;
+}
+
+.jobs button {
+  background-color: #fff;
+  color: #082a5e;
+  border: none;
+  padding: 12px !important;
+}
+
+.jobs button .right-arrow {
+  transition: all 0.5s;
+}
+
+.jobs button:hover .right-arrow {
+  transform: translateX(8px);
+}
+
+.blog .card .card-title {
+  margin-block: 14px !important;
+}
+
+.blog .card .card-title a {
+  color: #082a5e;
+}
+
+.blog .card .card-content {
+  color: #39557e;
+}
+
+.blog .header h2 {
+  font-size: 36px !important;
+  font-weight: 600 !important;
+  color: #082a5e !important;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.instructors .header .highlight-text {
+  color: #024585 !important;
+}
+
+.instructors .header .highlight-text::after {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mail .join h4 {
+  color: #082a5e;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.subscribe-box {
+  background: #e7effc;
+  border-radius: 50px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #d0dff7;
+}
+
+.subscribe-box input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 14px 18px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.subscribe-box button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  background: #0c4a8a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .subscribe-box {
+    padding: 4px;
+    gap: 8px;
+  }
+  .subscribe-box input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .subscribe-box button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+.instructors .share {
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #e7effc;
+  color: #024585;
+  transition: all 0.5s;
+}
+
+.instructors .share:hover {
+  color: #e7effc;
+  background-color: #024585;
+}
