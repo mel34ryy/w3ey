@@ -3,6 +3,7 @@ import ar from "../../assets/images/ar.svg";
 import menu from "../../assets/images/menu.png";
 import "./Navbar.css";
 import { useTranslation } from "react-i18next";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar({ onToggle }) {
   const { t } = useTranslation();
@@ -26,9 +27,9 @@ export default function Navbar({ onToggle }) {
   return (
     <nav className="navbar navbar-expand-xl">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link to="/" className="navbar-brand">
           <img src="/images/Logo.svg" alt="logo" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler border-0"
           type="button"
@@ -47,9 +48,9 @@ export default function Navbar({ onToggle }) {
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <a className="offcanvas-title" id="offcanvasNavbarLabel" href="#">
+            <Link to="/" className="offcanvas-title" id="offcanvasNavbarLabel">
               <img src="/images/Logo.svg" alt="logo" />
-            </a>
+            </Link>
             <button
               type="button"
               className={`btn-close text-reset close-icon ${
@@ -62,9 +63,9 @@ export default function Navbar({ onToggle }) {
           <div className="offcanvas-body">
             <ul className="navbar-nav m-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink to="/" className="nav-link" aria-current="page">
                   {t("home")}
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -72,9 +73,9 @@ export default function Navbar({ onToggle }) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink to="instructors" className="nav-link">
                   {t("instructors")}
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">

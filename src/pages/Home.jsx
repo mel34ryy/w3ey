@@ -1,4 +1,3 @@
-import Navbar from "../components/layout/Navbar";
 import "./Home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -33,13 +32,11 @@ import instructor2 from "../assets/images/instructor02.jpeg";
 import instructor3 from "../assets/images/instructor03.jpg";
 import instructor4 from "../assets/images/instructor04.jpg";
 import sub from "../assets/images/subscribe.png";
-import Footer from "../components/layout/Footer";
 
-export default function Home({ onToggle }) {
+export default function Home() {
   return (
     <>
       <div className="home">
-        <Navbar onToggle={onToggle} />
         <section className="hero container d-flex px-4 px-md-5 py-5 mb-5">
           <img
             src={planet}
@@ -954,7 +951,6 @@ export default function Home({ onToggle }) {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

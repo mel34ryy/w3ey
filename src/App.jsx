@@ -1,7 +1,11 @@
 import Home from "./pages/Home";
+// import Instructors from "./pages/Instructors";
 import FollowCursor from "./components/effects/FollowCursor";
 import i18n from "i18next";
 import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 export default function App() {
   function toggleLanguage() {
@@ -28,9 +32,14 @@ export default function App() {
   }, []);
 
   return (
-    <div>
+    <BrowserRouter>
       <FollowCursor color="#024585" />
-      <Home onToggle={toggleLanguage} />
-    </div>
+      <Navbar onToggle={toggleLanguage} />
+      <Routes>
+        <Route index element={<Home />} />
+        {/* <Route path="instructors" element={<Instructors />} /> */}
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }

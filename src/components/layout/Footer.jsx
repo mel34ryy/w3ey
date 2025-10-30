@@ -8,6 +8,7 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -34,10 +35,18 @@ export default function Footer() {
           <div className="col-sm-6 col-md-3">
             <h4 className="mb-3">Quick Links</h4>
             <ul>
-              <li>Home</li>
+              <li>
+                <Link to="/" className="link">
+                  Home
+                </Link>
+              </li>
               <li>About Us</li>
               <li>Courses</li>
-              <li>Instructors</li>
+              <li>
+                <Link to="instructors" className="link">
+                  Instructors
+                </Link>
+              </li>
               <li>Blogs</li>
               <li>Contact Us</li>
             </ul>
