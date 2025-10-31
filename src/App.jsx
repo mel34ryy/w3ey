@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-// import Instructors from "./pages/Instructors";
+import Instructors from "./pages/Instructors";
 import FollowCursor from "./components/effects/FollowCursor";
 import i18n from "i18next";
 import { useEffect } from "react";
@@ -37,7 +37,7 @@ export default function App() {
       <Navbar onToggle={toggleLanguage} />
       <Routes>
         <Route index element={<Home />} />
-        {/* <Route path="instructors" element={<Instructors />} /> */}
+         <Route path="instructors" element={<Instructors />} /> 
       </Routes>
       <Footer />
     </BrowserRouter>
