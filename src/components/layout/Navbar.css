@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
-/* .navbar {
-  background-color: #f1f4fb !important;
-} */
-
 .register-btn {
   width: 143px;
   height: 46px;
@@ -12,6 +8,7 @@
   font-weight: 500;
   border-radius: 4px;
   color: #5a7093;
+  background-color: var(--color-bg) !important;
   transition: all 0.5s !important;
 }
 
@@ -26,6 +23,14 @@
   font-weight: 400 !important;
   transition: all 0.5s !important;
   font-family: "Lexend Deca", sans-serif;
+}
+
+.mode-switch .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 6px 8px;
 }
 
 .active,

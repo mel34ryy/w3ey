@@ -28,27 +28,27 @@ body {
 }
 
 .bg-babyblue {
-  background-color: #e7effc;
+  background-color: var(--color-bg-alt) !important;
 }
 
 .paragraph {
   width: fit-content;
-  color: #024585;
+  color: var(--color-primary);
 }
 
 h1 {
   max-width: 520px;
   font-size: 58px !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
 }
 
 h1 span {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .hero .buttons > button {
-  background-color: #024585 !important;
-  color: #f1f4f9 !important;
+  color: var(--btn-text) !important;
+  background-color: var(--btn-bg) !important;
   transition: all 0.5s;
   font-size: 20px;
 }
@@ -58,7 +58,7 @@ h1 span {
 }
 
 .hero .buttons > button:hover {
-  background-color: #082a5e !important;
+  background-color: var(--color-primary-dark) !important;
 }
 
 .hero .buttons > button:hover .right-arrow {
@@ -66,19 +66,19 @@ h1 span {
 }
 
 .lead {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .hero .buttons .icon {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .hero .buttons .content p {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .hero .buttons .content button {
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-weight: 700;
   font-size: 18px;
 }
@@ -91,17 +91,17 @@ h1 span {
   position: absolute;
   top: 40%;
   left: 20%;
-  background-color: #fff !important;
+  background-color: var(--color-bg) !important;
 }
 
 .hero .photo .boxes .first-box .first {
-  background-color: #12bb6a !important;
-  color: #fff !important;
+  background-color: var(--color-accent) !important;
+  color: var(--color-bg) !important;
   width: 18px;
   height: 18px;
   padding: 14px;
   border-radius: 50%;
-  box-shadow: 0 3px 8px 0 #12bb6a;
+  box-shadow: 0 3px 8px 0 var(--color-accent);
   margin-bottom: 10px;
 }
 
@@ -114,18 +114,18 @@ h1 span {
   position: absolute;
   top: 65%;
   left: 75%;
-  background-color: #fff !important;
+  background-color: var(--color-bg) !important;
   width: 180px;
 }
 
 .hero .photo .boxes .second-box .second {
-  background-color: #8121fb !important;
-  color: #fff !important;
+  background-color: var(--color-purple) !important;
+  color: var(--color-bg) !important;
   width: 18px;
   height: 18px;
   padding: 14px;
   border-radius: 50%;
-  box-shadow: 0 3px 8px 0 #8121fb;
+  box-shadow: 0 3px 8px 0 var(--color-purple);
   margin-bottom: 10px;
 }
 
@@ -270,12 +270,12 @@ h1 span {
 .about h2 {
   font-size: 36px !important;
   font-weight: 600 !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .about .highlight-text {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .about .highlight-text::after {
@@ -285,7 +285,7 @@ h1 span {
 }
 
 .about .content .paragraph p {
-  color: #39557e !important;
+  color: var(--color-text) !important;
   font-size: 16px !important;
   font-weight: 400 !important;
 }
@@ -361,8 +361,8 @@ h1 span {
 }
 
 .about .content button {
-  background-color: #024585 !important;
-  color: #f1f4f9 !important;
+  background-color: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
   transition: all 0.5s;
 }
 
@@ -371,7 +371,7 @@ h1 span {
 }
 
 .about .content button:hover {
-  background-color: #082a5e !important;
+  background-color: var(--color-primary-dark) !important;
 }
 
 .about .content button:hover .right-arrow {
@@ -385,12 +385,12 @@ h1 span {
 .featured h2 {
   font-size: 36px !important;
   font-weight: 600 !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .featured .highlight-text {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .featured .highlight-text::after {
@@ -400,7 +400,7 @@ h1 span {
 }
 
 .featured .card ul {
-  color: #39557e !important;
+  color: var(--color-text) !important;
 }
 
 .featured .card ul li {
@@ -408,7 +408,7 @@ h1 span {
 }
 
 .featured .card h5 a {
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
 }
 
 .featured .star {
@@ -416,16 +416,16 @@ h1 span {
 }
 
 .featured button {
-  background-color: #024585 !important;
-  color: #f1f4f9 !important;
+  background-color: var(--color-primary) !important;
+  color: var(--color-section-bg) !important;
 }
 
 .featured button:hover {
-  background-color: #082a5e !important;
+  background-color: var(--color-primary-dark) !important;
 }
 
 .w3ey {
-  background-color: #fff !important;
+  background-color: var(--color-bg) !important;
 }
 
 .w3ey > img {
@@ -444,12 +444,12 @@ h1 span {
 .w3ey h2 {
   font-size: 36px !important;
   font-weight: 600 !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .w3ey .highlight-text {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
   text-transform: uppercase;
 }
 
@@ -464,27 +464,27 @@ h1 span {
 }
 
 .w3ey .cards .card {
-  background-color: #f1f4f9 !important;
+  background-color: var(--color-section-bg) !important;
 }
 
 .w3ey .cards .card .icon {
   width: 50px;
   height: 50px;
-  background-color: #fff !important;
-  color: #024585 !important;
+  background-color: var(--color-bg) !important;
+  color: var(--color-primary) !important;
   border-radius: 50%;
   padding: 12px;
   transition: all 0.8s;
 }
 
 .w3ey .cards .card:hover .icon {
-  background-color: #024585 !important;
-  color: #fff !important;
+  background-color: var(--color-primary) !important;
+  color: var(--color-bg) !important;
 }
 
 .w3ey .cards .card span {
   font-size: 18px !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-weight: 500 !important;
 }
 
@@ -505,6 +505,10 @@ h1 span {
   background-image: url("../assets/images/testimonial_bg.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.carousel-inner {
+  background-color: var(--color-bg-alt) !important;
 }
 
 .carousel-section .carousel-inner {
@@ -532,8 +536,8 @@ h1 span {
 }
 
 .carousel-section .control-icon {
-  background-color: #e7effc;
-  color: #082a5e;
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary-dark);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -542,8 +546,8 @@ h1 span {
 }
 
 .carousel-section .control-icon:hover {
-  background-color: #024585;
-  color: #e7effc;
+  background-color: var(--color-primary);
+  color: var(--color-bg-alt);
 }
 @media (max-width: 992px) {
   .carousel-section .lead {
@@ -588,7 +592,7 @@ h1 span {
 
 .instructors .header p:last-of-type,
 .blog .header p:last-of-type {
-  color: #39557e;
+  color: var(--color-text);
 }
 
 .instructors .header .button button,
@@ -607,7 +611,7 @@ h1 span {
 
 .instructors .jobs {
   max-width: 1100px;
-  background-color: #024585;
+  background-color: var(--color-primary);
   background-image: url("../assets/images/jobs-bg.png");
   background-position: center;
   background-size: cover;
@@ -620,12 +624,12 @@ h1 span {
 .instructors .header .text h2 {
   font-size: 36px !important;
   font-weight: 600 !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .instructors .header .text .highlight-text {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .instructors .header .text .highlight-text::after {
@@ -635,15 +639,15 @@ h1 span {
 }
 
 .instructors .header .button button {
-  color: #082a5e;
+  color: var(--color-primary-dark);
   background-color: transparent;
-  border: 1px solid #024585;
+  border: 1px solid var(--color-primary);
   transition: all 0.5s;
 }
 
 .instructors .header .button button:hover {
-  background-color: #082a5e;
-  color: #e7effc;
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-alt);
 }
 
 .instructors .header .button button .right-arrow {
@@ -655,20 +659,25 @@ h1 span {
 }
 
 .blog .card .btn button {
-  color: #082a5e;
-  background-color: #e7effc;
+  color: var(--color-primary-dark);
+  background-color: var(--color-bg-alt);
 }
 
 .blog .card .btn button:hover {
-  background-color: #082a5e;
-  color: #e7effc;
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-alt);
 }
 
 .jobs button {
-  background-color: #fff;
-  color: #082a5e;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   padding: 12px !important;
+  transition: all 0.5s;
+}
+
+.jobs button:hover {
+  background-color: var(--btn-hover-bg);
 }
 
 .jobs button .right-arrow {
@@ -684,22 +693,22 @@ h1 span {
 }
 
 .blog .card .card-title a {
-  color: #082a5e;
+  color: var(--color-primary-dark);
 }
 
 .blog .card .card-content {
-  color: #39557e;
+  color: var(--color-text);
 }
 
 .blog .header h2 {
   font-size: 36px !important;
   font-weight: 600 !important;
-  color: #082a5e !important;
+  color: var(--color-primary-dark) !important;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .instructors .header .highlight-text {
-  color: #024585 !important;
+  color: var(--color-primary) !important;
 }
 
 .instructors .header .highlight-text::after {
@@ -709,14 +718,14 @@ h1 span {
 }
 
 .mail .join h4 {
-  color: #082a5e;
+  color: var(--color-primary-dark);
   font-size: 30px !important;
   font-weight: 600 !important;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .subscribe-box {
-  background: #e7effc;
+  background: var(--color-bg-alt);
   border-radius: 50px;
   padding: 6px;
   display: flex;
@@ -743,8 +752,8 @@ h1 span {
 .subscribe-box button {
   flex: 0 0 auto;
   white-space: nowrap;
-  background: #0c4a8a;
-  color: #fff;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
@@ -771,12 +780,12 @@ h1 span {
 .instructors .share {
   padding: 12px;
   border-radius: 50%;
-  background-color: #e7effc;
-  color: #024585;
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
   transition: all 0.5s;
 }
 
 .instructors .share:hover {
-  color: #e7effc;
-  background-color: #024585;
+  color: var(--color-bg-alt);
+  background-color: var(--color-primary);
 }

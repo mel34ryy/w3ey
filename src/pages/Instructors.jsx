@@ -1,16 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Instructors.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBriefcase,
-  faStar,
-  faStarHalfAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faXTwitter,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import instructor1 from "../assets/images/instructor01.jpg";
 import instructor2 from "../assets/images/instructor02.jpeg";
 import instructor3 from "../assets/images/instructor03.jpg";
@@ -88,27 +78,16 @@ export default function InstructorsPage() {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (rating >= i) {
-        stars.push(
-          <FontAwesomeIcon key={i} icon={faStar} className="text-warning" />
-        );
+        stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>);
       } else if (rating >= i - 0.5) {
-        stars.push(
-          <FontAwesomeIcon
-            key={i}
-            icon={faStarHalfAlt}
-            className="text-warning"
-          />
-        );
+        stars.push(<i key={i} className="bi bi-star-half text-warning"></i>);
       } else {
         stars.push(
-          <FontAwesomeIcon
-            key={i}
-            icon={faStar}
-            className="text-warning opacity-25"
-          />
+          <i key={i} className="bi bi-star text-warning opacity-25"></i>
         );
       }
     }
+
     return stars;
   };
 
@@ -193,7 +172,7 @@ export default function InstructorsPage() {
                 <div className="card-body">
                   <h5 className="card-title">{inst.name}</h5>
                   <p className="card-text">
-                    <FontAwesomeIcon icon={faBriefcase} /> {inst.specialization}
+                    <i class="bi bi-briefcase-fill"></i> {inst.specialization}
                   </p>
                   <div className="rating">
                     {generateStars(inst.rating)}{" "}
@@ -205,7 +184,7 @@ export default function InstructorsPage() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FontAwesomeIcon icon={faFacebookF} />
+                      <i class="bi bi-facebook"></i>
                     </a>
                     <a
                       href={inst.socials.twitter}
@@ -213,14 +192,14 @@ export default function InstructorsPage() {
                       rel="noreferrer"
                       className="mx-2"
                     >
-                      <FontAwesomeIcon icon={faXTwitter} />
+                      <i class="bi bi-twitter-x"></i>
                     </a>
                     <a
                       href={inst.socials.linkedin}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FontAwesomeIcon icon={faLinkedinIn} />
+                      <i class="bi bi-linkedin"></i>
                     </a>
                   </div>
                 </div>

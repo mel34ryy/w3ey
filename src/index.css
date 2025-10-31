@@ -1,3 +1,46 @@
-body {
-  background-color: #f1f4f9 !important;
+/* ========== Base Theme Variables ========== */
+:root {
+  /* Primary Colors */
+  --color-primary: #024585;
+  --color-primary-dark: #082a5e;
+  --color-accent: #12bb6a;
+  --color-purple: #8121fb;
+
+  /* Text Colors */
+  --color-heading: #082a5e;
+  --color-text: #39557e;
+
+  /* Backgrounds */
+  --color-bg: #ffffff;
+  --color-bg-alt: #e7effc;
+  --color-section-bg: #f1f4f9;
+
+  /* Buttons */
+  --btn-bg: var(--color-primary);
+  --btn-hover-bg: var(--color-primary-dark);
+  --btn-text: #f1f4f9;
+
+  /* Highlight */
+  --highlight: var(--color-primary);
+}
+
+/* ========== Dark Theme Variables ========== */
+.dark-theme {
+  --color-primary: #4b9fff;
+  --color-primary-dark: #1c74d9;
+  --color-accent: #18d08f;
+  --color-purple: #a273ff;
+
+  --color-heading: #f5f9ff;
+  --color-text: #cbd5e1;
+
+  --color-bg: #0b1120;
+  --color-bg-alt: #16213a;
+  --color-section-bg: #1e293b;
+
+  --btn-bg: var(--color-primary);
+  --btn-hover-bg: var(--color-primary-dark);
+  --btn-text: #ffffff;
+
+  --highlight: var(--color-primary);
 }
