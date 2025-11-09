@@ -20,6 +20,11 @@
 
 .footer ul li:hover {
   color: #024585;
+  transform: translateX(8px);
+}
+
+.footer ul li.icons:hover {
+  transform: none;
 }
 
 svg {

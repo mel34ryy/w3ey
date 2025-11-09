@@ -109,22 +109,23 @@ export default function InstructorsPage() {
 
   return (
     <div>
-      <div className="cover"></div>
+      <div className="instructor-cover"></div>
 
-      <div className="container hero col-md-7 col-lg-10 my-5 text-center">
-        <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto text-center">
+      <div className="container instructor-hero col-md-7 col-lg-10 my-5 text-center">
+        <p className="instructor-bg-babyblue instructor-paragraph px-4 py-1 rounded-1 mx-auto text-center">
           Teaching Staff
         </p>
-        <h2 className="title mb-4 mt-3 fw-bold fs-1">
-          Top<span className="highlight-text"> Class</span> Instructor
+        <h2 className="instructor-title mb-4 mt-3 fw-bold fs-1">
+          Top<span className="instructor-highlight-text"> Class</span>{" "}
+          Instructor
         </h2>
-        <div className="paragraph text-start">
+        <div className="instructor-paragraph text-start">
           <p>
             Our team of educators is selected based on rigorous criteria that
             combine academic excellence with educational and psychological
             awareness. All teachers are:
           </p>
-          <ul className="list mt-5 mb-5 fs-6">
+          <ul className="instructor-list mt-5 mb-5 fs-6">
             <li>• Experienced in online teaching</li>
             <li>• Trained in both educational and psychological approaches</li>
             <li>
@@ -160,25 +161,25 @@ export default function InstructorsPage() {
           </select>
         </div>
 
-        <div id="instructorsContainer" className="row g-4 mb-5">
+        <div id="instructorsContainer" className="instructor-row row g-4 mb-5">
           {instructors.map((inst, index) => (
             <div key={index} className="col-md-3 fade-in">
-              <div className="card h-100">
+              <div className="instructor-card h-100">
                 <img
                   src={inst.image}
-                  className="card-img-top"
+                  className="instructor-card-img-top"
                   alt={inst.name}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{inst.name}</h5>
-                  <p className="card-text">
+                <div className="instructor-card-body">
+                  <h5 className="instructor-card-title">{inst.name}</h5>
+                  <p className="instructor-card-text">
                     <i class="bi bi-briefcase-fill"></i> {inst.specialization}
                   </p>
-                  <div className="rating">
+                  <div className="instructor-rating">
                     {generateStars(inst.rating)}{" "}
                     <span>({inst.rating.toFixed(1)})</span>
                   </div>
-                  <div className="social-links mt-2">
+                  <div className="instructor-social-links mt-2">
                     <a
                       href={inst.socials.facebook}
                       target="_blank"

@@ -36,13 +36,13 @@ body {
   color: var(--color-primary);
 }
 
-h1 {
+.home-h1 {
   max-width: 520px;
   font-size: 58px !important;
   color: var(--color-primary-dark) !important;
 }
 
-h1 span {
+.home-h1 span {
   color: var(--color-primary) !important;
 }
 
@@ -180,7 +180,7 @@ h1 span {
 }
 
 @media (max-width: 576px) {
-  h1 {
+  .home-h1 {
     font-size: 36px !important;
   }
 

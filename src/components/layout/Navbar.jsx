@@ -117,9 +117,9 @@ export default function Navbar({ onToggle }) {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to="courses" className="nav-link">
                   {t("courses")}
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -185,9 +185,9 @@ export default function Navbar({ onToggle }) {
                 </button>
               </li>
             </ul>
-            <div className="button">
+            <Link to="signup" className="button">
               <button className="register-btn bg-white">{t("register")}</button>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

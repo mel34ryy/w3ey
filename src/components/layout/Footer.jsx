@@ -1,4 +1,3 @@
-import logo from "../../../public/images/Logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -17,13 +16,13 @@ export default function Footer() {
         <div className="row">
           <div className="col-sm-6 col-md-3">
             <div className="logo">
-              <img src={logo} alt="logo" />
+              <img src="/images/Logo.svg" alt="logo" />
             </div>
             <p>Knowledge Without Borders. Education Without Limits.</p>
             <ul>
-              <li>407 Gamal Abd El-Nasser, Aleaxndria</li>
+              <li>Cairo</li>
               <li>+201011111111</li>
-              <li className="d-flex gap-3">
+              <li className="d-flex gap-3 icons">
                 <FontAwesomeIcon icon={faFacebookF} />
                 <FontAwesomeIcon icon={faInstagram} />
                 <FontAwesomeIcon icon={faWhatsapp} />

@@ -49,7 +49,7 @@ export default function Home() {
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
                 100% Satisfaction Guarantee
               </p>
-              <h1 className="mb-4 mt-3">
+              <h1 className="mb-4 mt-3 home-h1">
                 Learn <span className="highlight-text">Skills</span> From Our
                 Top Instructors
               </h1>
