@@ -44,3 +44,7 @@
 
   --highlight: var(--color-primary);
 }
+
+.chat-bg {
+  background-color: var(--color-primary);
+}

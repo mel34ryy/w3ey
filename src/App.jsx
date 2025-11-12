@@ -6,9 +6,10 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Courses from "./pages/Courses";
-import Course from "./components/layout/Course";
+// import Courses from "./pages/Courses";
+// import Course from "./components/layout/Course";
 import Auth from "./pages/Auth";
+import ChatBot from "./components/layout/Chatbot";
 
 export default function App() {
   function toggleLanguage() {
@@ -37,14 +38,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <FollowCursor color="#024585" />
+      <ChatBot />
       <Navbar onToggle={toggleLanguage} />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/login" element={<Auth defaultSignIn={true} />} />
         <Route path="/signup" element={<Auth defaultSignIn={false} />} />
         <Route path="instructors" element={<Instructors />} />
-        <Route path="courses" element={<Courses />} />
-        <Route path="courses/:course" element={<Course />} />
+        {/* <Route path="courses" element={<Courses />} /> */}
+        {/* <Route path="courses/:course" element={<Course />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
