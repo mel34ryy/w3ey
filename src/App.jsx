@@ -10,6 +10,8 @@ import Courses from "./pages/Courses";
 import Course from "./components/layout/Course";
 import Auth from "./pages/Auth";
 import ChatBot from "./components/layout/Chatbot";
+import About from "./pages/About"; 
+import Contact from "./pages/Contact"; 
 
 export default function App() {
   function toggleLanguage() {
@@ -47,6 +49,8 @@ export default function App() {
         <Route path="instructors" element={<Instructors />} />
         <Route path="courses" element={<Courses />} />
         <Route path="courses/:course" element={<Course />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
