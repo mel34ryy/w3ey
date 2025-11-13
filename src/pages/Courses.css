@@ -1,0 +1,87 @@
+.courses-sec1 {
+  background: #1c252e url("../assets/images/bannar.jpg") no-repeat;
+  height: auto;
+  background-size: 100% 200px;
+  width: 100%;
+  color: aliceblue;
+}
+.courses-text {
+  line-height: 50px;
+  padding: 40px;
+}
+.courses-sec1 .courses-text a {
+  text-decoration: none;
+}
+.courses-div {
+  height: auto;
+  width: 80%;
+  margin: 50px auto;
+}
+.course-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card a img,
+.course-card .a img {
+  width: 100%;
+  display: block;
+  transition: all 0.5s;
+}
+.course-card a img:hover,
+.course-card .a img:hover {
+  opacity: 0.7;
+}
+.course-card a button,
+.course-card .a button {
+  font-size: x-small;
+  position: absolute;
+  top: 40px;
+  left: 8px;
+  transform: translateY(-50%);
+  background-color: rgba(59, 253, 29, 0.6);
+  color: rgb(14, 129, 51);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.course-card a button:hover,
+.course-card .a button:hover {
+  background-color: rgba(77, 155, 57, 0.8);
+  color: aliceblue;
+}
+a.course-link-anim {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+a.course-link-anim::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background-color: #1c252e;
+  transition: width 0.3s ease-in-out;
+}
+a.course-link-anim:hover::after {
+  width: 100%;
+}
+.course-banrpage {
+  height: 300px;
+  background-color: #041734;
+  position: relative;
+}
+.course-banrpage .card-banr {
+  position: absolute;
+  right: 70px;
+  top: 50px;
+  width: 300px;
+  height: 100%;
+  border-radius: 40px !important;
+}
