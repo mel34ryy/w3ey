@@ -32,8 +32,10 @@ import instructor2 from "../assets/images/instructor02.jpeg";
 import instructor3 from "../assets/images/instructor03.jpg";
 import instructor4 from "../assets/images/instructor04.jpg";
 import sub from "../assets/images/subscribe.png";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="home">
@@ -47,21 +49,19 @@ export default function Home() {
           <div className="row align-items-center">
             <div className="intro mt-4 mt-lg-5 col-12 col-lg-6 text-center text-lg-start">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
-                100% Satisfaction Guarantee
+                {t("hero.satisfaction")}
               </p>
               <h1 className="mb-4 mt-3 home-h1">
-                Learn <span className="highlight-text">Skills</span> From Our
-                Top Instructors
+                {t("hero.title.part1")}{" "}
+                <span className="highlight-text">
+                  {t("hero.title.highlight")}
+                </span>{" "}
+                {t("hero.title.part2")}
               </h1>
-              <p className="lead mb-5">
-                Our online school is tailored for Egyptian students abroad,
-                combining academic excellence with modern educational vision,
-                all within a safe and smart environment that feels like home…
-                and supports every home.
-              </p>
+              <p className="lead mb-5">{t("hero.description")}</p>
               <div className="buttons d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start align-items-center gap-4">
                 <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
-                  explore courses
+                  {t("hero.button.explore")}
                   <span className="ms-2">
                     <FontAwesomeIcon
                       icon={faArrowRight}
@@ -76,9 +76,9 @@ export default function Home() {
                     color="#082a5e"
                   />
                   <div className="content d-flex flex-column">
-                    <p className="m-0">Have any Question?</p>
+                    <p className="m-0">{t("hero.call.question")}</p>
                     <button className="border-0 bg-transparent p-0 text-start">
-                      +201000000000
+                      {t("hero.call.phone")}
                     </button>
                   </div>
                 </div>
@@ -89,14 +89,14 @@ export default function Home() {
               <div className="boxes">
                 <div className="first-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
                   <FontAwesomeIcon className="first" icon={faPeopleGroup} />
-                  <p className="m-0">Enrolled Students</p>
-                  <span>+200</span>
+                  <p className="m-0">{t("hero.box1.title")}</p>
+                  <span>{t("hero.box1.value")}</span>
                 </div>
                 {/* todo: handle this on lg screens */}
                 <div className="second-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
                   <FontAwesomeIcon className="second" icon={faGraduationCap} />
-                  <p className="m-0">Experience Since</p>
-                  <span>2020</span>
+                  <p className="m-0">{t("hero.box2.title")}</p>
+                  <span>{t("hero.box2.value")}</span>
                 </div>
               </div>
             </div>
@@ -149,31 +149,21 @@ export default function Home() {
             </div>
             <div className="content col-12 col-md-7">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
-                Get To Know About Us
+                {t("about.badge")}
               </p>
               <h2 className="mb-4 mt-3">
-                W3ey Online <span className="highlight-text">School</span> For
-                Learning And Instruction
+                {t("about.title.part1")}{" "}
+                <span className="highlight-text">
+                  {t("about.title.highlight")}
+                </span>{" "}
+                {t("about.title.part2")}
               </h2>
               <div className="paragraph">
-                <p>
-                  Welcome to W3ey — the accredited online Egyptian school
-                  dedicated to educating Egyptian expat children, especially in
-                  the Gulf region.
-                </p>
+                <p>{t("about.p1")}</p>
                 <br />
-                <p>
-                  If you’re looking for modern, flexible, and secure Egyptian
-                  education that nurtures your children both academically and
-                  emotionally, W3ey is your perfect choice.
-                </p>
+                <p>{t("about.p2")}</p>
                 <br />
-                <p>
-                  We deliver accredited education following the Egyptian
-                  Experimental Curriculum (Languages) from Kindergarten (KG) to
-                  Middle 1, through a smart and comprehensive digital platform
-                  that blends flexibility with precision.
-                </p>
+                <p>{t("about.p3")}</p>
                 <br />
               </div>
               <div className="icons d-grid mb-4">
@@ -184,9 +174,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    10+ Yrs
+                    {t("about.icons.expYears.p1")}
                     <br />
-                    Teachers Experience
+                    {t("about.icons.expYears.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -196,8 +186,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    4<br />
-                    Enrichment Programs
+                    {t("about.icons.programs.p1")}
+                    <br />
+                    {t("about.icons.programs.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -207,9 +198,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    200
+                    {t("about.icons.students.p1")}
                     <br />
-                    Over Students
+                    {t("about.icons.students.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -219,9 +210,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    MOE
+                    {t("about.icons.curriculum.p1")}
                     <br />
-                    Curriculum
+                    {t("about.icons.curriculum.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -231,9 +222,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    24/7
+                    {t("about.icons.support.p1")}
                     <br />
-                    Support
+                    {t("about.icons.support.p2")}
                   </p>
                 </div>
               </div>
@@ -257,11 +248,14 @@ export default function Home() {
             style={{ width: "60px", height: "60px" }}
           />
           <p className="bg-babyblue paragraph px-4 py-1 rounded-1">
-            Welcome our Property.
+            {t("featured.badge")}
           </p>
           <h2 className="mb-4 mt-3">
-            Our <span className="highlight-text">Featured</span> Clubs &
-            <br /> Subjects
+            {t("featured.title.part1")}{" "}
+            <span className="highlight-text">
+              {t("featured.title.highlight")}
+            </span>{" "}
+            {t("featured.title.part2")}
           </h2>
           <div className="row">
             <div className="col-md-6 col-lg-4">
@@ -275,16 +269,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -293,7 +289,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -309,16 +305,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -327,7 +325,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -343,16 +341,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -361,7 +361,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -377,16 +377,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -395,7 +397,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -411,16 +413,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -429,7 +433,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -445,16 +449,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -463,7 +469,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -479,16 +485,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -497,7 +505,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -513,16 +521,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -531,7 +541,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
@@ -547,16 +557,18 @@ export default function Home() {
                   <div className="card-icons">
                     <ul className="list-unstyled d-flex gap-3">
                       <li>
-                        <FontAwesomeIcon icon={faClock} /> 0h 0m
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {t("featured.card.duration")}
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faUserGroup} /> 0 Students
+                        <FontAwesomeIcon icon={faUserGroup} />{" "}
+                        {t("featured.card.students")}
                       </li>
                     </ul>
                   </div>
                   <h5 className="card-title">
                     <a className="text-decoration-none" href="#">
-                      W3ey
+                      {t("featured.card.title")}
                     </a>
                   </h5>
                   <div className="card-content">
@@ -565,14 +577,14 @@ export default function Home() {
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
                     <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">(0)</span>
+                    <span className="ms-1">{t("featured.card.reviews")}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <button className="btn d-flex mx-auto mt-4 px-4 py-2">
-            All Courses
+            {t("featured.button")}
           </button>
         </section>
         <section className="w3ey py-5">
@@ -581,24 +593,20 @@ export default function Home() {
             <div className="row">
               <div className="col-md-6 col-lg-4">
                 <p className="bg-babyblue paragraph px-4 py-1 rounded-1">
-                  Unique online courses
+                  {t("w3ey.badge")}
                 </p>
                 <h2 className="mb-4 mt-3">
-                  At{" "}
+                  {t("w3ey.title.part1")}{" "}
                   <span className="highlight-text">
-                    W<span className="three">3</span>ey
+                    {t("w3ey.title.part2")}
+                    <span className="three">{t("w3ey.title.highlight")}</span>
+                    {t("w3ey.title.part3")}
                   </span>
                 </h2>
                 <p className="lead">
-                  we don’t just teach what’s in the books — we shape
-                  well-rounded, thoughtful individuals through free interactive
-                  clubs and exceptional enrichment subjects.
-                  <br /> From Science and Design Clubs to debates and
-                  educational films, we fuel curiosity and creativity in every
-                  student.
-                  <br /> With French, Programming, and Critical Thinking
-                  programs, we open new horizons and help build a generation
-                  that’s aware, cultured, and balanced.
+                  {t("w3ey.description.p1")}
+                  <br /> {t("w3ey.description.p2")}
+                  <br /> {t("w3ey.description.p3")}
                 </p>
               </div>
               <div className="col-md-6 col-lg-8 cards">
@@ -606,31 +614,31 @@ export default function Home() {
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faAtom} className="icon" />
-                      <span>Science Club</span>
+                      <span>{t("w3ey.cards.science")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faComments} className="icon" />
-                      <span>Debate Club</span>
+                      <span>{t("w3ey.cards.debate")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faFilm} className="icon" />
-                      <span>Movie Club</span>
+                      <span>{t("w3ey.cards.movies")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faPenRuler} className="icon" />
-                      <span>Drawing Club</span>
+                      <span>{t("w3ey.cards.drawing")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faCakeCandles} className="icon" />
-                      <span>Fun Days</span>
+                      <span>{t("w3ey.cards.fundays")}</span>
                     </div>
                   </div>
                 </div>
@@ -655,13 +663,11 @@ export default function Home() {
                       <FontAwesomeIcon key={i} icon={faStar} className="star" />
                     ))}
                   </div>
-                  <p className="lead mx-auto">
-                    I used to be afraid of speaking in class, but at W3ey, my
-                    teachers encouraged me to ask questions. Now I feel
-                    confident and happy, and I love joining the activities.
-                  </p>
-                  <h4 className="mt-3 mb-0">Ali</h4>
-                  <span className="text-muted small">Egypt - Age 10</span>
+                  <p className="lead mx-auto">{t("carousel.items.0.text")}</p>
+                  <h4 className="mt-3 mb-0">{t("carousel.items.0.name")}</h4>
+                  <span className="text-muted small">
+                    {t("carousel.items.0.meta")}
+                  </span>
                 </div>
                 <div className="carousel-item text-center">
                   <div className="img mb-3">
@@ -672,12 +678,11 @@ export default function Home() {
                       <FontAwesomeIcon key={i} icon={faStar} className="star" />
                     ))}
                   </div>
-                  <p className="lead mx-auto">
-                    At W3ey, learning feels exciting — not stressful! I love how
-                    we can express ideas and learn creatively every day.
-                  </p>
-                  <h4 className="mt-3 mb-0">Sara</h4>
-                  <span className="text-muted small">UAE - Age 11</span>
+                  <p className="lead mx-auto">{t("carousel.items.1.text")}</p>
+                  <h4 className="mt-3 mb-0">{t("carousel.items.1.name")}</h4>
+                  <span className="text-muted small">
+                    {t("carousel.items.1.meta")}
+                  </span>
                 </div>
                 <div className="carousel-item text-center">
                   <div className="img mb-3">
@@ -688,12 +693,11 @@ export default function Home() {
                       <FontAwesomeIcon key={i} icon={faStar} className="star" />
                     ))}
                   </div>
-                  <p className="lead mx-auto">
-                    W3ey changed how I see school — now I look forward to every
-                    class because it’s fun and inspiring.
-                  </p>
-                  <h4 className="mt-3 mb-0">Omar</h4>
-                  <span className="text-muted small">KSA - Age 9</span>
+                  <p className="lead mx-auto">{t("carousel.items.2.text")}</p>
+                  <h4 className="mt-3 mb-0">{t("carousel.items.2.name")}</h4>
+                  <span className="text-muted small">
+                    {t("carousel.items.2.meta")}
+                  </span>
                 </div>
               </div>
               <button
@@ -720,20 +724,20 @@ export default function Home() {
             <div className="header row align-items-center">
               <div className="text col-lg-8 col-md-7">
                 <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
-                  Our Qualified People Matter
+                  {t("instructors.badge")}
                 </p>
                 <h2 className="mb-4 mt-3">
-                  Top <span className="highlight-text">Class </span>Instructor
+                  {t("instructors.title.part1")}{" "}
+                  <span className="highlight-text">
+                    {t("instructors.title.highlight")}{" "}
+                  </span>
+                  {t("instructors.title.part2")}
                 </h2>
-                <p>
-                  At W3ey, we carefully select our teachers — Not just for their
-                  qualifications, but for their ability to teach with heart and
-                  build trust from the very first class.
-                </p>
+                <p>{t("instructors.description")}</p>
               </div>
               <div className="button mb-3 col-lg-4 col-md-5 text-lg-end text-center mt-3 mt-md-0">
                 <button className="px-3 py-2 text-uppercase rounded-2">
-                  all instructors{" "}
+                  {t("instructors.button")}{" "}
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     className="right-arrow"
@@ -751,8 +755,12 @@ export default function Home() {
                   />
                   <div className="card-body d-flex align-items-center justify-content-between">
                     <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">Academic Director</p>
-                      <h5 className="card-title">Aya Habashy</h5>
+                      <p className="card-text m-0">
+                        {t("instructors.cards.0.role")}
+                      </p>
+                      <h5 className="card-title">
+                        {t("instructors.cards.0.name")}
+                      </h5>
                     </div>
                     <div className="button">
                       <FontAwesomeIcon icon={faShareNodes} className="share" />
@@ -769,8 +777,12 @@ export default function Home() {
                   />
                   <div className="card-body d-flex align-items-center justify-content-between">
                     <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">English Coordinator</p>
-                      <h5 className="card-title">Nahla Fotouh El Ashry</h5>
+                      <p className="card-text m-0">
+                        {t("instructors.cards.1.role")}
+                      </p>
+                      <h5 className="card-title">
+                        {t("instructors.cards.1.name")}
+                      </h5>
                     </div>
                     <div className="button">
                       <FontAwesomeIcon icon={faShareNodes} className="share" />
@@ -787,8 +799,12 @@ export default function Home() {
                   />
                   <div className="card-body d-flex align-items-center justify-content-between">
                     <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">Math Coordinator</p>
-                      <h5 className="card-title">Mona Abdelazeez</h5>
+                      <p className="card-text m-0">
+                        {t("instructors.cards.2.role")}
+                      </p>
+                      <h5 className="card-title">
+                        {t("instructors.cards.2.name")}
+                      </h5>
                     </div>
                     <div className="button">
                       <FontAwesomeIcon icon={faShareNodes} className="share" />
@@ -805,8 +821,12 @@ export default function Home() {
                   />
                   <div className="card-body d-flex align-items-center justify-content-between">
                     <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">Science Coordinator</p>
-                      <h5 className="card-title">Asmaa Saad</h5>
+                      <p className="card-text m-0">
+                        {t("instructors.cards.3.role")}
+                      </p>
+                      <h5 className="card-title">
+                        {t("instructors.cards.3.name")}
+                      </h5>
                     </div>
                     <div className="button">
                       <FontAwesomeIcon icon={faShareNodes} className="share" />
@@ -818,19 +838,17 @@ export default function Home() {
             <div className="jobs mt-5 row flex-column flex-lg-row justify-content-between align-items-center mx-auto p-5 rounded-2 text-white">
               <div className="col-lg-3">
                 <h2 className="fs-1">
-                  Join us &<span> Share</span> Your Expertise
+                  {t("instructors.jobs.title.part1")}
+                  <span> {t("instructors.jobs.title.highlight")}</span>{" "}
+                  {t("instructors.jobs.title.part2")}
                 </h2>
               </div>
               <div className="col-lg-6">
-                <p className="lead">
-                  At W3ey, we're always looking for passionate educators who
-                  believe in modern learning and are ready to deliver
-                  exceptional online teaching experiences.
-                </p>
+                <p className="lead">{t("instructors.jobs.description")}</p>
               </div>
               <div className="col-lg-3">
                 <button className="text-uppercase px-2 py-2 rounded-2">
-                  become an instructor{" "}
+                  {t("instructors.jobs.button")}{" "}
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     className="right-arrow"
@@ -844,16 +862,17 @@ export default function Home() {
           <div className="container">
             <div className="header text-center">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto">
-                Always Smart To Hear News
+                {t("blog.badge")}
               </p>
               <h2 className="mb-4 mt-3">
-                Latest <span className="highlight-text"> News </span>& Blog
+                {t("blog.title.part1")}{" "}
+                <span className="highlight-text">
+                  {" "}
+                  {t("blog.title.highlight")}{" "}
+                </span>
+                {t("blog.title.part2")}
               </h2>
-              <p className="w-50 mx-auto">
-                Stay Updated with Everything W3ey Here, you’ll find the latest
-                from W3ey — events, articles, and updates that shape your
-                child’s learning journey.
-              </p>
+              <p className="w-50 mx-auto">{t("blog.description")}</p>
             </div>
             <div className="row">
               <div className="col-md-4">
@@ -866,18 +885,17 @@ export default function Home() {
                   <div className="card-body">
                     <div className="btn">
                       <button className="btn rounded-5 px-3 py-1">
-                        English
+                        {t("blog.posts.0.tag")}
                       </button>
                     </div>
                     <h5 className="card-title">
                       <a className="text-decoration-none" href="#">
-                        How Do W3ey's Interactive Clubs Help Shape Student
-                        Personality?
+                        {t("blog.posts.0.title")}
                       </a>
                     </h5>
                     <div className="card-content d-flex gap-2 align-items-center">
                       <FontAwesomeIcon icon={faCalendar} />
-                      <span>May 25, 2025</span>
+                      <span>{t("blog.posts.0.date")}</span>
                     </div>
                   </div>
                 </div>
@@ -892,18 +910,17 @@ export default function Home() {
                   <div className="card-body">
                     <div className="btn">
                       <button className="btn rounded-5 px-3 py-1">
-                        English
+                        {t("blog.posts.1.tag")}
                       </button>
                     </div>
                     <h5 className="card-title">
                       <a className="text-decoration-none" href="#">
-                        Is Egyptian Online Education the Right Choice for Your
-                        Child Abroad?
+                        {t("blog.posts.1.title")}
                       </a>
                     </h5>
                     <div className="card-content d-flex gap-2 align-items-center">
                       <FontAwesomeIcon icon={faCalendar} />
-                      <span>June 22, 2023</span>
+                      <span>{t("blog.posts.1.date")}</span>
                     </div>
                   </div>
                 </div>
@@ -918,18 +935,17 @@ export default function Home() {
                   <div className="card-body">
                     <div className="btn">
                       <button className="btn rounded-5 px-3 py-1">
-                        English
+                        {t("blog.posts.2.tag")}
                       </button>
                     </div>
                     <h5 className="card-title">
                       <a className="text-decoration-none" href="#">
-                        Why W3ey is One of the Best Online Schools for Egyptian
-                        Students Abroad ?
+                        {t("blog.posts.2.title")}
                       </a>
                     </h5>
                     <div className="card-content d-flex gap-2 align-items-center">
                       <FontAwesomeIcon icon={faCalendar} />
-                      <span>June 22, 2023</span>
+                      <span>{t("blog.posts.2.date")}</span>
                     </div>
                   </div>
                 </div>
@@ -940,13 +956,13 @@ export default function Home() {
         <div className="mail container my-5">
           <div className="row align-items-center justify-content-between gx-3">
             <div className="join col-12 col-md-5 text-md-start text-center mb-3 mb-md-0">
-              <h4>Let’s Join To Our Newsletters</h4>
+              <h4>{t("mail.title")}</h4>
               <img src={sub} alt="join" className="img-fluid" />
             </div>
             <div className="col-12 col-md-6">
               <div className="subscribe-box d-flex w-100">
-                <input type="email" placeholder="Enter your email*" />
-                <button type="button">SUBSCRIBE NOW</button>
+                <input type="email" placeholder={t("mail.input.placeholder")} />
+                <button type="button">{t("mail.button")}</button>
               </div>
             </div>
           </div>

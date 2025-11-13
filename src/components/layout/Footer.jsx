@@ -8,8 +8,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <div className="footer py-5">
       <div className="container">
@@ -18,10 +20,10 @@ export default function Footer() {
             <div className="logo">
               <img src="/images/Logo.svg" alt="logo" />
             </div>
-            <p>Knowledge Without Borders. Education Without Limits.</p>
+            <p>{t("footer.description")}</p>
             <ul>
-              <li>Cairo</li>
-              <li>+201011111111</li>
+              <li>{t("footer.location")}</li>
+              <li>{t("footer.phone")}</li>
               <li className="d-flex gap-3 icons">
                 <FontAwesomeIcon icon={faFacebookF} />
                 <FontAwesomeIcon icon={faInstagram} />
@@ -32,35 +34,35 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-sm-6 col-md-3">
-            <h4 className="mb-3">Quick Links</h4>
+            <h4 className="mb-3">{t("footer.quickLinks.title")}</h4>
             <ul>
               <li>
                 <Link to="/" className="link">
-                  Home
+                  {t("footer.quickLinks.home")}
                 </Link>
               </li>
-              <li>About Us</li>
-              <li>Courses</li>
+              <li>{t("footer.quickLinks.about")}</li>
+              <li>{t("footer.quickLinks.courses")}</li>
               <li>
                 <Link to="instructors" className="link">
-                  Instructors
+                  {t("footer.quickLinks.instructors")}
                 </Link>
               </li>
-              <li>Blogs</li>
-              <li>Contact Us</li>
+              <li>{t("footer.quickLinks.blogs")}</li>
+              <li>{t("footer.quickLinks.contact")}</li>
             </ul>
           </div>
           <div className="col-sm-6 col-md-3">
-            <h4 className="mb-3">Policy</h4>
+            <h4 className="mb-3">{t("footer.policy.title")}</h4>
             <ul>
-              <li>Asked Question</li>
+              <li>{t("footer.policy.question")}</li>
             </ul>
           </div>
           <div className="col-sm-6 col-md-3">
-            <h4 className="mb-3">Working Hours</h4>
+            <h4 className="mb-3">{t("footer.hours.title")}</h4>
             <div className="open d-flex justify-content-between">
-              <span>Sat - Thu</span>
-              <span>7:00 AM - 3:00 PM</span>
+              <span>{t("footer.hours.days")}</span>
+              <span>{t("footer.hours.time")}</span>
             </div>
           </div>
         </div>

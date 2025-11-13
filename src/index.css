@@ -48,3 +48,7 @@
 .chat-bg {
   background-color: var(--color-primary);
 }
+
+.send:hover {
+  background-color: #082a5e;
+}

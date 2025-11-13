@@ -142,7 +142,7 @@ const ChatBot = () => {
                 <button
                   onClick={sendMessage}
                   disabled={loading}
-                  className="btn chat-bg ms-2 text-white"
+                  className="btn chat-bg ms-2 text-white send"
                 >
                   {loading ? "..." : "Send"}
                 </button>

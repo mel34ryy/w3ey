@@ -89,15 +89,15 @@ export default function Courses() {
           </div>
 
           <div className="col">
-
             <div className="course-card  shadow-sm card h-100">
-               <Link to="course" className="a">
-              <a href="#">
-                <img src={mamaEduraImg} className="card-img-top" alt="..." />
-                <button href="#" className="small btn btn-success-subtle">
-                  thre
-                </button>
-              </a></Link>
+              <Link to="course" className="a">
+                <a href="#">
+                  <img src={mamaEduraImg} className="card-img-top" alt="..." />
+                  <button href="#" className="small btn btn-success-subtle">
+                    thre
+                  </button>
+                </a>
+              </Link>
               <div className="card-body text-start">
                 <p className="card-text">
                   <FontAwesomeIcon icon={faClock} />
@@ -105,9 +105,9 @@ export default function Courses() {
                   <FontAwesomeIcon icon={faUserGroup} />
                   <span className="text-secondary"> 0 students </span>
                 </p>
-                <Link to="course"
+                <Link
+                  to="course"
                   className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  
                 >
                   mama edura
                 </Link>

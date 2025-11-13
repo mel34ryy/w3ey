@@ -789,3 +789,38 @@ body {
   color: var(--color-bg-alt);
   background-color: var(--color-primary);
 }
+
+html[dir="rtl"] .hero {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .home-h1,
+html[dir="rtl"] .lead,
+html[dir="rtl"] .paragraph {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .hero {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .highlight-text::after {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .planet,
+html[dir="rtl"] .dots {
+  left: auto;
+  right: -8%;
+}
+
+html[dir="rtl"] .hero .photo .boxes .first-box {
+  left: auto;
+  right: 20%;
+}
+
+html[dir="rtl"] .hero .photo .boxes .second-box {
+  left: auto;
+  right: 75%;
+}

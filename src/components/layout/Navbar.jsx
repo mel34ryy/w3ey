@@ -103,38 +103,38 @@ export default function Navbar({ onToggle }) {
             <ul className="navbar-nav m-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink to="/" className="nav-link" aria-current="page">
-                  {t("home")}
+                  {t("navbar.home")}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  {t("about")}
-                </a>
+                <Link to="about" className="nav-link">
+                  {t("navbar.about")}
+                </Link>
               </li>
               <li className="nav-item">
                 <NavLink to="instructors" className="nav-link">
-                  {t("instructors")}
+                  {t("navbar.instructors")}
                 </NavLink>
               </li>
               <li className="nav-item">
                 <Link to="courses" className="nav-link">
-                  {t("courses")}
+                  {t("navbar.courses")}
                 </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  {t("jobs")}
+                  {t("navbar.jobs")}
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  {t("blogs")}
+                  {t("navbar.blogs")}
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  {t("contact")}
-                </a>
+                <Link to="contact" className="nav-link">
+                  {t("navbar.contact")}
+                </Link>
               </li>
               <li className="nav-item">
                 <div className="mode-switch d-flex gap-2">
@@ -181,12 +181,14 @@ export default function Navbar({ onToggle }) {
                     alt="arabic"
                     style={{ height: "18px", width: "auto", margin: "0 5px" }}
                   />
-                  <span>{t("lang")}</span>
+                  <span>{t("navbar.lang")}</span>
                 </button>
               </li>
             </ul>
             <Link to="signup" className="button">
-              <button className="register-btn bg-white">{t("register")}</button>
+              <button className="register-btn bg-white">
+                {t("navbar.register")}
+              </button>
             </Link>
           </div>
         </div>
