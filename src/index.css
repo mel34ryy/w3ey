@@ -50,5 +50,5 @@
 }
 
 .send:hover {
-  background-color: #082a5e;
+  background-color: var(--color-primary-dark);
 }

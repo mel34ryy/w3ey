@@ -124,8 +124,7 @@
 }
 
 .auth-overlay {
-  background: #024585;
-  background: linear-gradient(to right, #024585, #0155a3);
+  background: #082a5e;
   color: #ffffff;
   position: relative;
   left: -100%;

@@ -19,11 +19,11 @@
 }
 
 /* about-us */
-.highlight-text {
+.about-highlight-text {
   position: relative;
   color: #2f548f;
 }
-.highlight-text::after {
+.about-highlight-text::after {
   content: url("../assets/images/row.svg");
   position: absolute;
   bottom: -30px;

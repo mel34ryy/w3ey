@@ -1,4 +1,6 @@
 import "./Home.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhoneVolume,
@@ -6,16 +8,15 @@ import {
   faArrowLeft,
   faPeopleGroup,
   faGraduationCap,
-  faClock,
-  faUserGroup,
   faStar,
   faAtom,
   faComments,
   faFilm,
   faPenRuler,
   faCakeCandles,
-  faShareNodes,
   faCalendar,
+  faClock,
+  faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import hero from "../assets/images/hero.svg";
 import planet from "../assets/images/planet.svg";
@@ -27,15 +28,69 @@ import icon02 from "../assets/images/about-icon02.svg";
 import icon03 from "../assets/images/about-icon03.svg";
 import icon04 from "../assets/images/about-icon04.svg";
 import icon05 from "../assets/images/about-icon05.svg";
-import instructor1 from "../assets/images/instructor01.jpg";
-import instructor2 from "../assets/images/instructor02.jpeg";
-import instructor3 from "../assets/images/instructor03.jpg";
-import instructor4 from "../assets/images/instructor04.jpg";
 import sub from "../assets/images/subscribe.png";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { t } = useTranslation();
+  const [courses, setCourses] = useState([]);
+  const [instructors, setInstructors] = useState([]);
+  const currentItems = courses.slice(0, 9);
+  const currentInstructors = instructors.slice(0, 4);
+
+  useEffect(() => {
+    async function fetchCourses() {
+      try {
+        const res = await axios.get("https://w3ey.runasp.net/api/Courses");
+
+        const normalized = res.data.map((c) => ({
+          id: c.id,
+          title: c.title,
+          description: c.description,
+          image: c.thumbnail,
+          duration: c.duration,
+          students: c.studentCount,
+          author: c.authorName,
+          tags: c.filters,
+        }));
+
+        setCourses(normalized);
+      } catch (error) {
+        console.error("Failed to load courses:", error);
+      }
+    }
+
+    fetchCourses();
+  }, []);
+
+  useEffect(() => {
+    async function fetchInstructors() {
+      try {
+        const res = await axios.get("https://w3ey.runasp.net/api/Authors");
+
+        const normalized = res.data.map((item) => ({
+          name: item.name,
+          specialization: `${item.courseCount} ${
+            item.courseCount > 1 ? "Courses" : "Course"
+          }`,
+          rating: Number(item.rating),
+          image: item.avatar,
+          socials: item.socialLinks.reduce((acc, s) => {
+            acc[s.platform.toLowerCase()] = s.url;
+            return acc;
+          }, {}),
+        }));
+
+        setInstructors(normalized);
+      } catch (error) {
+        console.error("API Fetch Error:", error);
+      }
+    }
+
+    fetchInstructors();
+  }, []);
+
   return (
     <>
       <div className="home">
@@ -60,15 +115,17 @@ export default function Home() {
               </h1>
               <p className="lead mb-5">{t("hero.description")}</p>
               <div className="buttons d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start align-items-center gap-4">
-                <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
-                  {t("hero.button.explore")}
-                  <span className="ms-2">
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="right-arrow"
-                    />
-                  </span>
-                </button>
+                <Link to="courses" className="buttons">
+                  <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
+                    {t("hero.button.explore")}
+                    <span className="ms-2">
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="right-arrow"
+                      />
+                    </span>
+                  </button>
+                </Link>
                 <div className="call d-flex align-items-center">
                   <FontAwesomeIcon
                     className="h2 m-0 me-2 icon"
@@ -92,7 +149,6 @@ export default function Home() {
                   <p className="m-0">{t("hero.box1.title")}</p>
                   <span>{t("hero.box1.value")}</span>
                 </div>
-                {/* todo: handle this on lg screens */}
                 <div className="second-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
                   <FontAwesomeIcon className="second" icon={faGraduationCap} />
                   <p className="m-0">{t("hero.box2.title")}</p>
@@ -228,15 +284,17 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
-                discover more
-                <span className="ms-2">
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    className="right-arrow"
-                  />
-                </span>
-              </button>
+              <Link to="about">
+                <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
+                  {t("about.button")}
+                  <span className="ms-2">
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="right-arrow"
+                    />
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -258,334 +316,49 @@ export default function Home() {
             {t("featured.title.part2")}
           </h2>
           <div className="row">
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
+            {currentItems.map((course) => (
+              <div className="col-md-6 col-lg-4 mb-4" key={course.id}>
+                <div className="course-card shadow-sm card h-100">
+                  <Link to={`/course/${course.id}`} className="a">
+                    <img
+                      src={course.image}
+                      className="card-img-top"
+                      alt={course.title}
+                    />
+                    <button className="small btn btn-success-subtle text-capitalize">
+                      {course.tags?.[0] || "course"}
+                    </button>
+                  </Link>
+
+                  <div className="card-body text-start">
+                    <p className="card-text">
+                      <FontAwesomeIcon icon={faClock} />
+                      <span className="text-secondary me-3">
+                        {course.duration || "0 h 0 m"}
+                      </span>
+
+                      <FontAwesomeIcon icon={faUserGroup} />
+                      <span className="text-secondary">
+                        {course.students || "0"} students
+                      </span>
+                    </p>
+
+                    <Link
+                      to={`/course/${course.id}`}
+                      className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
+                    >
+                      {course.title}
+                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <img
-                  className="card-img-top"
-                  src="/images/featured01.png"
-                  alt="Card"
-                />
-                <div className="card-body">
-                  <div className="card-icons">
-                    <ul className="list-unstyled d-flex gap-3">
-                      <li>
-                        <FontAwesomeIcon icon={faClock} />{" "}
-                        {t("featured.card.duration")}
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faUserGroup} />{" "}
-                        {t("featured.card.students")}
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 className="card-title">
-                    <a className="text-decoration-none" href="#">
-                      {t("featured.card.title")}
-                    </a>
-                  </h5>
-                  <div className="card-content">
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <FontAwesomeIcon icon={faStar} className="star" />
-                    <span className="ms-1">{t("featured.card.reviews")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
-          <button className="btn d-flex mx-auto mt-4 px-4 py-2">
-            {t("featured.button")}
-          </button>
+          <Link to="courses" className="text-decoration-none">
+            <button className="btn d-flex mx-auto mt-4 px-4 py-2">
+              {t("featured.button")}
+            </button>
+          </Link>
         </section>
         <section className="w3ey py-5">
           <img className="d-none d-lg-block" src={rotation} alt="circle" />
@@ -736,104 +509,71 @@ export default function Home() {
                 <p>{t("instructors.description")}</p>
               </div>
               <div className="button mb-3 col-lg-4 col-md-5 text-lg-end text-center mt-3 mt-md-0">
-                <button className="px-3 py-2 text-uppercase rounded-2">
-                  {t("instructors.button")}{" "}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    className="right-arrow"
-                  />
-                </button>
+                <Link to="instructors">
+                  <button className="px-3 py-2 text-uppercase rounded-2">
+                    {t("instructors.button")}{" "}
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="right-arrow"
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-6 col-md-3">
-                <div className="card h-100">
-                  <img
-                    src={instructor1}
-                    className="card-img-top"
-                    alt="instructor"
-                  />
-                  <div className="card-body d-flex align-items-center justify-content-between">
-                    <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">
-                        {t("instructors.cards.0.role")}
+              {currentInstructors.map((inst, index) => (
+                <div key={index} className="col-sm-6 col-md-3">
+                  <div className="instructor-card h-100">
+                    <img
+                      src={inst.image}
+                      className="instructor-card-img-top"
+                      alt={inst.name}
+                    />
+
+                    <div className="instructor-card-body">
+                      <h5 className="instructor-card-title">{inst.name}</h5>
+
+                      <p className="instructor-card-text">
+                        <i className="bi bi-briefcase-fill"></i>{" "}
+                        {inst.specialization}
                       </p>
-                      <h5 className="card-title">
-                        {t("instructors.cards.0.name")}
-                      </h5>
-                    </div>
-                    <div className="button">
-                      <FontAwesomeIcon icon={faShareNodes} className="share" />
+
+                      <div className="instructor-social-links mt-2">
+                        {inst.socials.twitter && (
+                          <a
+                            href={inst.socials.twitter}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <i className="bi bi-twitter-x"></i>
+                          </a>
+                        )}
+
+                        {inst.socials.youtube && (
+                          <a
+                            href={inst.socials.youtube}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mx-2"
+                          >
+                            <i className="bi bi-youtube"></i>
+                          </a>
+                        )}
+
+                        {inst.socials.linkedin && (
+                          <a
+                            href={inst.socials.linkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <i className="bi bi-linkedin"></i>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="card h-100">
-                  <img
-                    src={instructor2}
-                    className="card-img-top"
-                    alt="instructor"
-                  />
-                  <div className="card-body d-flex align-items-center justify-content-between">
-                    <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">
-                        {t("instructors.cards.1.role")}
-                      </p>
-                      <h5 className="card-title">
-                        {t("instructors.cards.1.name")}
-                      </h5>
-                    </div>
-                    <div className="button">
-                      <FontAwesomeIcon icon={faShareNodes} className="share" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="card h-100">
-                  <img
-                    src={instructor3}
-                    className="card-img-top"
-                    alt="instructor"
-                  />
-                  <div className="card-body d-flex align-items-center justify-content-between">
-                    <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">
-                        {t("instructors.cards.2.role")}
-                      </p>
-                      <h5 className="card-title">
-                        {t("instructors.cards.2.name")}
-                      </h5>
-                    </div>
-                    <div className="button">
-                      <FontAwesomeIcon icon={faShareNodes} className="share" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="card h-100">
-                  <img
-                    src={instructor4}
-                    className="card-img-top"
-                    alt="instructor"
-                  />
-                  <div className="card-body d-flex align-items-center justify-content-between">
-                    <div className="text d-flex flex-column gap-2">
-                      <p className="card-text m-0">
-                        {t("instructors.cards.3.role")}
-                      </p>
-                      <h5 className="card-title">
-                        {t("instructors.cards.3.name")}
-                      </h5>
-                    </div>
-                    <div className="button">
-                      <FontAwesomeIcon icon={faShareNodes} className="share" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="jobs mt-5 row flex-column flex-lg-row justify-content-between align-items-center mx-auto p-5 rounded-2 text-white">
               <div className="col-lg-3">
@@ -847,13 +587,15 @@ export default function Home() {
                 <p className="lead">{t("instructors.jobs.description")}</p>
               </div>
               <div className="col-lg-3">
-                <button className="text-uppercase px-2 py-2 rounded-2">
-                  {t("instructors.jobs.button")}{" "}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    className="right-arrow"
-                  />
-                </button>
+                <Link to="contact">
+                  <button className="text-uppercase px-2 py-2 rounded-2">
+                    {t("instructors.jobs.button")}{" "}
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="right-arrow"
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

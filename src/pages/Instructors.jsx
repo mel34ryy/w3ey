@@ -1,110 +1,79 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import "./Instructors.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import instructor1 from "../assets/images/instructor01.jpg";
-import instructor2 from "../assets/images/instructor02.jpeg";
-import instructor3 from "../assets/images/instructor03.jpg";
-import instructor4 from "../assets/images/instructor04.jpg";
+import Loader from "../components/layout/Loader";
 
 export default function InstructorsPage() {
-  const instructorsData = [
-    {
-      name: "John Smith",
-      specialization: "Frontend Developer",
-      rating: 4.9,
-      image: instructor1,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "Emily Brown",
-      specialization: "UI/UX Designer",
-      rating: 4.7,
-      image: instructor2,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "Michael Johnson",
-      specialization: "Backend Engineer",
-      rating: 5.0,
-      image: instructor3,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "Sarah Williams",
-      specialization: "Full Stack Developer",
-      rating: 4.7,
-      image: instructor4,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "David Clark",
-      specialization: "React Instructor",
-      rating: 4.5,
-      image: instructor1,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "Jessica Taylor",
-      specialization: "Mobile Developer",
-      rating: 4.0,
-      image: instructor2,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "Daniel Evans",
-      specialization: "Python Instructor",
-      rating: 4.8,
-      image: instructor3,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-    {
-      name: "Sophia Miller",
-      specialization: "Data Scientist",
-      rating: 4.8,
-      image: instructor4,
-      socials: { facebook: "#", twitter: "#", linkedin: "#" },
-    },
-  ];
-
-  const [instructors, setInstructors] = useState(instructorsData);
+  const [instructors, setInstructors] = useState([]);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("none");
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   useEffect(() => {
-    handleFilterAndSort();
-  }, [query, sort]);
+    async function fetchInstructors() {
+      try {
+        setLoading(true);
+        const res = await axios.get("https://w3ey.runasp.net/api/Authors");
+
+        const normalized = res.data.map((item) => ({
+          name: item.name,
+          specialization: `${item.courseCount} ${
+            item.courseCount > 1 ? "Courses" : "Course"
+          }`,
+          rating: Number(item.rating),
+          image: item.avatar,
+          socials: item.socialLinks.reduce((acc, s) => {
+            acc[s.platform.toLowerCase()] = s.url;
+            return acc;
+          }, {}),
+        }));
+
+        setInstructors(normalized);
+      } catch (error) {
+        console.error("API Fetch Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchInstructors();
+  }, []);
+
+  const filteredList = instructors
+    .filter(
+      (inst) =>
+        inst.name.toLowerCase().includes(query.toLowerCase()) ||
+        inst.specialization.toLowerCase().includes(query.toLowerCase())
+    )
+    .sort((a, b) => {
+      if (sort === "high") return b.rating - a.rating;
+      if (sort === "low") return a.rating - b.rating;
+      return 0;
+    });
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = filteredList.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+  const totalPages = Math.ceil(filteredList.length / itemsPerPage);
 
   const generateStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      if (rating >= i) {
+      if (rating >= i)
         stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>);
-      } else if (rating >= i - 0.5) {
+      else if (rating >= i - 0.5)
         stars.push(<i key={i} className="bi bi-star-half text-warning"></i>);
-      } else {
+      else
         stars.push(
           <i key={i} className="bi bi-star text-warning opacity-25"></i>
         );
-      }
     }
-
     return stars;
-  };
-
-  const handleFilterAndSort = () => {
-    let filtered = instructorsData.filter(
-      (inst) =>
-        inst.name.toLowerCase().includes(query.toLowerCase()) ||
-        inst.specialization.toLowerCase().includes(query.toLowerCase())
-    );
-
-    if (sort === "high") {
-      filtered.sort((a, b) => b.rating - a.rating);
-    } else if (sort === "low") {
-      filtered.sort((a, b) => a.rating - b.rating);
-    }
-
-    setInstructors(filtered);
   };
 
   return (
@@ -112,7 +81,7 @@ export default function InstructorsPage() {
       <div className="instructor-cover"></div>
 
       <div className="container instructor-hero col-md-7 col-lg-10 my-5 text-center">
-        <p className="instructor-bg-babyblue instructor-paragraph px-4 py-1 rounded-1 mx-auto text-center">
+        <p className="instructor-bg-babyblue instructor-paragraph px-4 py-1 rounded-1 mx-auto">
           Teaching Staff
         </p>
         <h2 className="instructor-title mb-4 mt-3 fw-bold fs-1">
@@ -155,58 +124,124 @@ export default function InstructorsPage() {
             value={sort}
             onChange={(e) => setSort(e.target.value)}
           >
-            <option value="none">Sort by rating</option>
+            <option value="none">Default Order</option>
             <option value="high">Highest Rated</option>
             <option value="low">Lowest Rated</option>
           </select>
         </div>
 
-        <div id="instructorsContainer" className="instructor-row row g-4 mb-5">
-          {instructors.map((inst, index) => (
-            <div key={index} className="col-md-3 fade-in">
-              <div className="instructor-card h-100">
-                <img
-                  src={inst.image}
-                  className="instructor-card-img-top"
-                  alt={inst.name}
-                />
-                <div className="instructor-card-body">
-                  <h5 className="instructor-card-title">{inst.name}</h5>
-                  <p className="instructor-card-text">
-                    <i class="bi bi-briefcase-fill"></i> {inst.specialization}
-                  </p>
-                  <div className="instructor-rating">
-                    {generateStars(inst.rating)}{" "}
-                    <span>({inst.rating.toFixed(1)})</span>
-                  </div>
-                  <div className="instructor-social-links mt-2">
-                    <a
-                      href={inst.socials.facebook}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i class="bi bi-facebook"></i>
-                    </a>
-                    <a
-                      href={inst.socials.twitter}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mx-2"
-                    >
-                      <i class="bi bi-twitter-x"></i>
-                    </a>
-                    <a
-                      href={inst.socials.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i class="bi bi-linkedin"></i>
-                    </a>
+        <div className="row g-4 mb-5">
+          {loading ? (
+            <Loader />
+          ) : (
+            currentItems.map((inst, index) => (
+              <div key={index} className="col-md-3 fade-in">
+                <div className="instructor-card h-100">
+                  <img
+                    src={inst.image}
+                    className="instructor-card-img-top"
+                    alt={inst.name}
+                  />
+
+                  <div className="instructor-card-body">
+                    <h5 className="instructor-card-title">{inst.name}</h5>
+
+                    <p className="instructor-card-text">
+                      <i className="bi bi-briefcase-fill"></i>{" "}
+                      {inst.specialization}
+                    </p>
+
+                    <div className="instructor-rating">
+                      {generateStars(inst.rating)}
+                      <span>({inst.rating})</span>
+                    </div>
+
+                    <div className="instructor-social-links mt-2">
+                      {inst.socials.twitter && (
+                        <a
+                          href={inst.socials.twitter}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <i className="bi bi-twitter-x"></i>
+                        </a>
+                      )}
+
+                      {inst.socials.youtube && (
+                        <a
+                          href={inst.socials.youtube}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mx-2"
+                        >
+                          <i className="bi bi-youtube"></i>
+                        </a>
+                      )}
+
+                      {inst.socials.linkedin && (
+                        <a
+                          href={inst.socials.linkedin}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <i className="bi bi-linkedin"></i>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
+        </div>
+        <div className="d-flex justify-content-center mt-4">
+          <div>
+            <ul className="pagination">
+              <li
+                className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.max(prev - 1, 1))
+                  }
+                >
+                  Previous
+                </button>
+              </li>
+
+              {Array.from({ length: totalPages }, (_, i) => (
+                <li
+                  key={i + 1}
+                  className={`page-item ${
+                    currentPage === i + 1 ? "active" : ""
+                  }`}
+                >
+                  <button
+                    className="page-link"
+                    onClick={() => setCurrentPage(i + 1)}
+                  >
+                    {i + 1}
+                  </button>
+                </li>
+              ))}
+
+              <li
+                className={`page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                  }
+                >
+                  Next
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

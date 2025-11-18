@@ -1,16 +1,49 @@
-import germanImg from "../assets/images/german-language.png";
-import englishImg from "../assets/images/edura-english-power.png";
-import frenchImg from "../assets/images/French-Language.png";
-import mamaEduraImg from "../assets/images/mama-edura.jpg";
-import lifeCoachingImg from "../assets/images/life-coaching.png";
-import monazraClubImg from "../assets/images/monazra.jpg";
-import scienceClubImg from "../assets/images/science.jpg";
 import "./Courses.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Loader from "../components/layout/Loader";
 
 export default function Courses() {
+  const [courses, setCourses] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const itemsPerPage = 9;
+
+  useEffect(() => {
+    async function fetchCourses() {
+      try {
+        setLoading(true);
+        const res = await axios.get("https://w3ey.runasp.net/api/Courses");
+
+        const normalized = res.data.map((c) => ({
+          id: c.id,
+          title: c.title,
+          description: c.description,
+          image: c.thumbnail,
+          duration: c.duration,
+          students: c.studentCount,
+          author: c.authorName,
+          tags: c.filters,
+        }));
+
+        setCourses(normalized);
+      } catch (error) {
+        console.error("Failed to load courses:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchCourses();
+  }, []);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = courses.slice(startIndex, startIndex + itemsPerPage);
+  const totalPages = Math.ceil(courses.length / itemsPerPage);
+
   return (
     <>
       <main className="main">
@@ -34,183 +67,95 @@ export default function Courses() {
         </div>
 
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center align-content-center text-capitalize">
-          <div className="col">
-            <div className="course-card shadow-sm card h-100">
-              <Link to="course" className="a">
-                <img src={germanImg} className="card-img-top" alt="german" />
-                <button className="small btn btn-success-subtle">
-                  german language
-                </button>
-              </Link>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <a
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  href="#"
-                >
-                  german language
-                </a>
-              </div>
-            </div>
-          </div>
+          {loading ? (
+            <Loader />
+          ) : (
+            currentItems.map((course) => (
+              <div className="col" key={course.id}>
+                <div className="course-card shadow-sm card h-100">
+                  <Link to={`/course/${course.id}`} className="a">
+                    <img
+                      src={course.image}
+                      className="card-img-top"
+                      alt={course.title}
+                    />
+                    <button className="small btn btn-success-subtle text-capitalize">
+                      {course.tags?.[0] || "course"}
+                    </button>
+                  </Link>
 
-          <div className="col">
-            <div className="course-card  shadow-sm card h-100">
-              <a href="#">
-                <img
-                  src={englishImg}
-                  className="card-img-top"
-                  alt="english-power"
-                />
-                <button href="#" className="small btn btn-success-subtle">
-                  edura english power
-                </button>
-              </a>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <a
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  href="#"
-                >
-                  english language
-                </a>
-              </div>
-            </div>
-          </div>
+                  <div className="card-body text-start">
+                    <p className="card-text">
+                      <FontAwesomeIcon icon={faClock} />
+                      <span className="text-secondary me-3">
+                        {course.duration || "0 h 0 m"}
+                      </span>
 
-          <div className="col">
-            <div className="course-card  shadow-sm card h-100">
-              <Link to="course" className="a">
-                <a href="#">
-                  <img src={mamaEduraImg} className="card-img-top" alt="..." />
-                  <button href="#" className="small btn btn-success-subtle">
-                    thre
+                      <FontAwesomeIcon icon={faUserGroup} />
+                      <span className="text-secondary">
+                        {course.students || "0"} students
+                      </span>
+                    </p>
+
+                    <Link
+                      to={`/course/${course.id}`}
+                      className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
+                    >
+                      {course.title}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+        <div className="d-flex justify-content-center mt-4">
+          <div>
+            <ul className="pagination">
+              <li
+                className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.max(prev - 1, 1))
+                  }
+                >
+                  Previous
+                </button>
+              </li>
+
+              {Array.from({ length: totalPages }, (_, i) => (
+                <li
+                  key={i + 1}
+                  className={`page-item ${
+                    currentPage === i + 1 ? "active" : ""
+                  }`}
+                >
+                  <button
+                    className="page-link"
+                    onClick={() => setCurrentPage(i + 1)}
+                  >
+                    {i + 1}
                   </button>
-                </a>
-              </Link>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <Link
-                  to="course"
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                >
-                  mama edura
-                </Link>
-              </div>
-            </div>
-          </div>
+                </li>
+              ))}
 
-          <div className="col">
-            <div className="course-card shadow-sm card h-100">
-              <a href="#">
-                <img src={lifeCoachingImg} className="card-img-top" alt="..." />
-                <button href="#" className="small btn btn-success-subtle">
-                  thinking
-                </button>
-              </a>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <a
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  href="#"
+              <li
+                className={`page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                  }
                 >
-                  life coaching
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col">
-            <div className="course-card shadow-sm card h-100">
-              <a href="#">
-                <img src={frenchImg} className="card-img-top" alt="..." />
-                <button href="#" className="small btn btn-success-subtle">
-                  french language
+                  Next
                 </button>
-              </a>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <a
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  href="#"
-                >
-                  French-Language
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="course-card shadow-sm  card h-100">
-              <a href="#">
-                <img src={monazraClubImg} className="card-img-top" alt="..." />
-                <button href="#" className="small btn btn-success-subtle">
-                  english
-                </button>
-              </a>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <a
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  href="#"
-                >
-                  Debate club
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="course-card shadow-sm card h-100">
-              <a href="#">
-                <img src={scienceClubImg} className="card-img-top" alt="..." />
-                <button href="#" className="small btn btn-success-subtle">
-                  english
-                </button>
-              </a>
-              <div className="card-body text-start">
-                <p className="card-text">
-                  <FontAwesomeIcon icon={faClock} />
-                  <span className="text-secondary me-3"> 0 h 0 m</span>
-                  <FontAwesomeIcon icon={faUserGroup} />
-                  <span className="text-secondary"> 0 students </span>
-                </p>
-                <a
-                  className="card-title fw-bold text-secondary text-decoration-none course-link-anim"
-                  href="#"
-                >
-                  science club
-                </a>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 .courses-sec1 {
-  background: #1c252e url("../assets/images/bannar.jpg") no-repeat;
+  background: #1c252e url("../assets/images/banner.jpg") no-repeat;
   height: auto;
   background-size: 100% 200px;
   width: 100%;
@@ -84,4 +84,29 @@ a.course-link-anim:hover::after {
   width: 300px;
   height: 100%;
   border-radius: 40px !important;
+}
+
+.pagination .page-link {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+  border-color: var(--color-primary) !important;
+}
+
+.pagination .page-link:hover {
+  background-color: #013764 !important;
+  border-color: #013764 !important;
+  color: #fff !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #013764 !important;
+  border-color: #013764 !important;
+  color: #fff !important;
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: #b4c0d1 !important;
+  border-color: #b4c0d1 !important;
+  color: #ffffff !important;
+  opacity: 0.7;
 }

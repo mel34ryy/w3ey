@@ -29,8 +29,8 @@ export default function About() {
           <div className="col-lg-5 col-md-12 mb-4 mb-md-0">
             <h6 className="rounded-2 px-3">Who we are</h6>
             <h2 className="fw-bold mb-4">
-              W3ey Online <span className="highlight-text">School</span> For{" "}
-              <br />
+              W3ey Online <span className="about-highlight-text">School</span>{" "}
+              For <br />
               Learning And Instruction
             </h2>
 
@@ -139,7 +139,7 @@ export default function About() {
           <div className="title row mb-5">
             <div className="col-lg-8 mx-auto">
               <h2 className="display-6 fw-bold mb-3">
-                Academic <span className="highlight-text">System</span>
+                Academic <span className="about-highlight-text">System</span>
               </h2>
               <p>
                 We implement the Egyptian Experimental Curriculum (Languages)
@@ -223,7 +223,7 @@ export default function About() {
           Our Qualified People Matter
         </h6>
         <h2 className="fw-bold mb-3">
-          Top <span className="highlight-text">Class</span> Instructor
+          Top <span className="about-highlight-text">Class</span> Instructor
         </h2>
         <p className="mb-5">
           At W3ey, we carefully select our teachers — not just for their

@@ -18,7 +18,11 @@ export default function Footer() {
         <div className="row">
           <div className="col-sm-6 col-md-3">
             <div className="logo">
-              <img src="/images/Logo.svg" alt="logo" />
+              <img
+                style={{ width: "250px", height: "120px" }}
+                src="/images/Logo.svg"
+                alt="logo"
+              />
             </div>
             <p>{t("footer.description")}</p>
             <ul>

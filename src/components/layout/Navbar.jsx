@@ -67,7 +67,11 @@ export default function Navbar({ onToggle }) {
     <nav className="navbar navbar-expand-xl">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          <img src="/images/Logo.svg" alt="logo" />
+          <img
+            style={{ width: "250px", height: "120px" }}
+            src="/images/Logo.svg"
+            alt="logo"
+          />
         </Link>
         <button
           className="navbar-toggler border-0"
@@ -88,7 +92,11 @@ export default function Navbar({ onToggle }) {
         >
           <div className="offcanvas-header">
             <Link to="/" className="offcanvas-title" id="offcanvasNavbarLabel">
-              <img src="/images/Logo.svg" alt="logo" />
+              <img
+                style={{ width: "250px", height: "120px" }}
+                src="/images/Logo.svg"
+                alt="logo"
+              />
             </Link>
             <button
               type="button"
@@ -122,14 +130,9 @@ export default function Navbar({ onToggle }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  {t("navbar.jobs")}
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to="blogs" className="nav-link">
                   {t("navbar.blogs")}
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link to="contact" className="nav-link">

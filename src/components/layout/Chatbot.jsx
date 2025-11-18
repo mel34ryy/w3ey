@@ -13,6 +13,7 @@ const ChatBot = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const messagesEndRef = useRef(null);
 
@@ -43,11 +44,27 @@ const ChatBot = () => {
 
   return (
     <div className="position-fixed bottom-0 end-0 p-3 d-flex flex-column align-items-end z-3">
-      {/* Floating button */}
       <motion.div
+        drag
+        dragMomentum={false}
+        animate={{ opacity: isDragging ? 1 : 0.5 }}
+        onDragStart={() => setIsDragging(true)}
+        onDragEnd={() => {
+          setTimeout(() => setIsDragging(false), 150);
+        }}
         className="chat-bg text-white rounded-circle d-flex align-items-center justify-content-center shadow"
-        style={{ width: "50px", height: "50px", cursor: "pointer" }}
-        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          width: "50px",
+          height: "50px",
+          cursor: "pointer",
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 9999,
+        }}
+        onClick={() => {
+          if (!isDragging) setIsOpen(!isOpen);
+        }}
       >
         <MessageCircle size={24} strokeWidth={2} className="text-white" />
       </motion.div>
@@ -82,7 +99,6 @@ const ChatBot = () => {
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
             >
-              {/* Header */}
               <div className="chat-bg text-white p-2 d-flex justify-content-between align-items-center">
                 <span>Chat with AI</span>
                 <button
@@ -93,7 +109,6 @@ const ChatBot = () => {
                 </button>
               </div>
 
-              {/* Chat area */}
               <div className="p-3 flex-grow-1 overflow-auto">
                 {chatHistory.map((msg, index) => (
                   <div
@@ -129,7 +144,6 @@ const ChatBot = () => {
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Input area */}
               <div className="p-2 border-top d-flex align-items-center">
                 <input
                   type="text"
