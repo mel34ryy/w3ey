@@ -12,188 +12,190 @@
     "register": "Register Now",
     "signout": "Sign out"
   },
-  "hero": {
-    "satisfaction": "100% Satisfaction Guarantee",
-    "title": {
-      "part1": "Learn",
-      "highlight": "Skills",
-      "part2": "From Our Top Instructors"
-    },
-    "description": "Our online school is tailored for Egyptian students abroad, combining academic excellence with modern educational vision, all within a safe and smart environment that feels like home… and supports every home.",
-    "button": {
-      "explore": "Explore Courses"
-    },
-    "call": {
-      "question": "Have any Question?",
-      "phone": "+201000000000"
-    },
-    "box1": {
-      "title": "Enrolled Students",
-      "value": "+200"
-    },
-    "box2": {
-      "title": "Experience Since",
-      "value": "2020"
-    }
-  },
-  "about": {
-    "badge": "Get To Know About Us",
-    "title": {
-      "part1": "W3ey Online",
-      "highlight": "School",
-      "part2": "For Learning And Instruction"
-    },
-    "p1": "Welcome to W3ey — the accredited online Egyptian school dedicated to educating Egyptian expat children, especially in the Gulf region.",
-    "p2": "If you’re looking for modern, flexible, and secure Egyptian education that nurtures your children both academically and emotionally, W3ey is your perfect choice.",
-    "p3": "We deliver accredited education following the Egyptian Experimental Curriculum (Languages) from Kindergarten (KG) to Middle 1, through a smart and comprehensive digital platform that blends flexibility with precision.",
-    "icons": {
-      "expYears": {
-        "p1": "10+ Yrs",
-        "p2": "Teachers Experience"
-      },
-      "programs": {
-        "p1": "4",
-        "p2": "Enrichment Programs"
-      },
-      "students": {
-        "p1": "200",
-        "p2": "Over Students"
-      },
-      "curriculum": {
-        "p1": "MOE",
-        "p2": "Curriculum"
-      },
-      "support": {
-        "p1": "24/7",
-        "p2": "Support"
-      }
-    },
-    "button": "Discover More"
-  },
-  "featured": {
-    "badge": "Welcome our Property.",
-    "title": {
-      "part1": "Our",
-      "highlight": "Featured",
-      "part2": "Clubs & Subjects"
-    },
-    "card": {
-      "duration": "0h 0m",
-      "students": "0 Students",
-      "title": "W3ey",
-      "reviews": "(0)"
-    },
-    "button": "All Courses"
-  },
-  "w3ey": {
-    "badge": "Unique online courses",
-    "title": {
-      "part1": "At",
-      "part2": "W",
-      "highlight": "3",
-      "part3": "ey"
-    },
-    "description": {
-      "p1": "We don’t just teach what’s in the books — we shape well-rounded, thoughtful individuals through free interactive clubs and exceptional enrichment subjects.",
-      "p2": "From Science and Design Clubs to debates and educational films, we fuel curiosity and creativity in every student.",
-      "p3": "With French, Programming, and Critical Thinking programs, we open new horizons and help build a generation that’s aware, cultured, and balanced."
-    },
-    "cards": {
-      "science": "Science Club",
-      "debate": "Debate Club",
-      "movies": "Movie Club",
-      "drawing": "Drawing Club",
-      "fundays": "Fun Days"
-    }
-  },
-  "carousel": {
-    "items": [
-      {
-        "text": "I used to be afraid of speaking in class, but at W3ey, my teachers encouraged me to ask questions. Now I feel confident and happy, and I love joining the activities.",
-        "name": "Ali",
-        "meta": "Egypt - Age 10"
-      },
-      {
-        "text": "At W3ey, learning feels exciting — not stressful! I love how we can express ideas and learn creatively every day.",
-        "name": "Sara",
-        "meta": "UAE - Age 11"
-      },
-      {
-        "text": "W3ey changed how I see school — now I look forward to every class because it’s fun and inspiring.",
-        "name": "Omar",
-        "meta": "KSA - Age 9"
-      }
-    ]
-  },
-  "instructors": {
-    "badge": "Our Qualified People Matter",
-    "title": {
-      "part1": "Top",
-      "highlight": "Class",
-      "part2": "Instructor"
-    },
-    "description": "At W3ey, we carefully select our teachers — Not just for their qualifications, but for their ability to teach with heart and build trust from the very first class.",
-    "button": "All Instructors",
-    "cards": [
-      {
-        "role": "Academic Director",
-        "name": "Aya Habashy"
-      },
-      {
-        "role": "English Coordinator",
-        "name": "Nahla Fotouh El Ashry"
-      },
-      {
-        "role": "Math Coordinator",
-        "name": "Mona Abdelazeez"
-      },
-      {
-        "role": "Science Coordinator",
-        "name": "Asmaa Saad"
-      }
-    ],
-    "jobs": {
+  "home": {
+    "hero": {
+      "satisfaction": "100% Satisfaction Guarantee",
       "title": {
-        "part1": "Join us &",
-        "highlight": "Share",
-        "part2": "Your Expertise"
+        "part1": "Learn",
+        "highlight": "Skills",
+        "part2": "From Our Top Instructors"
       },
-      "description": "At W3ey, we're always looking for passionate educators who believe in modern learning and are ready to deliver exceptional online teaching experiences.",
-      "button": "Become an Instructor"
-    }
-  },
-  "blog": {
-    "badge": "Always Smart To Hear News",
-    "title": {
-      "part1": "Latest",
-      "highlight": "News",
-      "part2": "& Blog"
-    },
-    "description": "Stay Updated with Everything W3ey. Here, you’ll find the latest from W3ey — events, articles, and updates that shape your child’s learning journey.",
-    "posts": [
-      {
-        "tag": "English",
-        "title": "How Do W3ey's Interactive Clubs Help Shape Student Personality?",
-        "date": "May 25, 2025"
+      "description": "Our online school is tailored for Egyptian students abroad, combining academic excellence with modern educational vision, all within a safe and smart environment that feels like home… and supports every home.",
+      "button": {
+        "explore": "Explore Courses"
       },
-      {
-        "tag": "English",
-        "title": "Is Egyptian Online Education the Right Choice for Your Child Abroad?",
-        "date": "June 22, 2023"
+      "call": {
+        "question": "Have any Question?",
+        "phone": "+201000000000"
       },
-      {
-        "tag": "English",
-        "title": "Why W3ey is One of the Best Online Schools for Egyptian Students Abroad?",
-        "date": "June 22, 2023"
+      "box1": {
+        "title": "Enrolled Students",
+        "value": "+200"
+      },
+      "box2": {
+        "title": "Experience Since",
+        "value": "2020"
       }
-    ]
-  },
-  "mail": {
-    "title": "Let’s Join To Our Newsletters",
-    "input": {
-      "placeholder": "Enter your email*"
     },
-    "button": "SUBSCRIBE NOW"
+    "about": {
+      "badge": "Get To Know About Us",
+      "title": {
+        "part1": "W3ey Online",
+        "highlight": "School",
+        "part2": "For Learning And Instruction"
+      },
+      "p1": "Welcome to W3ey — the accredited online Egyptian school dedicated to educating Egyptian expat children, especially in the Gulf region.",
+      "p2": "If you’re looking for modern, flexible, and secure Egyptian education that nurtures your children both academically and emotionally, W3ey is your perfect choice.",
+      "p3": "We deliver accredited education following the Egyptian Experimental Curriculum (Languages) from Kindergarten (KG) to Middle 1, through a smart and comprehensive digital platform that blends flexibility with precision.",
+      "icons": {
+        "expYears": {
+          "p1": "10+ Yrs",
+          "p2": "Teachers Experience"
+        },
+        "programs": {
+          "p1": "4",
+          "p2": "Enrichment Programs"
+        },
+        "students": {
+          "p1": "200",
+          "p2": "Over Students"
+        },
+        "curriculum": {
+          "p1": "MOE",
+          "p2": "Curriculum"
+        },
+        "support": {
+          "p1": "24/7",
+          "p2": "Support"
+        }
+      },
+      "button": "Discover More"
+    },
+    "featured": {
+      "badge": "Welcome our Property.",
+      "title": {
+        "part1": "Our",
+        "highlight": "Featured",
+        "part2": "Clubs & Subjects"
+      },
+      "card": {
+        "duration": "0h 0m",
+        "students": "0 Students",
+        "title": "W3ey",
+        "reviews": "(0)"
+      },
+      "button": "All Courses"
+    },
+    "w3ey": {
+      "badge": "Unique online courses",
+      "title": {
+        "part1": "At",
+        "part2": "W",
+        "highlight": "3",
+        "part3": "ey"
+      },
+      "description": {
+        "p1": "We don’t just teach what’s in the books — we shape well-rounded, thoughtful individuals through free interactive clubs and exceptional enrichment subjects.",
+        "p2": "From Science and Design Clubs to debates and educational films, we fuel curiosity and creativity in every student.",
+        "p3": "With French, Programming, and Critical Thinking programs, we open new horizons and help build a generation that’s aware, cultured, and balanced."
+      },
+      "cards": {
+        "science": "Science Club",
+        "debate": "Debate Club",
+        "movies": "Movie Club",
+        "drawing": "Drawing Club",
+        "fundays": "Fun Days"
+      }
+    },
+    "carousel": {
+      "items": [
+        {
+          "text": "I used to be afraid of speaking in class, but at W3ey, my teachers encouraged me to ask questions. Now I feel confident and happy, and I love joining the activities.",
+          "name": "Ali",
+          "meta": "Egypt - Age 10"
+        },
+        {
+          "text": "At W3ey, learning feels exciting — not stressful! I love how we can express ideas and learn creatively every day.",
+          "name": "Sara",
+          "meta": "UAE - Age 11"
+        },
+        {
+          "text": "W3ey changed how I see school — now I look forward to every class because it’s fun and inspiring.",
+          "name": "Omar",
+          "meta": "KSA - Age 9"
+        }
+      ]
+    },
+    "instructors": {
+      "badge": "Our Qualified People Matter",
+      "title": {
+        "part1": "Top",
+        "highlight": "Class",
+        "part2": "Instructor"
+      },
+      "description": "At W3ey, we carefully select our teachers — Not just for their qualifications, but for their ability to teach with heart and build trust from the very first class.",
+      "button": "All Instructors",
+      "cards": [
+        {
+          "role": "Academic Director",
+          "name": "Aya Habashy"
+        },
+        {
+          "role": "English Coordinator",
+          "name": "Nahla Fotouh El Ashry"
+        },
+        {
+          "role": "Math Coordinator",
+          "name": "Mona Abdelazeez"
+        },
+        {
+          "role": "Science Coordinator",
+          "name": "Asmaa Saad"
+        }
+      ],
+      "jobs": {
+        "title": {
+          "part1": "Join us &",
+          "highlight": "Share",
+          "part2": "Your Expertise"
+        },
+        "description": "At W3ey, we're always looking for passionate educators who believe in modern learning and are ready to deliver exceptional online teaching experiences.",
+        "button": "Become an Instructor"
+      }
+    },
+    "blog": {
+      "badge": "Always Smart To Hear News",
+      "title": {
+        "part1": "Latest",
+        "highlight": "News",
+        "part2": "& Blog"
+      },
+      "description": "Stay Updated with Everything W3ey. Here, you’ll find the latest from W3ey — events, articles, and updates that shape your child’s learning journey.",
+      "posts": [
+        {
+          "tag": "English",
+          "title": "How Do W3ey's Interactive Clubs Help Shape Student Personality?",
+          "date": "May 25, 2025"
+        },
+        {
+          "tag": "English",
+          "title": "Is Egyptian Online Education the Right Choice for Your Child Abroad?",
+          "date": "June 22, 2023"
+        },
+        {
+          "tag": "English",
+          "title": "Why W3ey is One of the Best Online Schools for Egyptian Students Abroad?",
+          "date": "June 22, 2023"
+        }
+      ]
+    },
+    "mail": {
+      "title": "Let’s Join To Our Newsletters",
+      "input": {
+        "placeholder": "Enter your email*"
+      },
+      "button": "SUBSCRIBE NOW"
+    }
   },
   "footer": {
     "description": "Knowledge Without Borders. Education Without Limits.",

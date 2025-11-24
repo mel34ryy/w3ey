@@ -104,20 +104,20 @@ export default function Home() {
           <div className="row align-items-center">
             <div className="intro mt-4 mt-lg-5 col-12 col-lg-6 text-center text-lg-start">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
-                {t("hero.satisfaction")}
+                {t("home.hero.satisfaction")}
               </p>
               <h1 className="mb-4 mt-3 home-h1">
-                {t("hero.title.part1")}{" "}
+                {t("home.hero.title.part1")}{" "}
                 <span className="highlight-text">
-                  {t("hero.title.highlight")}
+                  {t("home.hero.title.highlight")}
                 </span>{" "}
-                {t("hero.title.part2")}
+                {t("home.hero.title.part2")}
               </h1>
-              <p className="lead mb-5">{t("hero.description")}</p>
+              <p className="lead mb-5">{t("home.hero.description")}</p>
               <div className="buttons d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start align-items-center gap-4">
                 <Link to="courses" className="buttons">
                   <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
-                    {t("hero.button.explore")}
+                    {t("home.hero.button.explore")}
                     <span className="ms-2">
                       <FontAwesomeIcon
                         icon={faArrowRight}
@@ -133,9 +133,9 @@ export default function Home() {
                     color="#082a5e"
                   />
                   <div className="content d-flex flex-column">
-                    <p className="m-0">{t("hero.call.question")}</p>
+                    <p className="m-0">{t("home.hero.call.question")}</p>
                     <button className="border-0 bg-transparent p-0 text-start">
-                      {t("hero.call.phone")}
+                      {t("home.hero.call.phone")}
                     </button>
                   </div>
                 </div>
@@ -146,13 +146,13 @@ export default function Home() {
               <div className="boxes">
                 <div className="first-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
                   <FontAwesomeIcon className="first" icon={faPeopleGroup} />
-                  <p className="m-0">{t("hero.box1.title")}</p>
-                  <span>{t("hero.box1.value")}</span>
+                  <p className="m-0">{t("home.hero.box1.title")}</p>
+                  <span>{t("home.hero.box1.value")}</span>
                 </div>
                 <div className="second-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
                   <FontAwesomeIcon className="second" icon={faGraduationCap} />
-                  <p className="m-0">{t("hero.box2.title")}</p>
-                  <span>{t("hero.box2.value")}</span>
+                  <p className="m-0">{t("home.hero.box2.title")}</p>
+                  <span>{t("home.hero.box2.value")}</span>
                 </div>
               </div>
             </div>
@@ -205,21 +205,21 @@ export default function Home() {
             </div>
             <div className="content col-12 col-md-7">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
-                {t("about.badge")}
+                {t("home.about.badge")}
               </p>
               <h2 className="mb-4 mt-3">
-                {t("about.title.part1")}{" "}
+                {t("home.about.title.part1")}{" "}
                 <span className="highlight-text">
-                  {t("about.title.highlight")}
+                  {t("home.about.title.highlight")}
                 </span>{" "}
-                {t("about.title.part2")}
+                {t("home.about.title.part2")}
               </h2>
               <div className="paragraph">
-                <p>{t("about.p1")}</p>
+                <p>{t("home.about.p1")}</p>
                 <br />
-                <p>{t("about.p2")}</p>
+                <p>{t("home.about.p2")}</p>
                 <br />
-                <p>{t("about.p3")}</p>
+                <p>{t("home.about.p3")}</p>
                 <br />
               </div>
               <div className="icons d-grid mb-4">
@@ -230,9 +230,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    {t("about.icons.expYears.p1")}
+                    {t("home.about.icons.expYears.p1")}
                     <br />
-                    {t("about.icons.expYears.p2")}
+                    {t("home.about.icons.expYears.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -242,9 +242,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    {t("about.icons.programs.p1")}
+                    {t("home.about.icons.programs.p1")}
                     <br />
-                    {t("about.icons.programs.p2")}
+                    {t("home.about.icons.programs.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -254,9 +254,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    {t("about.icons.students.p1")}
+                    {t("home.about.icons.students.p1")}
                     <br />
-                    {t("about.icons.students.p2")}
+                    {t("home.about.icons.students.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -266,9 +266,9 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    {t("about.icons.curriculum.p1")}
+                    {t("home.about.icons.curriculum.p1")}
                     <br />
-                    {t("about.icons.curriculum.p2")}
+                    {t("home.about.icons.curriculum.p2")}
                   </p>
                 </div>
                 <div className="icon d-flex gap-2">
@@ -278,15 +278,15 @@ export default function Home() {
                     alt="icon"
                   />
                   <p className="m-0">
-                    {t("about.icons.support.p1")}
+                    {t("home.about.icons.support.p1")}
                     <br />
-                    {t("about.icons.support.p2")}
+                    {t("home.about.icons.support.p2")}
                   </p>
                 </div>
               </div>
               <Link to="about">
                 <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
-                  {t("about.button")}
+                  {t("home.about.button")}
                   <span className="ms-2">
                     <FontAwesomeIcon
                       icon={faArrowRight}
@@ -306,14 +306,14 @@ export default function Home() {
             style={{ width: "60px", height: "60px" }}
           />
           <p className="bg-babyblue paragraph px-4 py-1 rounded-1">
-            {t("featured.badge")}
+            {t("home.featured.badge")}
           </p>
           <h2 className="mb-4 mt-3">
-            {t("featured.title.part1")}{" "}
+            {t("home.featured.title.part1")}{" "}
             <span className="highlight-text">
-              {t("featured.title.highlight")}
+              {t("home.featured.title.highlight")}
             </span>{" "}
-            {t("featured.title.part2")}
+            {t("home.featured.title.part2")}
           </h2>
           <div className="row">
             {currentItems.map((course) => (
@@ -356,7 +356,7 @@ export default function Home() {
           </div>
           <Link to="courses" className="text-decoration-none">
             <button className="btn d-flex mx-auto mt-4 px-4 py-2">
-              {t("featured.button")}
+              {t("home.featured.button")}
             </button>
           </Link>
         </section>
@@ -366,20 +366,22 @@ export default function Home() {
             <div className="row">
               <div className="col-md-6 col-lg-4">
                 <p className="bg-babyblue paragraph px-4 py-1 rounded-1">
-                  {t("w3ey.badge")}
+                  {t("home.w3ey.badge")}
                 </p>
                 <h2 className="mb-4 mt-3">
-                  {t("w3ey.title.part1")}{" "}
+                  {t("home.w3ey.title.part1")}{" "}
                   <span className="highlight-text">
-                    {t("w3ey.title.part2")}
-                    <span className="three">{t("w3ey.title.highlight")}</span>
-                    {t("w3ey.title.part3")}
+                    {t("home.w3ey.title.part2")}
+                    <span className="three">
+                      {t("home.w3ey.title.highlight")}
+                    </span>
+                    {t("home.w3ey.title.part3")}
                   </span>
                 </h2>
                 <p className="lead">
-                  {t("w3ey.description.p1")}
-                  <br /> {t("w3ey.description.p2")}
-                  <br /> {t("w3ey.description.p3")}
+                  {t("home.w3ey.description.p1")}
+                  <br /> {t("home.w3ey.description.p2")}
+                  <br /> {t("home.w3ey.description.p3")}
                 </p>
               </div>
               <div className="col-md-6 col-lg-8 cards">
@@ -387,31 +389,31 @@ export default function Home() {
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faAtom} className="icon" />
-                      <span>{t("w3ey.cards.science")}</span>
+                      <span>{t("home.w3ey.cards.science")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faComments} className="icon" />
-                      <span>{t("w3ey.cards.debate")}</span>
+                      <span>{t("home.w3ey.cards.debate")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faFilm} className="icon" />
-                      <span>{t("w3ey.cards.movies")}</span>
+                      <span>{t("home.w3ey.cards.movies")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faPenRuler} className="icon" />
-                      <span>{t("w3ey.cards.drawing")}</span>
+                      <span>{t("home.w3ey.cards.drawing")}</span>
                     </div>
                   </div>
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
                       <FontAwesomeIcon icon={faCakeCandles} className="icon" />
-                      <span>{t("w3ey.cards.fundays")}</span>
+                      <span>{t("home.w3ey.cards.fundays")}</span>
                     </div>
                   </div>
                 </div>
@@ -436,10 +438,14 @@ export default function Home() {
                       <FontAwesomeIcon key={i} icon={faStar} className="star" />
                     ))}
                   </div>
-                  <p className="lead mx-auto">{t("carousel.items.0.text")}</p>
-                  <h4 className="mt-3 mb-0">{t("carousel.items.0.name")}</h4>
+                  <p className="lead mx-auto">
+                    {t("home.carousel.items.0.text")}
+                  </p>
+                  <h4 className="mt-3 mb-0">
+                    {t("home.carousel.items.0.name")}
+                  </h4>
                   <span className="text-muted small">
-                    {t("carousel.items.0.meta")}
+                    {t("home.carousel.items.0.meta")}
                   </span>
                 </div>
                 <div className="carousel-item text-center">
@@ -451,10 +457,14 @@ export default function Home() {
                       <FontAwesomeIcon key={i} icon={faStar} className="star" />
                     ))}
                   </div>
-                  <p className="lead mx-auto">{t("carousel.items.1.text")}</p>
-                  <h4 className="mt-3 mb-0">{t("carousel.items.1.name")}</h4>
+                  <p className="lead mx-auto">
+                    {t("home.carousel.items.1.text")}
+                  </p>
+                  <h4 className="mt-3 mb-0">
+                    {t("home.carousel.items.1.name")}
+                  </h4>
                   <span className="text-muted small">
-                    {t("carousel.items.1.meta")}
+                    {t("home.carousel.items.1.meta")}
                   </span>
                 </div>
                 <div className="carousel-item text-center">
@@ -466,10 +476,14 @@ export default function Home() {
                       <FontAwesomeIcon key={i} icon={faStar} className="star" />
                     ))}
                   </div>
-                  <p className="lead mx-auto">{t("carousel.items.2.text")}</p>
-                  <h4 className="mt-3 mb-0">{t("carousel.items.2.name")}</h4>
+                  <p className="lead mx-auto">
+                    {t("home.carousel.items.2.text")}
+                  </p>
+                  <h4 className="mt-3 mb-0">
+                    {t("home.carousel.items.2.name")}
+                  </h4>
                   <span className="text-muted small">
-                    {t("carousel.items.2.meta")}
+                    {t("home.carousel.items.2.meta")}
                   </span>
                 </div>
               </div>
@@ -497,21 +511,21 @@ export default function Home() {
             <div className="header row align-items-center">
               <div className="text col-lg-8 col-md-7">
                 <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
-                  {t("instructors.badge")}
+                  {t("home.instructors.badge")}
                 </p>
                 <h2 className="mb-4 mt-3">
-                  {t("instructors.title.part1")}{" "}
+                  {t("home.instructors.title.part1")}{" "}
                   <span className="highlight-text">
-                    {t("instructors.title.highlight")}{" "}
+                    {t("home.instructors.title.highlight")}{" "}
                   </span>
-                  {t("instructors.title.part2")}
+                  {t("home.instructors.title.part2")}
                 </h2>
-                <p>{t("instructors.description")}</p>
+                <p>{t("home.instructors.description")}</p>
               </div>
               <div className="button mb-3 col-lg-4 col-md-5 text-lg-end text-center mt-3 mt-md-0">
                 <Link to="instructors">
                   <button className="px-3 py-2 text-uppercase rounded-2">
-                    {t("instructors.button")}{" "}
+                    {t("home.instructors.button")}{" "}
                     <FontAwesomeIcon
                       icon={faArrowRight}
                       className="right-arrow"
@@ -578,18 +592,21 @@ export default function Home() {
             <div className="jobs mt-5 row flex-column flex-lg-row justify-content-between align-items-center mx-auto p-5 rounded-2 text-white">
               <div className="col-lg-3">
                 <h2 className="fs-1">
-                  {t("instructors.jobs.title.part1")}
-                  <span> {t("instructors.jobs.title.highlight")}</span>{" "}
-                  {t("instructors.jobs.title.part2")}
+                  {t("home.instructors.jobs.title.part1")}
+                  <span>
+                    {" "}
+                    {t("home.instructors.jobs.title.highlight")}
+                  </span>{" "}
+                  {t("home.instructors.jobs.title.part2")}
                 </h2>
               </div>
               <div className="col-lg-6">
-                <p className="lead">{t("instructors.jobs.description")}</p>
+                <p className="lead">{t("home.instructors.jobs.description")}</p>
               </div>
               <div className="col-lg-3">
                 <Link to="contact">
                   <button className="text-uppercase px-2 py-2 rounded-2">
-                    {t("instructors.jobs.button")}{" "}
+                    {t("home.instructors.jobs.button")}{" "}
                     <FontAwesomeIcon
                       icon={faArrowRight}
                       className="right-arrow"
@@ -604,17 +621,17 @@ export default function Home() {
           <div className="container">
             <div className="header text-center">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto">
-                {t("blog.badge")}
+                {t("home.blog.badge")}
               </p>
               <h2 className="mb-4 mt-3">
-                {t("blog.title.part1")}{" "}
+                {t("home.blog.title.part1")}{" "}
                 <span className="highlight-text">
                   {" "}
-                  {t("blog.title.highlight")}{" "}
+                  {t("home.blog.title.highlight")}{" "}
                 </span>
-                {t("blog.title.part2")}
+                {t("home.blog.title.part2")}
               </h2>
-              <p className="w-50 mx-auto">{t("blog.description")}</p>
+              <p className="w-50 mx-auto">{t("home.blog.description")}</p>
             </div>
             <div className="row">
               <div className="col-md-4">
@@ -627,17 +644,17 @@ export default function Home() {
                   <div className="card-body">
                     <div className="btn">
                       <button className="btn rounded-5 px-3 py-1">
-                        {t("blog.posts.0.tag")}
+                        {t("home.blog.posts.0.tag")}
                       </button>
                     </div>
                     <h5 className="card-title">
                       <a className="text-decoration-none" href="#">
-                        {t("blog.posts.0.title")}
+                        {t("home.blog.posts.0.title")}
                       </a>
                     </h5>
                     <div className="card-content d-flex gap-2 align-items-center">
                       <FontAwesomeIcon icon={faCalendar} />
-                      <span>{t("blog.posts.0.date")}</span>
+                      <span>{t("home.blog.posts.0.date")}</span>
                     </div>
                   </div>
                 </div>
@@ -652,17 +669,17 @@ export default function Home() {
                   <div className="card-body">
                     <div className="btn">
                       <button className="btn rounded-5 px-3 py-1">
-                        {t("blog.posts.1.tag")}
+                        {t("home.blog.posts.1.tag")}
                       </button>
                     </div>
                     <h5 className="card-title">
                       <a className="text-decoration-none" href="#">
-                        {t("blog.posts.1.title")}
+                        {t("home.blog.posts.1.title")}
                       </a>
                     </h5>
                     <div className="card-content d-flex gap-2 align-items-center">
                       <FontAwesomeIcon icon={faCalendar} />
-                      <span>{t("blog.posts.1.date")}</span>
+                      <span>{t("home.blog.posts.1.date")}</span>
                     </div>
                   </div>
                 </div>
@@ -677,17 +694,17 @@ export default function Home() {
                   <div className="card-body">
                     <div className="btn">
                       <button className="btn rounded-5 px-3 py-1">
-                        {t("blog.posts.2.tag")}
+                        {t("home.blog.posts.2.tag")}
                       </button>
                     </div>
                     <h5 className="card-title">
                       <a className="text-decoration-none" href="#">
-                        {t("blog.posts.2.title")}
+                        {t("home.blog.posts.2.title")}
                       </a>
                     </h5>
                     <div className="card-content d-flex gap-2 align-items-center">
                       <FontAwesomeIcon icon={faCalendar} />
-                      <span>{t("blog.posts.2.date")}</span>
+                      <span>{t("home.blog.posts.2.date")}</span>
                     </div>
                   </div>
                 </div>
@@ -698,13 +715,16 @@ export default function Home() {
         <div className="mail container my-5">
           <div className="row align-items-center justify-content-between gx-3">
             <div className="join col-12 col-md-5 text-md-start text-center mb-3 mb-md-0">
-              <h4>{t("mail.title")}</h4>
+              <h4>{t("home.mail.title")}</h4>
               <img src={sub} alt="join" className="img-fluid" />
             </div>
             <div className="col-12 col-md-6">
               <div className="subscribe-box d-flex w-100">
-                <input type="email" placeholder={t("mail.input.placeholder")} />
-                <button type="button">{t("mail.button")}</button>
+                <input
+                  type="email"
+                  placeholder={t("home.mail.input.placeholder")}
+                />
+                <button type="button">{t("home.mail.button")}</button>
               </div>
             </div>
           </div>
