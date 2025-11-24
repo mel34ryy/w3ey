@@ -1,10 +1,19 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Auth.css";
+import { toast } from "react-toastify";
 
 export default function Auth({ defaultSignIn = true }) {
   const navigate = useNavigate();
   const [signIn, setSignIn] = useState(defaultSignIn);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const redirectPath = params.get("redirect") || "/";
 
   useEffect(() => {
     setSignIn(defaultSignIn);
@@ -13,6 +22,38 @@ export default function Auth({ defaultSignIn = true }) {
   const go = (toSignIn) => {
     setSignIn(toSignIn);
     navigate(toSignIn ? "/login" : "/signup", { replace: true });
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const res = await fetch("https://dummyjson.com/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+
+      const data = await res.json();
+      console.log("DATA:", data);
+
+      if (!res.ok) {
+        toast.error("Wrong username or password");
+        return;
+      } else {
+        toast.success("Login successful! 🎉");
+        localStorage.setItem("token", data.accessToken);
+        window.dispatchEvent(new Event("storage"));
+        setTimeout(() => navigate(redirectPath), 1200);
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Something went wrong");
+    }
   };
 
   return (
@@ -43,17 +84,33 @@ export default function Auth({ defaultSignIn = true }) {
             !signIn ? "auth-right-panel-active" : ""
           }`}
         >
-          <form className="auth-form">
+          <form className="auth-form" onSubmit={handleLogin}>
             <h1 className="auth-title">Sign in</h1>
-            <input className="auth-input" type="email" placeholder="Email" />
+
+            <input
+              className="auth-input"
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+
             <input
               className="auth-input"
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
+
+            {error && (
+              <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>
+            )}
+
             <a href="#" className="href">
               Forgot your password?
             </a>
+
             <button className="auth-button" type="submit">
               Sign In
             </button>
@@ -87,6 +144,7 @@ export default function Auth({ defaultSignIn = true }) {
                 Sign In
               </button>
             </div>
+
             <div
               className={`auth-overlay-panel auth-overlay-right ${
                 !signIn ? "auth-right-panel-active" : ""
@@ -94,7 +152,7 @@ export default function Auth({ defaultSignIn = true }) {
             >
               <h1 className="auth-title">Hello, Friend!</h1>
               <p className="p">
-                Enter Your personal details and start journey with us
+                Enter your personal details and start journey with us
               </p>
               <button
                 className="auth-button auth-ghost"

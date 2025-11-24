@@ -50,7 +50,7 @@ export default function Courses() {
         <section className="courses-sec1 fs-3">
           <div className="courses-text">
             <h1>Courses</h1>
-            <a href="#">Diora Online School</a>
+            <a href="#">W3ey Online School</a>
             <span></span>
             <span> &gt; courses</span>
           </div>

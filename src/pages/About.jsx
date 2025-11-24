@@ -15,7 +15,7 @@ import parent from "../assets/images/parent-communication-650x455.jpg.png";
 
 export default function About() {
   return (
-    <>
+    <div className="about-page">
       <section className="about-banner d-flex align-items-center text-white">
         <div className="container pb-4">
           <h1 className="display-5 fw-bold mb-2">About Us</h1>
@@ -223,7 +223,7 @@ export default function About() {
           Our Qualified People Matter
         </h6>
         <h2 className="fw-bold mb-3">
-          Top <span className="about-highlight-text">Class</span> Instructor
+          Top <span className="about-highlight-text-ins">Class</span> Instructor
         </h2>
         <p className="mb-5">
           At W3ey, we carefully select our teachers — not just for their
@@ -419,6 +419,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="logo">
               <img
                 style={{ width: "250px", height: "120px" }}
-                src="/images/Logo.svg"
+                src="/images/Logo.png"
                 alt="logo"
               />
             </div>

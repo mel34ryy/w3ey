@@ -1,0 +1,160 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+/* Banner */
+.my-courses-banner {
+  height: 45vh;
+  background: linear-gradient(
+      to top,
+      rgba(1, 18, 48, 0.8),
+      rgba(1, 18, 48, 0.8)
+    ),
+    url("../assets/images/parent-communication-650x455.jpg.png") center/cover
+      no-repeat;
+  color: #fff;
+}
+
+.my-courses-banner h1 {
+  font-size: 2.7rem;
+}
+
+.my-courses-banner span {
+  color: #bac2db;
+}
+
+/* Courses Hero Section */
+.my-courses-hero {
+  padding: 50px 0 20px;
+}
+
+.my-courses-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #001a70;
+}
+
+.my-courses-subtitle {
+  font-size: 1.1rem;
+  color: #1e3685;
+}
+
+/* Slider */
+.my-courses-slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.my-courses-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.my-courses-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Arrows */
+.my-courses-arrow {
+  background: #fff;
+  color: #001a70;
+  border: none;
+  font-size: 35px;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 0 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.my-courses-arrow:hover {
+  background: #e6e6e6;
+}
+
+/* Card */
+.my-courses-card {
+  min-width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.my-courses-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: 0.7s;
+  transform-style: preserve-3d;
+}
+
+.my-courses-card:hover .my-courses-inner {
+  transform: rotateY(180deg);
+}
+
+.my-courses-front,
+.my-courses-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.my-courses-front img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.my-courses-front h3 {
+  font-size: 1.5rem;
+  color: #001a70;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+}
+
+.my-courses-back {
+  background: #393b3f81;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+.my-courses-back h3,
+.my-courses-back p {
+  color: #001a70;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.my-courses-btn {
+  color: #001a70;
+  background-color: #4b74ca;
+  border: #fff 1px solid;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.my-courses-btn:hover {
+  transform: scale(0.97) translateY(-2px);
+  color: #3266d6;
+  border: #3266d6 1px solid;
+  background-color: #fff;
+}
+@media (max-width: 768px) {
+  .my-courses-card {
+    min-width: 200px;
+    height: 250px;
+  }
+  .my-courses-arrow {
+    font-size: 18px;
+    padding: 5px;
+    margin: 0 5px;
+  }
+}

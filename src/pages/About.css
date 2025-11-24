@@ -1,4 +1,9 @@
-/* Banner */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+.about-page {
+  font-family: "Lexend Deca", sans-serif;
+}
+
 .about-banner {
   min-height: 45vh;
   background: linear-gradient(
@@ -240,4 +245,22 @@
 .about-Communication img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-highlight-text-ins {
+  position: relative;
+  color: #2f548f;
+}
+.about-highlight-text-ins::after {
+  content: url("../assets/images/row.svg");
+  position: absolute;
+  bottom: -40px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: showRow 0.8s ease forwards;
+  animation-delay: 0.5s;
 }

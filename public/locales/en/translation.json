@@ -4,10 +4,13 @@
     "about": "About",
     "instructors": "Instructors",
     "courses": "Courses",
+    "all-courses": "All Courses",
+    "my-courses": "My Courses",
     "blogs": "Blogs",
     "contact": "Contact Us",
     "lang": "Arabic",
-    "register": "Register Now"
+    "register": "Register Now",
+    "signout": "Sign out"
   },
   "hero": {
     "satisfaction": "100% Satisfaction Guarantee",

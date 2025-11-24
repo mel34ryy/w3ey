@@ -3,7 +3,7 @@ import Instructors from "./pages/Instructors";
 import FollowCursor from "./components/effects/FollowCursor";
 import i18n from "i18next";
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Courses from "./pages/Courses";
@@ -25,8 +25,21 @@ import Blog8 from "./pages/blogs/Blog8";
 import Blog9 from "./pages/blogs/Blog9";
 import ScrollProgress from "./components/effects/ScrollProgress";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MyCourses from "./pages/MyCourses";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
   function toggleLanguage() {
     const newLang = i18n.language === "ar" ? "en" : "ar";
     i18n.changeLanguage(newLang);
@@ -60,12 +73,21 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <>
       <ScrollProgress />
       <ScrollToTop />
       <FollowCursor color="#024585" />
       <ChatBot />
       <Navbar onToggle={toggleLanguage} />
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        theme="light"
+      />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/login" element={<Auth defaultSignIn={true} />} />
@@ -85,8 +107,16 @@ export default function App() {
         <Route path="blog7" element={<Blog7 />} />
         <Route path="blog8" element={<Blog8 />} />
         <Route path="blog9" element={<Blog9 />} />
+        <Route
+          path="/my-courses"
+          element={
+            <ProtectedRoute>
+              <MyCourses />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }

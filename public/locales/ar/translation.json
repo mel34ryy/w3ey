@@ -4,10 +4,13 @@
     "about": "من نحن",
     "instructors": "المعلمين",
     "courses": "الكورسات",
+    "all-courses": "جميع الكورسات",
+    "my-courses": "كورساتي",
     "blogs": "المقالات",
     "contact": "تواصل معنا",
     "lang": "English",
-    "register": "سجل الآن"
+    "register": "سجل الآن",
+    "signout": "تسجيل خروج"
   },
   "hero": {
     "satisfaction": "ضمان رضا بنسبة 100%",

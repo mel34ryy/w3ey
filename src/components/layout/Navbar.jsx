@@ -8,6 +8,7 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar({ onToggle }) {
   const { t } = useTranslation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(
     localStorage.getItem("bs-theme") || "system"
@@ -63,13 +64,34 @@ export default function Navbar({ onToggle }) {
     };
   }, [theme]);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+
+    const handleStorageChange = () => {
+      const token = localStorage.getItem("token");
+      setIsLoggedIn(!!token);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.dispatchEvent(new Event("storage"));
+  };
+
   return (
     <nav className="navbar navbar-expand-xl">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           <img
             style={{ width: "250px", height: "120px" }}
-            src="/images/Logo.svg"
+            src="/images/Logo.png"
             alt="logo"
           />
         </Link>
@@ -94,7 +116,7 @@ export default function Navbar({ onToggle }) {
             <Link to="/" className="offcanvas-title" id="offcanvasNavbarLabel">
               <img
                 style={{ width: "250px", height: "120px" }}
-                src="/images/Logo.svg"
+                src="/images/Logo.png"
                 alt="logo"
               />
             </Link>
@@ -124,10 +146,28 @@ export default function Navbar({ onToggle }) {
                   {t("navbar.instructors")}
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <Link to="courses" className="nav-link">
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   {t("navbar.courses")}
-                </Link>
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="courses" className="dropdown-item">
+                      {t("navbar.all-courses")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="my-courses" className="dropdown-item">
+                      {t("navbar.my-courses")}
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
                 <Link to="blogs" className="nav-link">
@@ -188,11 +228,19 @@ export default function Navbar({ onToggle }) {
                 </button>
               </li>
             </ul>
-            <Link to="signup" className="button">
-              <button className="register-btn bg-white">
-                {t("navbar.register")}
+            {!isLoggedIn && (
+              <Link to="signup" className="button">
+                <button className="register-btn bg-white">
+                  {t("navbar.register")}
+                </button>
+              </Link>
+            )}
+
+            {isLoggedIn && (
+              <button className="register-btn bg-white" onClick={handleLogout}>
+                {t("navbar.signout")}
               </button>
-            </Link>
+            )}
           </div>
         </div>
       </div>
