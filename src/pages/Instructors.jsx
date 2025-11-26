@@ -4,6 +4,7 @@ import "./Instructors.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Loader from "../components/layout/Loader";
 import { useTranslation } from "react-i18next";
+import imagesMap from "../assets/images/ins/imagesMap";
 
 export default function InstructorsPage() {
   const [instructors, setInstructors] = useState([]);
@@ -33,7 +34,24 @@ export default function InstructorsPage() {
           }, {}),
         }));
 
-        setInstructors(normalized);
+        const finalWithLocal = normalized.map((inst) => {
+          const normalizedName = String(inst.name)
+            .normalize("NFKD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^\w\s]/g, "")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+
+          const localImg = imagesMap[normalizedName];
+
+          return {
+            ...inst,
+            image: localImg || inst.image,
+          };
+        });
+
+        setInstructors(finalWithLocal);
       } catch (error) {
         console.error("API Fetch Error:", error);
       } finally {
