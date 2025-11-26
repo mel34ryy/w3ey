@@ -10,11 +10,11 @@ import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { useTranslation } from "react-i18next";
 export default function Course() {
   const navigate = useNavigate();
   const { id } = useParams();
-
+const { t } = useTranslation();
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
@@ -73,19 +73,19 @@ export default function Course() {
               <h2 className="card-title">{course.price || "Free"}</h2>
               <p>
                 {course.price
-                  ? "Access this premium course"
-                  : "Free access to this course"}
+                  ? t("coursePage.access_premium")
+                  : t("coursePage.access_free")}
               </p>
               <hr />
               <ul className="custom-square">
                 <li>
-                  <p>To all over the world</p>
+                  <p>{t("coursePage.to_world")}</p>
                 </li>
                 <li>
-                  <p>{course.studentCount} total registered</p>
+                  <p>{course.studentCount} {t("coursePage.total_registered", { count: course.studentCount })}</p>
                 </li>
                 <li>
-                  <p>Users</p>
+                  <p>{t("coursePage.users")} </p>
                 </li>
                 <li>
                   <p>{course.features?.[0]}</p>
@@ -118,7 +118,7 @@ export default function Course() {
                 type="button"
                 role="tab"
               >
-                Course information
+                {t("coursePage.course_information")}
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -130,7 +130,7 @@ export default function Course() {
                 type="button"
                 role="tab"
               >
-                Ratings & Reviews
+                {t("coursePage.ratings_reviews")}
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -142,7 +142,7 @@ export default function Course() {
                 type="button"
                 role="tab"
               >
-                Advertisements
+                {t("coursePage.advertisements")}
               </button>
             </li>
           </ul>
@@ -157,7 +157,7 @@ export default function Course() {
                 <FontAwesomeIcon icon={faCircleXmark} />
               </h1>
 
-              <h4 className="text-secondary">No reviews yet</h4>
+              <h4 className="text-secondary">{t("coursePage.no_reviews")}</h4>
             </div>
           </div>
 
@@ -166,7 +166,7 @@ export default function Course() {
               <h1 className="display-1 text-secondary mw-100">
                 <FontAwesomeIcon icon={faBullhorn} />
               </h1>
-              <h4 className="text-secondary">No advertisements yet</h4>
+              <h4 className="text-secondary">{t("coursePage.no_ads")}</h4>
             </div>
           </div>
         </div>
@@ -175,17 +175,18 @@ export default function Course() {
       <div className="container">
         <div className="my-5 mx-4">
           <span className="text-bg-primary px-2 py-1 rounded text-white">
-            Top Course
+            {t("coursePage.top_course")}
           </span>
           <div className="row justify-content-between align-items-center">
             <h1 className="col-5 text-primary-emphasis">
-              More courses by {mainAuthor?.name}
+              {t("coursePage.more_courses_by")} {mainAuthor?.name}
             </h1>
             <button
               className="btn col-2 text-bg-primary text-white"
               onClick={() => navigate("/courses")}
             >
-              view all courses <i className="fa-solid fa-arrow-right"></i>
+              {t("coursePage.view_all_courses")}
+               <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </div>
@@ -217,7 +218,8 @@ export default function Course() {
 
                     <FontAwesomeIcon icon={faUserGroup} />
                     <span className="text-secondary">
-                      {c.studentCount} students
+                      {c.studentCount} 
+                      {t("coursePage.students")}
                     </span>
                   </p>
 

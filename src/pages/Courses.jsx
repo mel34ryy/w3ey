@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../components/layout/Loader";
-
+import { useTranslation } from "react-i18next";
 export default function Courses() {
+  
   const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const itemsPerPage = 9;
-
+const { t } = useTranslation();
   useEffect(() => {
     async function fetchCourses() {
       try {
@@ -49,20 +50,20 @@ export default function Courses() {
       <main className="main">
         <section className="courses-sec1 fs-3">
           <div className="courses-text">
-            <h1>Courses</h1>
-            <a href="#">W3ey Online School</a>
+            <h1>{t("courses.courses")}</h1>
+            <a href="#">{t("courses.breadcrumb_school")}</a>
             <span></span>
-            <span> &gt; courses</span>
+            <span> &gt; {t("courses.breadcrumb_courses")}</span>
           </div>
         </section>
       </main>
       <div className="courses-div text-center container">
         <div className="texts">
           <span className="bg-primary-subtle py-2 px-4 rounded-pill fs-3 fw-bold text-uppercase shadow-sm">
-            courses
+           {t("courses.courses_badge")}
           </span>
           <h6 className="m-3 p-1 fw-bold display-6">
-            Enrichment materials and interactive clubs
+            {t("courses.courses_heading")}
           </h6>
         </div>
 
@@ -93,7 +94,7 @@ export default function Courses() {
 
                       <FontAwesomeIcon icon={faUserGroup} />
                       <span className="text-secondary">
-                        {course.students || "0"} students
+                        {course.students || "0"} {t("courses.students")}
                       </span>
                     </p>
 
@@ -121,7 +122,7 @@ export default function Courses() {
                     setCurrentPage((prev) => Math.max(prev - 1, 1))
                   }
                 >
-                  Previous
+                 { t("courses.pagination_previous")}
                 </button>
               </li>
 
@@ -152,7 +153,7 @@ export default function Courses() {
                     setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                   }
                 >
-                  Next
+                 {t("courses.pagination_next")}
                 </button>
               </li>
             </ul>
@@ -161,7 +162,7 @@ export default function Courses() {
       </div>
       <section className="py-5 text-center">
         <span className="bg-primary-subtle py-2 px-4 rounded-pill fs-3 fw-bold text-uppercase shadow-sm">
-          Tracks
+         {t("courses.tracks")}
         </span>
         <div className="container mt-5">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
@@ -169,14 +170,11 @@ export default function Courses() {
               <div className="course-card card h-100 border-0 shadow-lg rounded-4">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                    Artificial Intelligence (AI)
+                    {t("courses.track_ai_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                    AI is the science of making machines think and act like
-                    humans. It focuses on creating systems that can solve
-                    problems, understand language, and make decisions
-                    intelligently.
+                   {t("courses.track_ai_desc")}
                   </p>
                 </div>
               </div>
@@ -185,12 +183,11 @@ export default function Courses() {
               <div className="course-card card h-100 border-0 shadow-lg rounded-4">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                    Machine Learning
+                   {t("courses.track_ml_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                    Machine Learning allows computers to learn from data and
-                    improve automatically without being explicitly programmed.
+                   {t("courses.track_ml_desc")}
                   </p>
                 </div>
               </div>
@@ -199,13 +196,11 @@ export default function Courses() {
               <div className="course-card card h-100 border-0 shadow-lg rounded-4">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                    web development
+                    {t("courses.track_web_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                    Web Development is about building and maintaining websites
-                    and web applications, including both the front-end (user
-                    interface) and back-end (server side).
+                    {t("courses.track_web_desc")}
                   </p>
                 </div>
               </div>
@@ -214,13 +209,11 @@ export default function Courses() {
               <div className="course-card card h-100 border-0 shadow-lg rounded-4 ">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                    Software Engineering
+                   {t("track_se_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                    Software Engineering is the process of designing,
-                    developing, and maintaining high-quality software systems
-                    efficiently and systematically.
+                    {t("courses.track_se_desc")}
                   </p>
                 </div>
               </div>
@@ -229,13 +222,11 @@ export default function Courses() {
               <div className="course-card card h-100 border-0 shadow-lg rounded-4 ">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                    cloud-computig
+                   {t("courses.track_cloud_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                    Cloud Computing is the delivery of computing services—like
-                    storage, servers, and databases—over the internet instead of
-                    using local hardware.
+                    {t("courses.track_cloud_desc")}
                   </p>
                 </div>
               </div>
@@ -244,13 +235,11 @@ export default function Courses() {
               <div className="course-card  card h-100 border-0  shadow-lg rounded-4 ">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                    Embedded Systems
+                   {t("courses.track_embedded_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                    Embedded Systems are small computer systems built into
-                    larger devices (like cars, TVs, or medical machines) to
-                    control specific functions.
+                    {t("courses.track_embedded_desc")}
                   </p>
                 </div>
               </div>
