@@ -11,10 +11,12 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import Loader from "./Loader";
+
 export default function Course() {
   const navigate = useNavigate();
   const { id } = useParams();
-const { t } = useTranslation();
+  const { t } = useTranslation();
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
@@ -32,12 +34,7 @@ const { t } = useTranslation();
     fetchCourse();
   }, [id]);
 
-  if (!course)
-    return (
-      <div className="text-center my-5 display-6 text-secondary">
-        Loading course...
-      </div>
-    );
+  if (!course) return <Loader />;
 
   const mainAuthor = course.authors?.[0];
   const tag = course.filters?.[0] || course.level || "course";
@@ -46,27 +43,42 @@ const { t } = useTranslation();
     <>
       <main className="main">
         <section className="course-banrpage text-capitalize">
-          <button className="small btn btn-success-subtle text-bg-success mt-5 mx-3 px-4">
-            {tag}
-          </button>
+          <div className="banr-content">
+            <button className="small btn btn-success-subtle text-bg-success mt-5 mx-3 px-4">
+              {tag}
+            </button>
 
-          <h1 className="text-white mx-3 p-2">{course.title}</h1>
+            <h1 className="text-white mx-3 p-2">{course.title}</h1>
 
-          <img
-            src={mainAuthor?.avatar}
-            className="rounded-circle m-3"
-            width="50"
-            height="50"
-            alt={mainAuthor?.name}
-          />
+            <div className="d-flex align-items-center mx-3">
+              <img
+                src={mainAuthor?.avatar}
+                className="rounded-circle me-2"
+                width="50"
+                height="50"
+                alt={mainAuthor?.name}
+              />
 
-          <span className="text-secondary">{mainAuthor?.name}</span>
+              <div className="text-start">
+                <div className="text-secondary">{mainAuthor?.name}</div>
 
-          <FontAwesomeIcon icon={faNoteSticky} className="text-white" />
-          <span className="text-white"> {course.sectionCount || 0} </span>
+                <div className="text-white d-inline-flex align-items-center gap-3">
+                  <span className="me-2">
+                    <FontAwesomeIcon
+                      icon={faNoteSticky}
+                      className="text-white"
+                    />
+                    <span className="ms-1">{course.sectionCount || 0}</span>
+                  </span>
 
-          <FontAwesomeIcon icon={faUser} className="text-white" />
-          <span className="text-white"> {course.studentCount} </span>
+                  <span>
+                    <FontAwesomeIcon icon={faUser} className="text-white" />
+                    <span className="ms-1">{course.studentCount}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="card card-banr bg-body-secondary">
             <div className="card-body">
@@ -82,7 +94,12 @@ const { t } = useTranslation();
                   <p>{t("coursePage.to_world")}</p>
                 </li>
                 <li>
-                  <p>{course.studentCount} {t("coursePage.total_registered", { count: course.studentCount })}</p>
+                  <p>
+                    {course.studentCount}{" "}
+                    {t("coursePage.total_registered", {
+                      count: course.studentCount,
+                    })}
+                  </p>
                 </li>
                 <li>
                   <p>{t("coursePage.users")} </p>
@@ -96,7 +113,7 @@ const { t } = useTranslation();
         </section>
       </main>
 
-      <div className="container">
+      <div className="container text-center">
         <img
           src={course.thumbnail}
           alt={course.title}
@@ -104,6 +121,9 @@ const { t } = useTranslation();
           height="auto"
           className="object-fit-cover m-4"
         />
+        <div className="col-12 col-md-auto d-flex justify-content-center justify-content-md-end">
+          <button className="btn btn-primary text-white">Add to card</button>
+        </div>
       </div>
 
       <div className="container">
@@ -186,7 +206,7 @@ const { t } = useTranslation();
               onClick={() => navigate("/courses")}
             >
               {t("coursePage.view_all_courses")}
-               <i className="fa-solid fa-arrow-right"></i>
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </div>
@@ -218,7 +238,7 @@ const { t } = useTranslation();
 
                     <FontAwesomeIcon icon={faUserGroup} />
                     <span className="text-secondary">
-                      {c.studentCount} 
+                      {c.studentCount}
                       {t("coursePage.students")}
                     </span>
                   </p>
