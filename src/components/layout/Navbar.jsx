@@ -90,7 +90,7 @@ export default function Navbar({ onToggle }) {
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           <img
-            style={{ width: "250px", height: "120px" }}
+            style={{ width: "200px", height: "80px" }}
             src="/images/Logo.png"
             alt="logo"
           />

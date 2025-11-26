@@ -220,42 +220,66 @@
       "time": "7:00 AM - 3:00 PM"
     }
   },
-  "courses":{ 
+  "instructor": {
+    "coverTag": "Teaching Staff",
+    "title": {
+      "p1": "Top",
+      "p2": "Class",
+      "p3": "Instructor"
+    },
+    "description": "Our team of educators is selected based on rigorous criteria that combine academic excellence with educational and psychological awareness. All teachers are:",
+    "points": {
+      "onlineExperience": "Experienced in online teaching",
+      "eduPsyTraining": "Trained in both educational and psychological approaches",
+      "teachingStyles": "Skilled in using teaching methods tailored to different learning styles",
+      "personalFollowup": "Committed to providing personalized follow-up for each student"
+    },
+    "searchPlaceholder": "Search by name or specialization...",
+    "sort": {
+      "default": "Default Order",
+      "high": "Highest Rated",
+      "low": "Lowest Rated"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "courses": {
     "courses": "Courses",
-  "breadcrumb_school": "W3ey Online School",
-  "breadcrumb_courses": "courses",
+    "breadcrumb_school": "W3ey Online School",
+    "breadcrumb_courses": "courses",
 
-  "courses_badge": "courses",
-  "courses_heading": "Enrichment materials and interactive clubs",
+    "courses_badge": "courses",
+    "courses_heading": "Enrichment materials and interactive clubs",
 
-  "duration": "Duration",
-  "students": "students",
+    "duration": "Duration",
+    "students": "students",
 
-  "pagination_previous": "Previous",
-  "pagination_next": "Next",
+    "pagination_previous": "Previous",
+    "pagination_next": "Next",
 
-  "tracks": "Tracks",
+    "tracks": "Tracks",
 
-  "track_ai_title": "Artificial Intelligence (AI)",
-  "track_ai_desc": "AI is the science of making machines think and act like humans. It focuses on creating systems that can solve problems, understand language, and make decisions intelligently.",
+    "track_ai_title": "Artificial Intelligence (AI)",
+    "track_ai_desc": "AI is the science of making machines think and act like humans. It focuses on creating systems that can solve problems, understand language, and make decisions intelligently.",
 
-  "track_ml_title": "Machine Learning",
-  "track_ml_desc": "Machine Learning allows computers to learn from data and improve automatically without being explicitly programmed.",
+    "track_ml_title": "Machine Learning",
+    "track_ml_desc": "Machine Learning allows computers to learn from data and improve automatically without being explicitly programmed.",
 
-  "track_web_title": "Web Development",
-  "track_web_desc": "Web Development is about building and maintaining websites and web applications, including both the front-end (user interface) and back-end (server side).",
+    "track_web_title": "Web Development",
+    "track_web_desc": "Web Development is about building and maintaining websites and web applications, including both the front-end (user interface) and back-end (server side).",
 
-  "track_se_title": "Software Engineering",
-  "track_se_desc": "Software Engineering is the process of designing, developing, and maintaining high-quality software systems efficiently and systematically.",
+    "track_se_title": "Software Engineering",
+    "track_se_desc": "Software Engineering is the process of designing, developing, and maintaining high-quality software systems efficiently and systematically.",
 
-  "track_cloud_title": "Cloud Computing",
-  "track_cloud_desc": "Cloud Computing is the delivery of computing services—like storage, servers, and databases—over the internet instead of using local hardware.",
+    "track_cloud_title": "Cloud Computing",
+    "track_cloud_desc": "Cloud Computing is the delivery of computing services—like storage, servers, and databases—over the internet instead of using local hardware.",
 
-  "track_embedded_title": "Embedded Systems",
-  "track_embedded_desc": "Embedded Systems are small computer systems built into larger devices (like cars, TVs, or medical machines) to control specific functions."
-
-},
-"coursePage": {
+    "track_embedded_title": "Embedded Systems",
+    "track_embedded_desc": "Embedded Systems are small computer systems built into larger devices (like cars, TVs, or medical machines) to control specific functions."
+  },
+  "coursePage": {
     "access_premium": "Access this premium course",
     "access_free": "Free access to this course",
 

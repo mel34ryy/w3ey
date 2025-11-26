@@ -45,21 +45,41 @@ export default function Footer() {
                   {t("footer.quickLinks.home")}
                 </Link>
               </li>
-              <li>{t("footer.quickLinks.about")}</li>
-              <li>{t("footer.quickLinks.courses")}</li>
+              <li>
+                <Link to="about" className="link">
+                  {t("footer.quickLinks.about")}
+                </Link>
+              </li>
+              <li>
+                <Link to="courses" className="link">
+                  {t("footer.quickLinks.courses")}
+                </Link>
+              </li>
               <li>
                 <Link to="instructors" className="link">
                   {t("footer.quickLinks.instructors")}
                 </Link>
               </li>
-              <li>{t("footer.quickLinks.blogs")}</li>
-              <li>{t("footer.quickLinks.contact")}</li>
+              <li>
+                <Link to="blogs" className="link">
+                  {t("footer.quickLinks.blogs")}
+                </Link>
+              </li>
+              <li>
+                <Link to="contact" className="link">
+                  {t("footer.quickLinks.contact")}
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-sm-6 col-md-3">
             <h4 className="mb-3">{t("footer.policy.title")}</h4>
             <ul>
-              <li>{t("footer.policy.question")}</li>
+              <li>
+                <Link to="contact" className="link">
+                  {t("footer.policy.question")}
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-sm-6 col-md-3">

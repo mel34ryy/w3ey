@@ -7,12 +7,11 @@ import axios from "axios";
 import Loader from "../components/layout/Loader";
 import { useTranslation } from "react-i18next";
 export default function Courses() {
-  
   const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const itemsPerPage = 9;
-const { t } = useTranslation();
+  const { t } = useTranslation();
   useEffect(() => {
     async function fetchCourses() {
       try {
@@ -60,7 +59,7 @@ const { t } = useTranslation();
       <div className="courses-div text-center container">
         <div className="texts">
           <span className="bg-primary-subtle py-2 px-4 rounded-pill fs-3 fw-bold text-uppercase shadow-sm">
-           {t("courses.courses_badge")}
+            {t("courses.courses_badge")}
           </span>
           <h6 className="m-3 p-1 fw-bold display-6">
             {t("courses.courses_heading")}
@@ -122,7 +121,7 @@ const { t } = useTranslation();
                     setCurrentPage((prev) => Math.max(prev - 1, 1))
                   }
                 >
-                 { t("courses.pagination_previous")}
+                  {t("courses.pagination_previous")}
                 </button>
               </li>
 
@@ -153,7 +152,7 @@ const { t } = useTranslation();
                     setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                   }
                 >
-                 {t("courses.pagination_next")}
+                  {t("courses.pagination_next")}
                 </button>
               </li>
             </ul>
@@ -162,7 +161,7 @@ const { t } = useTranslation();
       </div>
       <section className="py-5 text-center">
         <span className="bg-primary-subtle py-2 px-4 rounded-pill fs-3 fw-bold text-uppercase shadow-sm">
-         {t("courses.tracks")}
+          {t("courses.tracks")}
         </span>
         <div className="container mt-5">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
@@ -174,7 +173,7 @@ const { t } = useTranslation();
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                   {t("courses.track_ai_desc")}
+                    {t("courses.track_ai_desc")}
                   </p>
                 </div>
               </div>
@@ -183,11 +182,11 @@ const { t } = useTranslation();
               <div className="course-card card h-100 border-0 shadow-lg rounded-4">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                   {t("courses.track_ml_title")}
+                    {t("courses.track_ml_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
-                   {t("courses.track_ml_desc")}
+                    {t("courses.track_ml_desc")}
                   </p>
                 </div>
               </div>
@@ -209,7 +208,7 @@ const { t } = useTranslation();
               <div className="course-card card h-100 border-0 shadow-lg rounded-4 ">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                   {t("track_se_title")}
+                    {t("courses.track_se_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
@@ -222,7 +221,7 @@ const { t } = useTranslation();
               <div className="course-card card h-100 border-0 shadow-lg rounded-4 ">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                   {t("courses.track_cloud_title")}
+                    {t("courses.track_cloud_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">
@@ -235,7 +234,7 @@ const { t } = useTranslation();
               <div className="course-card  card h-100 border-0  shadow-lg rounded-4 ">
                 <div className="card-body">
                   <h4 className="card-title text-primary fw-bold">
-                   {t("courses.track_embedded_title")}
+                    {t("courses.track_embedded_title")}
                   </h4>
                   <hr />
                   <p className="card-text text-secondary">

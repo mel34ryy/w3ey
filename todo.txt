@@ -1,1 +1,3 @@
-Fix the conflicts in the style files.
+images for instructors
+add to card button
+component the intro of the page

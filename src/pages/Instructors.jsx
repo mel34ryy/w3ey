@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Instructors.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Loader from "../components/layout/Loader";
+import { useTranslation } from "react-i18next";
 
 export default function InstructorsPage() {
   const [instructors, setInstructors] = useState([]);
@@ -11,6 +12,7 @@ export default function InstructorsPage() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
+  const { t } = useTranslation();
 
   useEffect(() => {
     async function fetchInstructors() {
@@ -82,28 +84,23 @@ export default function InstructorsPage() {
 
       <div className="container instructor-hero col-md-7 col-lg-10 my-5 text-center">
         <p className="instructor-bg-babyblue instructor-paragraph px-4 py-1 rounded-1 mx-auto">
-          Teaching Staff
+          {t("instructor.coverTag")}
         </p>
         <h2 className="instructor-title mb-4 mt-3 fw-bold fs-1">
-          Top<span className="instructor-highlight-text"> Class</span>{" "}
-          Instructor
+          {t("instructor.title.p1")}
+          <span className="instructor-highlight-text">
+            {" "}
+            {t("instructor.title.p2")}
+          </span>{" "}
+          {t("instructor.title.p3")}
         </h2>
         <div className="instructor-paragraph text-start">
-          <p>
-            Our team of educators is selected based on rigorous criteria that
-            combine academic excellence with educational and psychological
-            awareness. All teachers are:
-          </p>
+          <p>{t("instructor.description")}</p>
           <ul className="instructor-list mt-5 mb-5 fs-6">
-            <li>• Experienced in online teaching</li>
-            <li>• Trained in both educational and psychological approaches</li>
-            <li>
-              • Skilled in using teaching methods tailored to different learning
-              styles
-            </li>
-            <li>
-              • Committed to providing personalized follow-up for each student
-            </li>
+            <li>• {t("instructor.points.onlineExperience")}</li>
+            <li>• {t("instructor.points.eduPsyTraining")}</li>
+            <li>• {t("instructor.points.teachingStyles")}</li>
+            <li>• {t("instructor.points.personalFollowup")}</li>
           </ul>
         </div>
       </div>
@@ -114,7 +111,7 @@ export default function InstructorsPage() {
             type="text"
             id="searchInput"
             className="form-control w-50"
-            placeholder="Search by name or specialization..."
+            placeholder={t("instructor.searchPlaceholder")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -124,9 +121,9 @@ export default function InstructorsPage() {
             value={sort}
             onChange={(e) => setSort(e.target.value)}
           >
-            <option value="none">Default Order</option>
-            <option value="high">Highest Rated</option>
-            <option value="low">Lowest Rated</option>
+            <option value="none">{t("instructor.sort.default")}</option>
+            <option value="high">{t("instructor.sort.high")}</option>
+            <option value="low">{t("instructor.sort.low")}</option>
           </select>
         </div>
 
@@ -206,7 +203,7 @@ export default function InstructorsPage() {
                     setCurrentPage((prev) => Math.max(prev - 1, 1))
                   }
                 >
-                  Previous
+                  {t("instructor.pagination.previous")}
                 </button>
               </li>
 
@@ -237,7 +234,7 @@ export default function InstructorsPage() {
                     setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                   }
                 >
-                  Next
+                  {t("instructor.pagination.next")}
                 </button>
               </li>
             </ul>
