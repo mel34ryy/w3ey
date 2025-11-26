@@ -3,18 +3,12 @@ import communication from "../assets/images/parent-communication-650x455.jpg.png
 import location from "../assets/images/location.png";
 import phone from "../assets/images/phone.png";
 import email from "../assets/images/email.png";
+import Banner from "../components/layout/Banner";
 
 export default function Contact() {
   return (
     <>
-      <section className="Contact-page-banner d-flex align-items-center text-white">
-        <div className="container pb-4">
-          <h1 className="display-5 fw-bold mb-2">Contact</h1>
-          <p className="fw-semibold">
-            W3ey Online School &gt; <span>Contact</span>
-          </p>
-        </div>
-      </section>
+      <Banner>Contact</Banner>
       <section className="technical-support container py-5 my-5">
         <div className="row g-5 d-flex justify-content-between align-items-center">
           <div className="col-lg-6 mb-5">

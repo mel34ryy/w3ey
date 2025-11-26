@@ -221,6 +221,9 @@
     }
   },
   "instructor": {
+    "banner": {
+      "title": "المدرسين"
+    },
     "coverTag": "هيئة التدريس",
     "title": {
       "p1": "مدربين",
@@ -246,9 +249,9 @@
     }
   },
   "courses": {
-    "courses": "الدورات",
-    "breadcrumb_school": "مدرسة وي ثري التعليمية",
-    "breadcrumb_courses": "الدورات",
+    "banner": {
+      "title": "الدورات"
+    },
 
     "courses_badge": "الدورات",
     "courses_heading": "مواد إثرائية وأندية تفاعلية",
@@ -302,5 +305,8 @@
     "duration_default": "٠ ساعة ٠ دقيقة",
 
     "course_default_tag": "دورة"
+  },
+  "banner": {
+    "w3ey": "مدرسة وعي الإلكترونية"
   }
 }

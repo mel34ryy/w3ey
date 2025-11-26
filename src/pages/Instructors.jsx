@@ -5,6 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Loader from "../components/layout/Loader";
 import { useTranslation } from "react-i18next";
 import imagesMap from "../assets/images/ins/imagesMap";
+import Banner from "../components/layout/Banner";
 
 export default function InstructorsPage() {
   const [instructors, setInstructors] = useState([]);
@@ -98,7 +99,7 @@ export default function InstructorsPage() {
 
   return (
     <div>
-      <div className="instructor-cover"></div>
+      <Banner>{t("instructor.banner.title")}</Banner>
 
       <div className="container instructor-hero col-md-7 col-lg-10 my-5 text-center">
         <p className="instructor-bg-babyblue instructor-paragraph px-4 py-1 rounded-1 mx-auto">

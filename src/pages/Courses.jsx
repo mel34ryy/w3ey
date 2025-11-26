@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../components/layout/Loader";
 import { useTranslation } from "react-i18next";
+import Banner from "../components/layout/Banner";
 export default function Courses() {
   const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,14 +48,7 @@ export default function Courses() {
   return (
     <>
       <main className="main">
-        <section className="courses-sec1 fs-3">
-          <div className="courses-text">
-            <h1>{t("courses.courses")}</h1>
-            <a href="#">{t("courses.breadcrumb_school")}</a>
-            <span></span>
-            <span> &gt; {t("courses.breadcrumb_courses")}</span>
-          </div>
-        </section>
+        <Banner>{t("courses.banner.title")}</Banner>
       </main>
       <div className="courses-div text-center container">
         <div className="texts">

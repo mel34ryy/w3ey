@@ -12,18 +12,12 @@ import duration from "../assets/images/duration.png";
 import communication from "../assets/images/communication-center.png";
 import img from "../assets/images/0003-650x355.png.png";
 import parent from "../assets/images/parent-communication-650x455.jpg.png";
+import Banner from "../components/layout/Banner";
 
 export default function About() {
   return (
     <div className="about-page">
-      <section className="about-banner d-flex align-items-center text-white">
-        <div className="container pb-4">
-          <h1 className="display-5 fw-bold mb-2">About Us</h1>
-          <p className="fw-semibold">
-            W3ey Online School &gt; <span>About Us</span>
-          </p>
-        </div>
-      </section>
+      <Banner>About Us</Banner>
       <div className="about-us container py-5 my-5">
         <div className="row d-flex justify-content-between g-5 align-items-center">
           <div className="col-lg-5 col-md-12 mb-4 mb-md-0">

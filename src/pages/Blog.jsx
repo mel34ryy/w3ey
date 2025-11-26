@@ -1,6 +1,7 @@
 import "./Blog.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Banner from "../components/layout/Banner";
 
 export default function Blog() {
   useEffect(() => {
@@ -33,6 +34,7 @@ export default function Blog() {
 
   return (
     <div className="blog">
+      <Banner>Blogs</Banner>
       <div className="container blog-hero col-md-7 col-lg-10 my-5 text-center">
         <p className="blog-bg-babyblue blog-paragraph px-4 py-1 rounded-1 mx-auto text-center">
           Our Blog

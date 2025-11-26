@@ -221,6 +221,9 @@
     }
   },
   "instructor": {
+    "banner": {
+      "title": "Instructors"
+    },
     "coverTag": "Teaching Staff",
     "title": {
       "p1": "Top",
@@ -246,9 +249,9 @@
     }
   },
   "courses": {
-    "courses": "Courses",
-    "breadcrumb_school": "W3ey Online School",
-    "breadcrumb_courses": "courses",
+    "banner": {
+      "title": "Courses"
+    },
 
     "courses_badge": "courses",
     "courses_heading": "Enrichment materials and interactive clubs",
@@ -302,5 +305,8 @@
     "duration_default": "0 h 0 m",
 
     "course_default_tag": "course"
+  },
+  "banner": {
+    "w3ey": "W3ey Online School"
   }
 }

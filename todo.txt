@@ -1,3 +1,2 @@
-images for instructors
 add to card button
 component the intro of the page
