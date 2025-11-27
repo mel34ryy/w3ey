@@ -126,6 +126,7 @@ body {
   background: #393b3f81;
   transform: rotateY(180deg);
   text-align: center;
+  overflow-y: auto;
 }
 .my-courses-back h3,
 .my-courses-back p {

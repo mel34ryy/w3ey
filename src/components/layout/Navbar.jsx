@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ar from "../../assets/images/ar.svg";
+import en from "../../assets/images/en.svg";
 import menu from "../../assets/images/menu.png";
 import "./Navbar.css";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 
-export default function Navbar({ onToggle }) {
+export default function Navbar({ onToggle, lang }) {
   const { t } = useTranslation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -218,12 +219,23 @@ export default function Navbar({ onToggle }) {
                   onClick={onToggle}
                   className="nav-link d-flex align-items-center"
                 >
-                  <img
-                    className="img-fluid"
-                    src={ar}
-                    alt="arabic"
-                    style={{ height: "18px", width: "auto", margin: "0 5px" }}
-                  />
+                  {(() => {
+                    const current = (lang || "en").split("-")[0];
+                    const flagSrc = current === "en" ? ar : en;
+                    const altText = current === "en" ? "arabic" : "english";
+                    return (
+                      <img
+                        className="img-fluid"
+                        src={flagSrc}
+                        alt={altText}
+                        style={{
+                          height: "18px",
+                          width: "auto",
+                          margin: "0 5px",
+                        }}
+                      />
+                    );
+                  })()}
                   <span>{t("navbar.lang")}</span>
                 </button>
               </li>

@@ -19,6 +19,16 @@ export default function Course() {
   const { t } = useTranslation();
   const [course, setCourse] = useState(null);
 
+  const goToCoursesWithData = () => {
+    const saved = JSON.parse(localStorage.getItem("myCourses")) || [];
+    const exists = saved.some((c) => c.id === course.id);
+    if (!exists) {
+      saved.push(course);
+    }
+    localStorage.setItem("myCourses", JSON.stringify(saved));
+    navigate("/my-courses");
+  };
+
   useEffect(() => {
     async function fetchCourse() {
       try {
@@ -122,7 +132,15 @@ export default function Course() {
           className="object-fit-cover m-4"
         />
         <div className="col-12 col-md-auto d-flex justify-content-center justify-content-md-end">
-          <button className="btn btn-primary text-white">Add to card</button>
+          <button
+            onClick={() => {
+              goToCoursesWithData();
+              console.log(course);
+            }}
+            className="btn btn-primary text-white"
+          >
+            {t("coursePage.btn")}
+          </button>
         </div>
       </div>
 
