@@ -66,11 +66,11 @@
   opacity: 1;
   transition: all 0.5s;
 }
-.course-card a button:hover,
+/* .course-card a button:hover,
 .course-card .a button:hover {
   background-color: rgba(77, 155, 57, 0.8);
   color: aliceblue;
-}
+} */
 a.course-link-anim {
   position: relative;
   text-decoration: none;

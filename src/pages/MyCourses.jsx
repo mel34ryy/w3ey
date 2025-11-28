@@ -1,6 +1,7 @@
 import "./MyCourses.css";
 import Banner from "../components/layout/Banner";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function MyCourses() {
   const [courses, setCourses] = useState([]);
@@ -14,15 +15,15 @@ export default function MyCourses() {
     const saved = JSON.parse(localStorage.getItem("myCourses")) || [];
     setCourses(saved);
   }, []);
-
+    const { t } = useTranslation();
+  
   return (
     <>
-      <Banner>My Courses</Banner>
-      <section className="my-courses-hero text-center">
+      <Banner>{ t("my-courses-banner.heading")}</Banner><section className="my-courses-hero text-center">
         <div className="container">
-          <h2 className="my-courses-title">Keep Going</h2>
+          <h2 className="my-courses-title">{t("my-courses-banner.heading")}</h2>
           <p className="my-courses-subtitle">
-            Start learning your purchased courses anytime.
+            {t("my-courses-banner.paragraph")} 
           </p>
         </div>
       </section>

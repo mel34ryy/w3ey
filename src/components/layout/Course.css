@@ -1,0 +1,77 @@
+/* COLORS USED:
+   main: #082a5e
+   main-light: #0d3a80
+   main-dark: #051d42
+   text-dark: #1f1f1f
+   text-light: #f8f9fa
+   gray: #6c757d
+*/
+
+/* =============================
+   BUTTONS
+============================= */
+.btn-primary,
+.text-bg-primary {
+  background-color: #082a5e !important;
+  border-color: #082a5e !important;
+}
+
+.btn-primary:hover {
+  background-color: #0d3a80 !important;
+}
+
+.btn-success-subtle:hover {
+  background: rgba(8, 42, 94, 0.25) !important;
+}
+
+/* =============================
+   NAV TABS
+============================= */
+.nav-tabs .nav-link {
+  color: #082a5e;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #082a5e;
+  color: #ffffff !important;
+  border-color: #082a5e;
+}
+
+/* =============================
+   IMAGES
+============================= */
+/* .container img {
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 20px;
+  width: 80%;
+} */
+
+/* =============================
+   LIST STYLE
+============================= */
+.custom-square {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 992px) {
+  .card-banr {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .course-banrpage {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .course-banrpage .banr-content h1 {
+    font-size: 1.9rem;
+  }
+}

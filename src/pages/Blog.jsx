@@ -1,6 +1,7 @@
 import "./Blog.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Banner from "../components/layout/Banner";
 import Reveal from "../components/effects/Reveal";
 
@@ -33,35 +34,33 @@ export default function Blog() {
 
     return () => observer.disconnect();
   }, []);
+const { t } = useTranslation();
 
   return (
     <div className="blog">
-      <Banner>Blogs</Banner>
+      <Banner>{t("navbar.blogs")}</Banner>
       <div className="container blog-hero col-md-7 col-lg-10 my-5 text-center">
         <p className="blog-bg-babyblue blog-paragraph px-4 py-1 rounded-1 mx-auto text-center">
-          Our Blog
+         {t("blog.our_blog")}
         </p>
         <Reveal>
         <h2 className="blog-title mb-4 mt-3 fw-bold fs-1">
-          Insights from <span className="blog-highlight-text"> Experts</span>
+          {t("blog.insights_from")} <span className="blog-highlight-text"> {t("blog.experts")  }</span>
         </h2>
-        <div className="paragraph d-flex justify-content-center align-items-center flex-column">
+        <div className="paragraph d-flex justify-content-center align-items-center flex-column mx-auto ">
           <p>
-            Our blog brings together knowledge, experience, and inspiration in
-            one place. Each article is carefully and spark curiosity across
-            various topics. All posts are:
+           {t("blog.intro_paragraph")}
           </p>
           <ul className="blog mt-2 mb-3 fs-6">
             <li>
-              • Written by professionals passionate about education and growth
+                {t("blog.point_1")}
             </li>
-            <li>• Based on research, experience, and real-world insights</li>
+            <li>   {t("blog.point_2")}</li>
             <li>
-              • Designed to simplify complex ideas and make learning enjoyable
+                 {t("blog.point_3")}
             </li>
             <li>
-              • Focused on helping readers develop both personally and
-              academically
+                 {t("blog.point_4")}
             </li>
           </ul>
         </div>
@@ -86,19 +85,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Frontend</span>
+                      <span className="badge bg-navy">{t("blog.categories.frontend")}</span>
                     </div>
-                    <h3 className="card-title">Mastering React Hooks</h3>
+                    <h3 className="card-title">{t("blog.articles.1_title")}</h3>
                     <p className="card-excerpt">
-                      Dive deep into React Hooks for building dynamic UIs with
-                      efficiency and elegance.
+                     {t("blog.articles.1_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By John Doe</span> | <span>Oct 15, 2023</span> |{" "}
                       <span>5 min read</span>
                     </div>
                     <Link to="/blog1" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -117,19 +115,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Backend</span>
+                      <span className="badge bg-navy">{t("blog.categories.backend")}</span>
                     </div>
-                    <h3 className="card-title">Node.js Best Practices</h3>
+                    <h3 className="card-title">{t("blog.articles.2_title")}</h3>
                     <p className="card-excerpt">
-                      Secure and scalable backend development with Node.js
-                      essentials.
+                     {t("blog.articles.2_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Jane Smith</span> | <span>Sep 20, 2023</span> |{" "}
                       <span>7 min read</span>
                     </div>
                     <Link to="/blog2" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -148,19 +145,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Algorithms</span>
+                      <span className="badge bg-navy">{t("blog.categories.algorithms")}</span>
                     </div>
-                    <h3 className="card-title">Sorting Algorithms Explained</h3>
+                    <h3 className="card-title">{t("blog.articles.3_title")}</h3>
                     <p className="card-excerpt">
-                      Understand sorting complexities and their practical
-                      applications.
+                      {t("blog.articles.3_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Alex Johnson</span> | <span>Aug 10, 2023</span> |{" "}
                       <span>6 min read</span>
                     </div>
                     <Link to="/blog3" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -179,18 +175,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Career</span>
+                      <span className="badge bg-navy">{t("blog.categories.career")}</span>
                     </div>
-                    <h3 className="card-title">Landing Your First Dev Job</h3>
+                    <h3 className="card-title">{t("blog.articles.4_title")}</h3>
                     <p className="card-excerpt">
-                      Tips and strategies for breaking into the tech industry.
+                      {t("blog.articles.4_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Sam Lee</span> | <span>Jul 5, 2023</span> |{" "}
                       <span>4 min read</span>
                     </div>
                     <Link to="/blog4" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -209,18 +205,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Frontend</span>
+                      <span className="badge bg-navy">{t("blog.categories.frontend")}</span>
                     </div>
-                    <h3 className="card-title">CSS Grid Mastery</h3>
+                    <h3 className="card-title"></h3>
                     <p className="card-excerpt">
-                      Build responsive layouts with the power of CSS Grid.
+                      {t("blog.articles.5_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Mia Chen</span> | <span>Jun 12, 2023</span> |{" "}
                       <span>8 min read</span>
                     </div>
                     <Link to="/blog5" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -239,18 +235,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Backend</span>
+                      <span className="badge bg-navy">{t("blog.categories.backend")}</span>
                     </div>
-                    <h3 className="card-title">Database Optimization</h3>
+                    <h3 className="card-title">{t("blog.articles.6_title")}</h3>
                     <p className="card-excerpt">
-                      Improve performance with advanced database techniques.
+                     {t("blog.articles.6_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Raj Patel</span> | <span>May 18, 2023</span> |{" "}
                       <span>9 min read</span>
                     </div>
                     <Link to="/blog6" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -269,18 +265,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Algorithms</span>
+                      <span className="badge bg-navy">{t("blog.categories.algorithms")}</span>
                     </div>
-                    <h3 className="card-title">Graph Theory Basics</h3>
+                    <h3 className="card-title"> {t("blog.articles.7_title")}</h3>
                     <p className="card-excerpt">
-                      Essential concepts for solving complex problems.
+                      {t("blog.articles.7_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Lena Kim</span> | <span>Apr 22, 2023</span> |{" "}
                       <span>7 min read</span>
                     </div>
                     <Link to="/blog7" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -299,18 +295,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Career</span>
+                      <span className="badge bg-navy">{t("blog.categories.career")}</span>
                     </div>
-                    <h3 className="card-title">Freelancing as a Developer</h3>
+                    <h3 className="card-title">{t("blog.articles.8_title")}</h3>
                     <p className="card-excerpt">
-                      Navigate the freelance world with confidence.
+                     {t("blog.articles.8_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Tom Wilson</span> | <span>Mar 8, 2023</span> |{" "}
                       <span>6 min read</span>
                     </div>
                     <Link to="/blog8" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>
@@ -329,18 +325,18 @@ export default function Blog() {
                   </div>
                   <div className="card-body">
                     <div className="card-tags">
-                      <span className="badge bg-navy">Frontend</span>
+                      <span className="badge bg-navy">{t("blog.categories.frontend")}</span>
                     </div>
-                    <h3 className="card-title">JavaScript ES6 Features</h3>
+                    <h3 className="card-title">{t("blog.articles.9_title")}</h3>
                     <p className="card-excerpt">
-                      Modern JavaScript for cleaner, more efficient code.
+                     {t("blog.articles.9_excerpt")}
                     </p>
                     <div className="card-meta">
                       <span>By Zoe Garcia</span> | <span>Feb 14, 2023</span> |{" "}
                       <span>5 min read</span>
                     </div>
                     <Link to="/blog9" className="btn btn-accent">
-                      Read More
+                      {t("blog.articles.read_more")}
                     </Link>
                   </div>
                 </article>

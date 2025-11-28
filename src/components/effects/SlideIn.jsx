@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
 
 export default function SlideIn({
   children,
@@ -15,23 +14,6 @@ export default function SlideIn({
     threshold,
   });
 
-  const [isRTL, setIsRTL] = useState(false);
-
-  useEffect(() => {
-    const dir = document.documentElement.getAttribute("dir");
-    setIsRTL(dir === "rtl");
-  }, []);
-
-  const flip = (dir) => {
-    if (!isRTL) return dir;
-    if (dir === "left") return "right";
-    if (dir === "right") return "left";
-    return dir;
-  };
-
-  const finalDirection = flip(direction);
-
-  // 🔥 مسافة أكبر + سلاسة
   const offsets = {
     left: { x: -120, y: 0 },
     right: { x: 120, y: 0 },
@@ -39,21 +21,23 @@ export default function SlideIn({
     down: { x: 0, y: -120 },
   };
 
-  const starting = offsets[finalDirection] || { x: 0, y: 120 };
+  const starting = offsets[direction] || { x: 0, y: 120 };
 
   const variants = {
     hidden: {
       opacity: 0,
       ...starting,
+      filter: "blur(8px)",
     },
     visible: {
       opacity: 1,
       x: 0,
       y: 0,
+      filter: "blur(0px)",
       transition: {
         duration,
         delay,
-        ease: [0.22, 1, 0.36, 1], // 🔥 السلاسة السينمائية
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -65,6 +49,7 @@ export default function SlideIn({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       className={`smooth-slide ${className}`}
+      style={{ willChange: "opacity, transform, filter" }}
     >
       {children}
     </motion.div>

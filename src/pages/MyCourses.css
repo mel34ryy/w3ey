@@ -53,6 +53,8 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
+  text-align: center;
+  direction: ltr !important
 }
 
 .my-courses-track::-webkit-scrollbar {
@@ -71,6 +73,7 @@ body {
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
+  
 }
 
 .my-courses-arrow:hover {
@@ -79,9 +82,9 @@ body {
 
 /* Card */
 .my-courses-card {
-  min-width: 300px;
+  min-width: 430px;
   height: 400px !important;
-  width: 450px !important;
+  /* width: 600px !important; */
   perspective: 1000px;
   border-radius: 12px;
   background-color: transparent;
@@ -128,7 +131,7 @@ body {
 .my-courses-front h3 {
   font-size: 1.5rem;
   color: #001a70;
-  text-align: center;
+  text-align: start;
   padding: 12px;
   margin-top: 10px;
 }
@@ -143,13 +146,13 @@ body {
 }
 .my-courses-back h3,
 .my-courses-back p {
-  color: #001a70;
+  color: #082a5e;
   font-weight: 500;
   line-height: 1.4;
 }
 .my-courses-btn {
-  color: #001a70;
-  background-color: #4b74ca;
+  color: #fff;
+  background-color: #082a5e;
   border: #fff 1px solid;
   border-radius: 0.75rem;
   font-weight: 600;
@@ -157,8 +160,8 @@ body {
 }
 .my-courses-btn:hover {
   transform: scale(0.97) translateY(-2px);
-  color: #3266d6;
-  border: #3266d6 1px solid;
+  color: #082a5e;
+  border: #082a5e 1px solid;
   background-color: #fff;
 }
 @media (max-width: 768px) {

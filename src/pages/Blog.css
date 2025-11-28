@@ -30,9 +30,13 @@
   width: fit-content;
   color: #024585;
   font-size: 15.5px;
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center;
 }
 .blog-hero p {
   font-weight: 500;
+  align-items: center;
 }
 .blog-title {
   color: #082a5e !important;
@@ -83,9 +87,9 @@
 ul.blog li {
   list-style-type: none;
 }
-ul.blog {
+.blog ul {
   padding-left: 0;
-  align-items: center;
+  align-items: center !important;
   display: flex;
   gap: 16px;
   justify-content: center;
@@ -108,6 +112,7 @@ ul.blog {
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease !important;
+  
 
 }
 
@@ -190,6 +195,7 @@ ul.blog {
   margin: 0 auto;
   padding: 2rem 1rem;
   line-height: 1.6;
+  direction: ltr !important;
 }
 
 .blog-details .back-link {

@@ -87,6 +87,7 @@
   background: #eaf0fab5;
   box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8);
   position: relative;
+  direction: ltr !important;
 
 }
 

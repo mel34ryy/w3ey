@@ -17,51 +17,51 @@
       "satisfaction": "100% Satisfaction Guarantee",
       "title": {
         "part1": "Learn",
-        "highlight": "Skills",
-        "part2": "From Our Top Instructors"
+        "highlight": "Programming Skills",
+        "part2": "From Industry Experts"
       },
-      "description": "Our online school is tailored for Egyptian students abroad, combining academic excellence with modern educational vision, all within a safe and smart environment that feels like home… and supports every home.",
+      "description": "W3ey is your gateway to high-quality programming education. Our courses are designed to take you from beginner to job-ready with hands-on projects, structured learning paths, and real-world tech skills that companies look for.",
       "button": {
         "explore": "Explore Courses"
       },
       "call": {
-        "question": "Have any Question?",
+        "question": "Need Help?",
         "phone": "+201000000000"
       },
       "box1": {
-        "title": "Enrolled Students",
+        "title": "Enrolled Learners",
         "value": "+200"
       },
       "box2": {
-        "title": "Experience Since",
+        "title": "Teaching Since",
         "value": "2020"
       }
     },
     "about": {
-      "badge": "Get To Know About Us",
+      "badge": "Get To Know W3ey",
       "title": {
-        "part1": "W3ey Online",
-        "highlight": "School",
-        "part2": "For Learning And Instruction"
+        "part1": "W3ey",
+        "highlight": "Tech Academy",
+        "part2": "For Modern Skills"
       },
-      "p1": "Welcome to W3ey — the accredited online Egyptian school dedicated to educating Egyptian expat children, especially in the Gulf region.",
-      "p2": "If you’re looking for modern, flexible, and secure Egyptian education that nurtures your children both academically and emotionally, W3ey is your perfect choice.",
-      "p3": "We deliver accredited education following the Egyptian Experimental Curriculum (Languages) from Kindergarten (KG) to Middle 1, through a smart and comprehensive digital platform that blends flexibility with precision.",
+      "p1": "Welcome to W3ey — a platform dedicated to teaching programming, AI, software engineering, and today’s most in-demand tech skills.",
+      "p2": "Whether you're starting from zero or leveling up your career, W3ey provides structured learning paths, expert instructors, and practical training focused on real-world applications.",
+      "p3": "Our mission is to transform beginners into skilled developers through clear guidance, hands-on projects, and continuous support.",
       "icons": {
         "expYears": {
           "p1": "10+ Yrs",
-          "p2": "Teachers Experience"
+          "p2": "Industry Experience"
         },
         "programs": {
-          "p1": "4",
-          "p2": "Enrichment Programs"
+          "p1": "20+",
+          "p2": "Tech Tracks"
         },
         "students": {
           "p1": "200",
-          "p2": "Over Students"
+          "p2": "Active Learners"
         },
         "curriculum": {
-          "p1": "MOE",
+          "p1": "Updated",
           "p2": "Curriculum"
         },
         "support": {
@@ -72,84 +72,84 @@
       "button": "Discover More"
     },
     "featured": {
-      "badge": "Welcome our Property.",
+      "badge": "Popular On W3ey",
       "title": {
         "part1": "Our",
         "highlight": "Featured",
-        "part2": "Clubs & Subjects"
+        "part2": "Courses"
       },
       "card": {
         "duration": "0h 0m",
         "students": "0 Students",
-        "title": "W3ey",
+        "title": "Course Title",
         "reviews": "(0)"
       },
       "button": "All Courses"
     },
     "w3ey": {
-      "badge": "Unique online courses",
+      "badge": "Skill-Focused Learning",
       "title": {
-        "part1": "At",
+        "part1": "Why Learn At",
         "part2": "W",
         "highlight": "3",
-        "part3": "ey"
+        "part3": "ey?"
       },
       "description": {
-        "p1": "We don’t just teach what’s in the books — we shape well-rounded, thoughtful individuals through free interactive clubs and exceptional enrichment subjects.",
-        "p2": "From Science and Design Clubs to debates and educational films, we fuel curiosity and creativity in every student.",
-        "p3": "With French, Programming, and Critical Thinking programs, we open new horizons and help build a generation that’s aware, cultured, and balanced."
+        "p1": "W3ey offers modern tech education built around practical skills that help you grow and stand out in the tech market.",
+        "p2": "From web development to data science, AI, and problem-solving, we design learning experiences that empower you to build real projects.",
+        "p3": "Our focus on hands-on learning, mentorship, and career-driven content prepares you for real opportunities in the global tech industry."
       },
       "cards": {
-        "science": "Science Club",
-        "debate": "Debate Club",
-        "movies": "Movie Club",
-        "drawing": "Drawing Club",
-        "fundays": "Fun Days"
+        "science": "Coding Challenges",
+        "debate": "Q&A Live Sessions",
+        "movies": "Tech Explained Videos",
+        "drawing": "UI/UX Workshops",
+        "fundays": "Hackathons"
       }
     },
     "carousel": {
       "items": [
         {
-          "text": "I used to be afraid of speaking in class, but at W3ey, my teachers encouraged me to ask questions. Now I feel confident and happy, and I love joining the activities.",
+          "text": "I started with zero knowledge, but W3ey courses helped me understand coding step by step. Now I can build full websites confidently!",
           "name": "Ali",
-          "meta": "Egypt - Age 10"
+          "meta": "Beginner Developer"
         },
         {
-          "text": "At W3ey, learning feels exciting — not stressful! I love how we can express ideas and learn creatively every day.",
+          "text": "Learning at W3ey is exciting — the instructors explain concepts clearly, and the projects helped me improve fast.",
           "name": "Sara",
-          "meta": "UAE - Age 11"
+          "meta": "Frontend Student"
         },
         {
-          "text": "W3ey changed how I see school — now I look forward to every class because it’s fun and inspiring.",
+          "text": "W3ey changed how I see programming — it made learning practical and enjoyable.",
           "name": "Omar",
-          "meta": "KSA - Age 9"
+          "meta": "AI Track Student"
         }
       ]
     },
     "instructors": {
-      "badge": "Our Qualified People Matter",
+      "badge": "Our Experts Matter",
       "title": {
         "part1": "Top",
-        "highlight": "Class",
-        "part2": "Instructor"
+        "highlight": "Tech",
+        "part2": "Instructors"
       },
-      "description": "At W3ey, we carefully select our teachers — Not just for their qualifications, but for their ability to teach with heart and build trust from the very first class.",
+      "description": "At W3ey, our instructors are experienced developers and industry professionals who teach with clarity, passion, and real-world insights to guide you throughout your learning journey.",
       "button": "All Instructors",
       "cards": [
         {
-          "role": "Academic Director",
+          "role": "Senior Software Engineer",
           "name": "Aya Habashy"
         },
         {
-          "role": "English Coordinator",
+          "role": "English Technical Content Lead",
           "name": "Nahla Fotouh El Ashry"
         },
         {
-          "role": "Math Coordinator",
+          "role": "Math & Algorithms Specialist",
           "name": "Mona Abdelazeez"
         },
         {
-          "role": "Science Coordinator",
+          "role": "Science & AI Coordinator",
           "name": "Asmaa Saad"
         }
       ],
@@ -159,38 +159,38 @@
           "highlight": "Share",
           "part2": "Your Expertise"
         },
-        "description": "At W3ey, we're always looking for passionate educators who believe in modern learning and are ready to deliver exceptional online teaching experiences.",
+        "description": "We're always looking for skilled developers, engineers, and educators passionate about teaching and shaping the next generation of tech talent.",
         "button": "Become an Instructor"
       }
     },
     "blog": {
-      "badge": "Always Smart To Hear News",
+      "badge": "Stay Updated",
       "title": {
         "part1": "Latest",
-        "highlight": "News",
-        "part2": "& Blog"
+        "highlight": "Articles",
+        "part2": " & Insights"
       },
-      "description": "Stay Updated with Everything W3ey. Here, you’ll find the latest from W3ey — events, articles, and updates that shape your child’s learning journey.",
+      "description": "Explore the latest tutorials, industry insights, and development tips from W3ey. Learn, grow, and stay ahead in the tech world.",
       "posts": [
         {
-          "tag": "English",
-          "title": "How Do W3ey's Interactive Clubs Help Shape Student Personality?",
+          "tag": "Tech",
+          "title": "How W3ey's Practical Training Helps You Build Real Projects",
           "date": "May 25, 2025"
         },
         {
-          "tag": "English",
-          "title": "Is Egyptian Online Education the Right Choice for Your Child Abroad?",
+          "tag": "Career",
+          "title": "Is Online Tech Education the Best Step for Your Future?",
           "date": "June 22, 2023"
         },
         {
-          "tag": "English",
-          "title": "Why W3ey is One of the Best Online Schools for Egyptian Students Abroad?",
+          "tag": "Programming",
+          "title": "Why W3ey Is One of the Best Platforms to Learn Development?",
           "date": "June 22, 2023"
         }
       ]
     },
     "mail": {
-      "title": "Let’s Join To Our Newsletters",
+      "title": "Join Our Newsletter",
       "input": {
         "placeholder": "Enter your email*"
       },
@@ -198,7 +198,7 @@
     }
   },
   "footer": {
-    "description": "Knowledge Without Borders. Education Without Limits.",
+    "description": "Learn Without Limits. Code Your Future.",
     "location": "Cairo",
     "phone": "+201011111111",
     "quickLinks": {
@@ -212,7 +212,7 @@
     },
     "policy": {
       "title": "Policy",
-      "question": "Asked Question"
+      "question": "FAQ"
     },
     "hours": {
       "title": "Working Hours",
@@ -224,18 +224,18 @@
     "banner": {
       "title": "Instructors"
     },
-    "coverTag": "Teaching Staff",
+    "coverTag": "Tech Experts",
     "title": {
       "p1": "Top",
-      "p2": "Class",
-      "p3": "Instructor"
+      "p2": "Tech",
+      "p3": "Instructors"
     },
-    "description": "Our team of educators is selected based on rigorous criteria that combine academic excellence with educational and psychological awareness. All teachers are:",
+    "description": "Our instructors are selected based on technical expertise, teaching skills, and mentoring ability. All instructors are:",
     "points": {
-      "onlineExperience": "Experienced in online teaching",
-      "eduPsyTraining": "Trained in both educational and psychological approaches",
-      "teachingStyles": "Skilled in using teaching methods tailored to different learning styles",
-      "personalFollowup": "Committed to providing personalized follow-up for each student"
+      "onlineExperience": "Experienced in online tech teaching",
+      "eduPsyTraining": "Skilled in simplifying complex concepts",
+      "teachingStyles": "Masters of project-based teaching",
+      "personalFollowup": "Committed to guiding every student"
     },
     "searchPlaceholder": "Search by name or specialization...",
     "sort": {
@@ -252,66 +252,219 @@
     "banner": {
       "title": "Courses"
     },
-
-    "courses_badge": "courses",
-    "courses_heading":{
+    "courses_badge": "Courses",
+    "courses_heading": {
       "part1": "Top",
       "highlight": "Rated",
-      "part2": "Courses"
+      "part2": "Tech Courses"
     },
-
     "duration": "Duration",
-    "students": "students",
-
+    "students": "Students",
     "pagination_previous": "Previous",
     "pagination_next": "Next",
-
     "tracks": "Tracks",
-
     "track_ai_title": "Artificial Intelligence (AI)",
-    "track_ai_desc": "AI is the science of making machines think and act like humans. It focuses on creating systems that can solve problems, understand language, and make decisions intelligently.",
-
+    "track_ai_desc": "Learn how machines think and solve problems. Master AI concepts, neural networks, and real-world applications.",
     "track_ml_title": "Machine Learning",
-    "track_ml_desc": "Machine Learning allows computers to learn from data and improve automatically without being explicitly programmed.",
-
+    "track_ml_desc": "Build ML models that learn from data using Python, algorithms, and real datasets.",
     "track_web_title": "Web Development",
-    "track_web_desc": "Web Development is about building and maintaining websites and web applications, including both the front-end (user interface) and back-end (server side).",
-
+    "track_web_desc": "Become a full-stack developer by mastering front-end, back-end, and modern frameworks.",
     "track_se_title": "Software Engineering",
-    "track_se_desc": "Software Engineering is the process of designing, developing, and maintaining high-quality software systems efficiently and systematically.",
-
+    "track_se_desc": "Learn how to design, build, test, and maintain high-quality software systems.",
     "track_cloud_title": "Cloud Computing",
-    "track_cloud_desc": "Cloud Computing is the delivery of computing services—like storage, servers, and databases—over the internet instead of using local hardware.",
-
+    "track_cloud_desc": "Master cloud platforms and learn how modern applications run at massive scale.",
     "track_embedded_title": "Embedded Systems",
-    "track_embedded_desc": "Embedded Systems are small computer systems built into larger devices (like cars, TVs, or medical machines) to control specific functions."
+    "track_embedded_desc": "Explore microcontrollers, IoT, and hardware programming."
   },
   "coursePage": {
     "access_premium": "Access this premium course",
     "access_free": "Free access to this course",
-
-    "to_world": "To all over the world",
+    "to_world": "Available worldwide",
     "users": "Users",
     "total_registered": "{{count}} total registered",
     "btn": "Add to cart",
-
     "course_information": "Course information",
     "ratings_reviews": "Ratings & Reviews",
     "advertisements": "Advertisements",
-
     "no_reviews": "No reviews yet",
     "no_ads": "No advertisements yet",
-
     "top_course": "Top Course",
     "more_courses_by": "More courses by",
     "view_all_courses": "View all courses",
-
     "students": "students",
     "duration_default": "0 h 0 m",
-
     "course_default_tag": "course"
   },
   "banner": {
-    "w3ey": "W3ey Online School"
+    "w3ey": "W3ey Tech Academy"
+  },
+  "blog": {
+    "our_blog": "Our Blog",
+    "insights_from": "Insights from",
+    "experts": "Experts",
+    "intro_paragraph": "Welcome to the W3ey Tech Blog — where we simplify programming, analyze tech trends, and deliver practical knowledge for developers at all levels. Every article is created to support your learning journey with clarity and depth.",
+    "point_1": "• Written by experienced developers and tech professionals",
+    "point_2": "• Based on real-world challenges, industry trends, and practical solutions",
+    "point_3": "• Simplifies complex concepts with examples and visual explanations",
+    "point_4": "• Helps you grow technically, professionally, and creatively",
+    "read_more": "Read More",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "algorithms": "Algorithms",
+      "career": "Career"
+    },
+    "articles": {
+      "1_title": "Mastering React Hooks",
+      "1_excerpt": "Master the most important React Hooks and build dynamic interfaces with ease.",
+      "2_title": "Node.js Best Practices",
+      "2_excerpt": "Build secure, scalable backends with essential Node.js guidelines.",
+      "3_title": "Sorting Algorithms Explained",
+      "3_excerpt": "A simple breakdown of sorting algorithms with real-world use cases.",
+      "4_title": "Landing Your First Dev Job",
+      "4_excerpt": "Steps to start your tech career with confidence.",
+      "5_title": "CSS Grid Mastery",
+      "5_excerpt": "Design responsive layouts using CSS Grid like a pro.",
+      "6_title": "Database Optimization",
+      "6_excerpt": "Boost performance with advanced database optimization techniques.",
+      "7_title": "Graph Theory Basics",
+      "7_excerpt": "Learn the fundamentals of graph theory for smarter problem-solving.",
+      "8_title": "Freelancing as a Developer",
+      "8_excerpt": "Tips to start and grow your freelance development career.",
+      "9_title": "JavaScript ES6 Features",
+      "9_excerpt": "Write cleaner, faster, modern JavaScript code.",
+      "read_more": "Read More"
+    }
+  },
+  "about-page": {
+    "banner": {
+      "aboutUs": "About Us"
+    },
+    "about-us": {
+      "sectionTitle": "Who We Are",
+      "heading": {
+        "part1": "W3ey Tech",
+        "part2": "For",
+        "part3": "Programming & Tech Skills",
+        "highlight": "Academy"
+      },
+      "paragraph1": "W3ey is a modern online academy focused on teaching the most in-demand tech skills — including Web Development, AI, Machine Learning, Cybersecurity, Software Engineering, and more. We combine structured learning with hands-on training to prepare students for real tech careers.",
+      "paragraph2": "At W3ey, we believe that everyone can learn programming with the right guidance. That’s why our instructors simplify complex ideas, provide real-time support, and help learners build practical projects that prove their abilities in the job market."
+    },
+    "vision": {
+      "card-body": {
+        "title1": "Our Vision",
+        "title2": "Our Mission",
+        "title3": "Our Approach",
+        "p1": "To become one of the leading online tech academies in the Middle East — empowering learners worldwide with modern, accessible, and career-focused programming education.",
+        "p2": "To deliver high-quality learning experiences through expert instructors, hands-on projects, and updated curriculums that follow global tech standards.",
+        "p3": "We believe real learning happens through practice — building, testing, failing, and improving. At W3ey, we teach with clarity, passion, and a strong focus on real-world results."
+      }
+    },
+    "about-academic": {
+      "heading": {
+        "part1": "Learning",
+        "part2": "System"
+      },
+      "p": {
+        "p1": "Our learning system is structured to take you from beginner to job-ready through:",
+        "p2": ""
+      },
+      "titles": {
+        "title1": "Live coding classes",
+        "title2": "Highly skilled instructors",
+        "title3": "Step-by-step project-based learning",
+        "title4": "Mentorship and feedback after sessions",
+        "title5": "Weekly practice challenges"
+      }
+    },
+    "hero-section": {
+      "p": "ARE YOU READY TO START?",
+      "heading": {
+        "part1": "Join W3ey and take advantage of exclusive offers all year.",
+        "part2": "Start your tech journey with confidence and skill."
+      }
+    },
+    "about-instructor": {
+      "heading": {
+        "part1": "Our Experts Matter",
+        "part2": "Top",
+        "part3": " Tech ",
+        "part4": "Instructors"
+      },
+      "paragraph": {
+        "p1": "At W3ey, we select instructors based on technical expertise and teaching ability.",
+        "p2": "They are committed to delivering high-value learning experiences from the very first session."
+      }
+    },
+    "about-platform": {
+      "heading": "W3ey Platform",
+      "paragraph": {
+        "p1": "The W3ey platform is designed to provide a smooth and powerful learning experience for students at all levels.",
+        "p2": "It includes tools that support learning, practice, and communication."
+      },
+      "titles": {
+        "title1": "Recorded tutorials explaining how to use the platform and submit assignments.",
+        "title2": "Separate dashboards for students and instructors.",
+        "title3": "Auto-graded quizzes and coding challenges.",
+        "title4": "Monthly check-ins with instructors to track your progress.",
+        "title5": "Weekly performance and skill reports."
+      }
+    },
+    "about-Communication": {
+      "heading": "Communication",
+      "paragraph": "We understand that consistent communication helps learners progress faster. That’s why we offer:",
+      "list": {
+        "item1": "Real-time progress tracking on the platform.",
+        "item2": "Multiple communication channels with fast response times.",
+        "item3": "Regular feedback sessions with instructors."
+      }
+    }
+  },
+  "contact-page": {
+    "banner": "Contact",
+    "title": "Technical Support",
+    "paragraph": "We provide 24/7 support to ensure your learning experience remains smooth, stable, and productive. This includes:",
+    "list": {
+      "item1": "A dedicated technical support team for resolving any platform issues.",
+      "item2": "A direct WhatsApp support line for quick responses."
+    },
+    "contact": {
+      "heading": "Keep In Touch With Us",
+      "paragraph": "We're always here to help — whether you're a student, a developer looking to join our team, or a partner. Reach out anytime.",
+      "list": {
+        "item1": {
+          "part1": "68 Holakt Street",
+          "part2": "Alexandria"
+        },
+        "item2": {
+          "part1": "+123 555 69090",
+          "part2": "+123 555 69099"
+        },
+        "item3": {
+          "part1": "info@w3eyacademy.com",
+          "part2": "support@w3eyacademy.com"
+        }
+      }
+    },
+    "contact-form": {
+      "heading": "Get in Touch",
+      "button": "SEND MESSAGE",
+      "form": {
+        "contact-placeholder": "Your Message*",
+        "phone-placeholder": "Phone*",
+        "name-placeholder": "Your Name*",
+        "email-placeholder": "Your Email*",
+        "subject-placeholder": "Subject*"
+      }
+    }
+  },
+  "my-courses-banner": {
+    "heading": "My Courses",
+    "paragraph": "Start learning your purchased courses anytime."
+  },
+  "my-courses-hero": {
+    "heading": "Keep Going",
+    "paragraph": "Continue your journey and keep building your skills."
   }
 }

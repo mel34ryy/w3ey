@@ -278,7 +278,7 @@ body {
   content: "";
   background-image: url("../assets/images/grid.svg"),
     url("../assets/images/circle.svg");
-  position: absolute;
+  position: relative ;
   background-repeat: no-repeat, no-repeat;
   top: 0;
   left: 45%;
@@ -290,9 +290,13 @@ body {
 .about .photo::after {
   content: url("/images/about2.png");
   position: absolute;
-  left: -25%;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
+  left: -25%;   
+}
+html[dir="rtl"] .about .photo::after {
+  left: auto;      /* نلغي الـleft */
+  right: -25%;     /* ونقلّبها لـright */
 }
 
 .about h2 {

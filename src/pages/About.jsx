@@ -15,39 +15,29 @@ import parent from "../assets/images/parent-communication-650x455.jpg.png";
 import Banner from "../components/layout/Banner";
 import Reveal from "../components/effects/Reveal";
 import SlideIn from "../components/effects/SlideIn";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <div className="about-page">
-      <Banner>About Us</Banner>
+      <Banner>{t("about-page.banner.aboutUs")}</Banner>
       <div className="about-us container py-5 my-5">
         <div className="row d-flex justify-content-between g-5 align-items-center">
           <div className="col-lg-5 col-md-12 mb-4 mb-md-0">
-            <h6 className="rounded-2 px-3">Who we are</h6>
+            <h6 className="rounded-2 px-3">{t("about-page.about-us.sectionTitle")}</h6>
             <SlideIn direction="left">
 
             <h2 className="fw-bold mb-4">
-              W3ey Online <span className="about-highlight-text">School</span>{" "}
-              For <br />
-              Learning And Instruction
+              {t("about-page.about-us.heading.part1")} <span className="about-highlight-text"> {t("about-page.about-us.heading.highlight")}</span> {t("about-page.about-us.heading.part2")} <br/>  {t("about-page.about-us.heading.part3")}
             </h2>
 
             <p className="info-text">
-              W3ey is an accredited online Egyptian school for students abroad,
-              particularly in Gulf countries. It offers the Egyptian
-              Experimental Curriculum (Languages) from Kindergarten to Middle 1
-              through an interactive platform, combining academics with
-              psychological and developmental support.
+              {t("about-page.about-us.paragraph1")}
             </p>
 
             <p className="info-text2">
-              At W3ey, we respect each student's unique learning and believe in
-              transparent, real-time family engagement. Our educational model
-              values parents’ time and children’s needs in a digital
-              environment. With highly experienced teachers, engaging
-              activities, and enrichment programs (like Programming, Critical
-              Thinking, Emotional Wellness), we nurture bright minds and growing
-              spirits with confidence.
+              {t("about-page.about-us.paragraph2")}
             </p>
             </SlideIn>
           </div>
@@ -91,12 +81,9 @@ export default function About() {
                 <div className="mb-3">
                   <img src={vision} alt="Our Vision" />
                 </div>
-                <h3 className="card-title fw-bold">Our Vision</h3>
+                <h3 className="card-title fw-bold">{t("about-page.vision.card-body.title1")}</h3>
                 <p className="card-text">
-                  To be the first choice for online Egyptian education for
-                  Egyptians worldwide — by delivering a modern, safe, and
-                  comprehensive learning experience that balances academic
-                  excellence, emotional support, and 21st-century flexibility.
+                 {t("about-page.vision.card-body.p1")}
                 </p>
               </div>
             </div>
@@ -108,13 +95,9 @@ export default function About() {
                 <div className="mb-3">
                   <img src={target} alt="Our Mission" />
                 </div>
-                <h3 className="card-title fw-bold">Our Mission</h3>
+                <h3 className="card-title fw-bold">{t("about-page.vision.card-body.title2")}</h3>
                 <p className="card-text">
-                  To offer high-quality, accredited Egyptian education through
-                  the latest interactive learning tools — while focusing on
-                  student character development, life skills, and continuous
-                  collaboration with families, all within a supportive
-                  psychological and educational environment.
+                  {t("about-page.vision.card-body.p2")}
                 </p>
               </div>
             </div>
@@ -126,13 +109,9 @@ export default function About() {
                 <div className="mb-3">
                   <img src={diamond} alt="Our Philosophy" />
                 </div>
-                <h3 className="card-title fw-bold">Our Philosophy</h3>
+                <h3 className="card-title fw-bold">{t("about-page.vision.card-body.title3")}</h3>
                 <p className="card-text">
-                  We believe education is not just about transferring knowledge
-                  — it's a journey to build conscious minds and well-rounded
-                  personalities capable of thinking, creating, and adapting. At
-                  **W3ey**, we teach with an eye on the future and a heart
-                  present with every student.
+                  {t("about-page.vision.card-body.p3")}
                 </p>
               </div>
             </div>
@@ -145,13 +124,12 @@ export default function About() {
           <div className="title row mb-5">
             <div className="col-lg-8 mx-auto">
               <h2 className="display-6 fw-bold mb-3">
-                Academic <span className="about-highlight-text">System</span>
+                 {t("about-page.about-academic.heading.part1")} <span className="about-highlight-text"> {t("about-page.about-academic.heading.part2")}</span>
               </h2>
               <p>
-                We implement the Egyptian Experimental Curriculum (Languages)
-                from
+                {t("about-page.about-academic.p.p1")}
                 <br />
-                KG to Middle 1 through:
+                {t("about-page.about-academic.p.p2")}
               </p>
             </div>
           </div>
@@ -161,7 +139,7 @@ export default function About() {
               <div className="system h-100 py-4 shadow border rounded-2">
                 <div className="system-body d-flex flex-column justify-content-center align-items-center">
                   <img src={zoom} alt="Zoom sessions icon" />
-                  <p className="system-text fw-semibold">Live Zoom sessions</p>
+                  <p className="system-text fw-semibold my-2">  {t("about-page.about-academic.titles.title1")}</p>
                 </div>
               </div>
             </div>
@@ -170,8 +148,8 @@ export default function About() {
               <div className="system h-100 py-4 shadow border rounded-2">
                 <div className="system-body d-flex flex-column justify-content-center align-items-center">
                   <img src={hat} alt="Educator icon" />
-                  <p className="system-text fw-semibold">
-                    Highly skilled online educators
+                  <p className="system-text fw-semibold my-2">
+                      {t("about-page.about-academic.titles.title2")}
                   </p>
                 </div>
               </div>
@@ -181,8 +159,8 @@ export default function About() {
               <div className="system h-100 py-4 shadow border rounded-2">
                 <div className="system-body d-flex flex-column justify-content-center align-items-center">
                   <img src={choice} alt="Teaching methods icon" />
-                  <p className="system-text fw-semibold">
-                    Teaching methods visual, auditory, and kinesthetic
+                  <p className="system-text fw-semibold my-2">
+                      {t("about-page.about-academic.titles.title3")}
                   </p>
                 </div>
               </div>
@@ -192,8 +170,8 @@ export default function About() {
               <div className="system h-100 py-4 shadow border rounded-2">
                 <div className="system-body d-flex flex-column justify-content-center align-items-center">
                   <img src={duration} alt="Duration icon" />
-                  <p className="system-text fw-semibold">
-                    10-minute academic support after class
+                  <p className="system-text fw-semibold my-2">
+                      {t("about-page.about-academic.titles.title4")}
                   </p>
                 </div>
               </div>
@@ -203,7 +181,7 @@ export default function About() {
               <div className="system h-100 py-4 shadow border rounded-2">
                 <div className="system-body d-flex flex-column justify-content-center align-items-center">
                   <img src={communication} alt="Extra help icon" />
-                  <p className="system-text fw-semibold">Weekly extra help</p>
+                  <p className="system-text fw-semibold my-2">  {t("about-page.about-academic.titles.title5")}</p>
                 </div>
               </div>
             </div>
@@ -214,29 +192,29 @@ export default function About() {
         <div className="overlay">
           <div className="container text-center text-white p-5">
             <p className="h5 fw-semibold text-uppercase mb-2">
-              ARE YOU READY FOR THIS OFFER
+              {t("about-page.hero-section.p")}
             </p>
             <h3 className="fw-semibold pt-4">
-              Take advantage of exclusive **W3ey** offers throughout the year
-              start <br />a high-quality learning journey at a more affordable
-              cost.
+              {t("about-page.hero-section.heading.part1")}
+              <br />
+              {t("about-page.hero-section.heading.part2")}
             </h3>
           </div>
         </div>
       </section>
       <div className="about-instructor container my-5 py-5">
         <h6 className="fw-semibold mb-2 rounded-1 px-3">
-          Our Qualified People Matter
+          {t("about-page.about-instructor.heading.part1")}
         </h6>
         <h2 className="fw-bold mb-3">
-          Top <span className="about-highlight-text-ins">Class</span> Instructor
+          {t("about-page.about-instructor.heading.part2")}
+           <span className="about-highlight-text-ins">{t("about-page.about-instructor.heading.part3")}</span>
+          {t("about-page.about-instructor.heading.part4")}
         </h2>
         <p className="mb-5">
-          At W3ey, we carefully select our teachers — not just for their
-          qualifications, but
+        {t("about-page.about-instructor.paragraph.p1")}
           <br />
-          for their ability to teach with heart and build trust from the very
-          first class.
+        {t("about-page.about-instructor.paragraph.p2")}
         </p>
 
         <div className="row g-5">
@@ -301,11 +279,11 @@ export default function About() {
         <div className="container">
           <div className="title row mb-5">
             <div className="col-lg-8 mx-auto">
-              <h2 className="fw-bold mb-3">W3ey Platform</h2>
+              <h2 className="fw-bold mb-3">{t("about-page.about-platform.heading")}</h2>
               <p className="fw-semibold mb-3">
-                The W3ey platform is designed to be comprehensive and easy to
-                use, effectively <br />
-                serving both students and parents. It includes:
+                {t("about-page.about-platform.paragraph.p1")}
+                 <br />
+                {t("about-page.about-platform.paragraph.p2")}
               </p>
             </div>
           </div>
@@ -320,9 +298,8 @@ export default function About() {
                     alt="Platform feature: Recorded videos"
                   />
                   <p className="fw-semibold">
-                    Recorded educational videos explaining how to use the
-                    platform, submit assignments, and take tests.
-                  </p>
+                {t("about-page.about-platform.titles.title1")}
+ my-2                  </p>
                 </div>
               </div>
             </div>
@@ -336,7 +313,8 @@ export default function About() {
                     alt="Platform feature: Separate accounts"
                   />
                   <p className="fw-semibold">
-                    Separate accounts for both the student and the parent.
+                {t("about-page.about-platform.titles.title2")}
+                    
                   </p>
                 </div>
               </div>
@@ -351,8 +329,8 @@ export default function About() {
                     alt="Platform feature: Timed tests"
                   />
                   <p className="fw-semibold">
-                    Time tests in which the answers are sent automatically to
-                    the teacher.
+                {t("about-page.about-platform.titles.title3")}
+                    
                   </p>
                 </div>
               </div>
@@ -369,8 +347,8 @@ export default function About() {
                     alt="Platform feature: Parent meetings"
                   />
                   <p className="fw-semibold">
-                    Monthly official meetings with parents to follow up on the
-                    student's development.
+                {t("about-page.about-platform.titles.title4")}
+                  
                   </p>
                 </div>
               </div>
@@ -385,8 +363,7 @@ export default function About() {
                     alt="Platform feature: Weekly reports"
                   />
                   <p className="fw-semibold">
-                    Weekly and monthly psychological and academic reports are
-                    sent to parents.
+                {t("about-page.about-platform.titles.title5")}
                   </p>
                 </div>
               </div>
@@ -399,21 +376,21 @@ export default function About() {
 
           <div className="col-md-6 mb-4 mb-md-0">
           <SlideIn direction="left">
-            <h2 className="fw-bold mb-4">Parent Communication</h2>
+            <h2 className="fw-bold mb-4">{t("about-page.about-Communication.heading")}</h2>
 
             <p>
-              We understand that every parent has a different level of
-              availability and engagement. That’s why we offer:
+              {t("about-page.about-Communication.paragraph")}
             </p>
 
             <ul className="fw-semibold">
               <li>
-                Real-time updates on student progress through our platform.
+              {t("about-page.about-Communication.list.item1")}
               </li>
-              <li>Flexible communication channels to suit your schedule.</li>
               <li>
-                Regular feedback sessions with teachers to discuss your child’s
-                development.
+              {t("about-page.about-Communication.list.item2")}
+              </li>
+              <li>
+              {t("about-page.about-Communication.list.item3")}
               </li>
             </ul>
           </SlideIn>

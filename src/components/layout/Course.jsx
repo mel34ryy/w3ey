@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Loader from "./Loader";
-
+import "./Course.css";
 export default function Course() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -129,7 +129,7 @@ export default function Course() {
           alt={course.title}
           width="50%"
           height="auto"
-          className="object-fit-cover m-4"
+          className="object-fit-cover m-4 rounded-4 shadow-lg w-75"
         />
         <div className="col-12 col-md-auto d-flex justify-content-center justify-content-md-end">
           <button

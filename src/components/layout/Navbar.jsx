@@ -88,10 +88,10 @@ export default function Navbar({ onToggle, lang }) {
 
   return (
     <nav className="navbar navbar-expand-xl">
-      <div className="container-fluid">
+      <div className="container-fluid navbar navbar-expand-lg my-navbar">
         <Link to="/" className="navbar-brand">
           <img
-            style={{ width: "200px", height: "80px" }}
+            className="logo"
             src="/images/Logo.png"
             alt="logo"
           />
@@ -138,9 +138,9 @@ export default function Navbar({ onToggle, lang }) {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <Link to="about" className="nav-link">
+                <NavLink to="about" className="nav-link">
                   {t("navbar.about")}
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="instructors" className="nav-link">
@@ -171,14 +171,14 @@ export default function Navbar({ onToggle, lang }) {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link to="blogs" className="nav-link">
+                <NavLink to="blogs" className="nav-link">
                   {t("navbar.blogs")}
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link to="contact" className="nav-link">
+                <NavLink to="contact" className="nav-link">
                   {t("navbar.contact")}
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <div className="mode-switch d-flex gap-2">
