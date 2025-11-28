@@ -15,15 +15,16 @@ export default function MyCourses() {
     const saved = JSON.parse(localStorage.getItem("myCourses")) || [];
     setCourses(saved);
   }, []);
-    const { t } = useTranslation();
-  
+  const { t } = useTranslation();
+
   return (
     <>
-      <Banner>{ t("my-courses-banner.heading")}</Banner><section className="my-courses-hero text-center">
+      <Banner>{t("my-courses-banner.heading")}</Banner>
+      <section className="my-courses-hero text-center">
         <div className="container">
           <h2 className="my-courses-title">{t("my-courses-banner.heading")}</h2>
           <p className="my-courses-subtitle">
-            {t("my-courses-banner.paragraph")} 
+            {t("my-courses-banner.paragraph")}
           </p>
         </div>
       </section>

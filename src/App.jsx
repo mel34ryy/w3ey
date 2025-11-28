@@ -30,10 +30,12 @@ import "react-toastify/dist/ReactToastify.css";
 import MyCourses from "./pages/MyCourses";
 import ProtectedRoute from "./ProtectedRoute";
 import Checkout from "./pages/Checkout";
+import useLanguageClass from "./useLanguageClass";
 
 export default function App() {
   const { pathname } = useLocation();
   const [lang, setLang] = useState(i18n.language || "en");
+  useLanguageClass();
 
   useEffect(() => {
     window.scrollTo({

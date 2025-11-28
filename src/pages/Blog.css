@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-
 * {
   box-sizing: border-box;
   /* overflow-x: hidden; */
-  font-family: "Lexend Deca", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -20,7 +17,6 @@
   --glow: rgba(8, 42, 94, 0.8);
   --bgb: #e7effc;
 }
-
 
 .blog-bg-babyblue {
   background-color: var(--bgb);
@@ -53,9 +49,9 @@
   bottom: -35px;
   left: 0;
   right: 0;
-    opacity: 0;
+  opacity: 0;
   /* transform: translateY(-25px); */
-  animation: showRow 4s ease forwards infinite ;
+  animation: showRow 4s ease forwards infinite;
   animation-delay: 0.4s;
   width: 0%;
 }
@@ -82,7 +78,6 @@
     width: 100%;
   }
 }
-
 
 ul.blog li {
   list-style-type: none;
@@ -112,8 +107,6 @@ ul.blog li {
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease !important;
-  
-
 }
 
 @keyframes reveal {
@@ -134,7 +127,7 @@ ul.blog li {
   width: 100%;
   border-bottom: 3px solid #0a2f6a;
 }
-.card-image  :hover img{
+.card-image :hover img {
   opacity: 0.7 !important;
 }
 
@@ -187,7 +180,7 @@ ul.blog li {
 .btn-accent:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px var(--glow);
-  color:var(--navy);
+  color: var(--navy);
 }
 
 .blog-details {
@@ -256,7 +249,6 @@ ul.blog li {
   margin-bottom: 1.5rem;
   animation: fadeInUp 1s ease-out 0.6s both;
 }
-
 
 .blog-details .blog-content pre code {
   background: none;

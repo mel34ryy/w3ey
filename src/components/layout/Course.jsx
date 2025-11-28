@@ -19,14 +19,26 @@ export default function Course() {
   const { t } = useTranslation();
   const [course, setCourse] = useState(null);
 
-  const goToCoursesWithData = () => {
-    const saved = JSON.parse(localStorage.getItem("myCourses")) || [];
-    const exists = saved.some((c) => c.id === course.id);
+  const addToCart = () => {
+    if (!course) return;
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const exists = cart.some((c) => c.id === course.id);
+
     if (!exists) {
-      saved.push(course);
+      cart.push({
+        id: course.id,
+        title: course.title,
+        price: course.price,
+        thumbnail: course.thumbnail,
+        image: course.image,
+        duration: course.duration,
+        level: course.level,
+      });
     }
-    localStorage.setItem("myCourses", JSON.stringify(saved));
-    navigate("/my-courses");
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    navigate("/checkout");
   };
 
   useEffect(() => {
@@ -132,13 +144,7 @@ export default function Course() {
           className="object-fit-cover m-4 rounded-4 shadow-lg w-75"
         />
         <div className="col-12 col-md-auto d-flex justify-content-center justify-content-md-end">
-          <button
-            onClick={() => {
-              goToCoursesWithData();
-              console.log(course);
-            }}
-            className="btn btn-primary text-white"
-          >
+          <button onClick={addToCart} className="btn btn-primary text-white">
             {t("coursePage.btn")}
           </button>
         </div>

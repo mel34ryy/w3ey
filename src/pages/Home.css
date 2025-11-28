@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-
-body {
-  font-family: "Lexend Deca", sans-serif;
-}
-
 .planet {
   position: relative;
   left: -8%;
@@ -146,7 +140,7 @@ body {
   right: 0;
   opacity: 0;
   transform: translateX(-25px);
-  animation: showRow 4s ease forwards infinite ;
+  animation: showRow 4s ease forwards infinite;
   animation-delay: 0.4s;
   width: 0%;
 }
@@ -863,6 +857,6 @@ html[dir="rtl"] .hero .photo .boxes .second-box {
   left: auto;
   right: 75%;
 }
-#course-card{
+#course-card {
   min-height: 400px;
 }

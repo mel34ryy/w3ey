@@ -1,10 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Lexend+Deca:wght@100..900&display=swap");
+
 /* ========== Base Theme Variables ========== */
 :root {
   /* Primary Colors */
   --color-primary: #024585;
   --color-primary-dark: #082a5e;
+  --primary-600: #072243;
   --color-accent: #12bb6a;
   --color-purple: #8121fb;
+  --bg: #ffffff;
+  --neutral-light: #f6f8fb;
+  --neutral-dark: #6c757d;
+  --bgb: #eaf2fb;
 
   /* Text Colors */
   --color-heading: #082a5e;
@@ -22,6 +29,8 @@
 
   /* Highlight */
   --highlight: var(--color-primary);
+
+  --radius: 14px;
 }
 
 /* ========== Dark Theme Variables ========== */
@@ -44,10 +53,10 @@
 
   --highlight: var(--color-primary);
 }
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
-
 
 .chat-bg {
   background-color: var(--color-primary);
@@ -60,3 +69,15 @@ html, body {
   will-change: transform, opacity;
 }
 
+html,
+body {
+  font-family: "Lexend Deca", "Cairo", sans-serif;
+}
+
+.lang-ar body {
+  font-family: "Cairo", sans-serif;
+}
+
+.lang-en body {
+  font-family: "Lexend Deca", sans-serif;
+}

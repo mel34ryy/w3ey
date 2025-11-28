@@ -1,10 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-
-
 * {
   box-sizing: border-box;
   /* overflow-x: hidden; */
-  font-family: "Lexend Deca", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -41,7 +37,7 @@
   right: 0;
   opacity: 0;
   transform: translateX(-25px);
-  animation: showRow 4s ease forwards infinite ;
+  animation: showRow 4s ease forwards infinite;
   animation-delay: 0.4s;
   width: 0%;
 }
@@ -98,15 +94,14 @@
 }
 .about-us img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 32px rgba(8, 42, 94, 1)!important;
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1) !important;
 }
 
 /*  our vision, Mission,Philosophy */
 
-.vision .card{
+.vision .card {
   border-radius: 36px !important;
   box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8) !important;
-
 }
 .vision .card-title {
   color: #2f548f;
@@ -125,7 +120,7 @@
 }
 .vision .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 32px rgba(8, 42, 94, 1)!important;
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1) !important;
 }
 
 /* Academic System */
@@ -143,11 +138,10 @@
   justify-content: center;
   padding: 15px 0px !important;
   box-shadow: 0 4px 10px rgba(8, 42, 94, 0.8) !important;
-
 }
 .about-academic .system:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(8, 42, 94, 1)!important;
+  box-shadow: 0 6px 15px rgba(8, 42, 94, 1) !important;
 }
 
 .about-academic .title h2 {
@@ -276,8 +270,7 @@
 }
 .about-Communication img:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 32px rgba(8, 42, 94, 1)!important;
-
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1) !important;
 }
 
 .about-highlight-text-ins {
@@ -294,7 +287,7 @@
   right: 0;
   opacity: 0;
   transform: translateX(-25px);
-  animation: showRow 4s ease forwards infinite ;
+  animation: showRow 4s ease forwards infinite;
   animation-delay: 0.4s;
   width: 0%;
 }

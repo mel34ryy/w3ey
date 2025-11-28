@@ -87,14 +87,10 @@ export default function Navbar({ onToggle, lang }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-xl">
+    <nav className="navbar navbar-expand-xxl">
       <div className="container-fluid navbar navbar-expand-lg my-navbar">
         <Link to="/" className="navbar-brand">
-          <img
-            className="logo"
-            src="/images/Logo.png"
-            alt="logo"
-          />
+          <img className="logo" src="/images/Logo.png" alt="logo" />
         </Link>
         <button
           className="navbar-toggler border-0"

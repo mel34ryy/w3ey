@@ -16,27 +16,20 @@ export default function Contact() {
         <div className="row g-5 d-flex justify-content-between align-items-center">
           <div className="col-lg-6 ">
             <h2 className="fw-bold mb-4">{t("contact-page.title")}</h2>
-            <p className="mb-4">
-              {t("contact-page.paragraph")}
-            </p>
+            <p className="mb-4">{t("contact-page.paragraph")}</p>
             <ul>
-              <li className="mb-2">
-               {t("contact-page.list.item1")}
-              </li>
-              <li className="mb-2">
-               {t("contact-page.list.item2")}
-              </li>
+              <li className="mb-2">{t("contact-page.list.item1")}</li>
+              <li className="mb-2">{t("contact-page.list.item2")}</li>
             </ul>
           </div>
 
           <div className="col-lg-6 mb-4 mb-lg-0">
             <SlideIn direction="right">
-            <img
-              src={communication}
-              alt="Technical Support"
-              className="img-fluid rounded shadow"
-            />
-
+              <img
+                src={communication}
+                alt="Technical Support"
+                className="img-fluid rounded shadow"
+              />
             </SlideIn>
           </div>
         </div>
@@ -44,47 +37,36 @@ export default function Contact() {
       <section className="contact container my-5 py-5">
         <div className="row g-5 d-flex justify-content-between align-items-center">
           <div className="col-lg-4">
-            <h2 className="fw-bold mb-3">{t("contact-page.contact.heading")}</h2>
+            <h2 className="fw-bold mb-3">
+              {t("contact-page.contact.heading")}
+            </h2>
             <hr className="rounded-2" />
-            <p className="mb-4">
-              {t("contact-page.contact.paragraph")}              
-            </p>
+            <p className="mb-4">{t("contact-page.contact.paragraph")}</p>
             <div className="container">
               <SlideIn direction="left">
+                <div className="contact-item display-flex align-items-center py-3">
+                  <img src={location} className="pb-2 px-1" />
+                  <ul>
+                    <li>{t("contact-page.contact.list.item1.part1")}</li>
+                    <li> {t("contact-page.contact.list.item1.part2")} </li>
+                  </ul>
+                </div>
 
-              <div className="contact-item display-flex align-items-center py-3">
-                <img src={location} className="pb-2 px-1"/>
-                <ul>
-                  <li> 
-                     {t("contact-page.contact.list.item1.part1")}
-                  </li>
-                  <li> {t("contact-page.contact.list.item1.part2")} </li>
-                </ul>
-              </div>
+                <div className="contact-item display-flex align-items-center py-3">
+                  <img src={phone} className="pb-2 px-1" />
+                  <ul>
+                    <li>{t("contact-page.contact.list.item2.part1")}</li>
+                    <li>{t("contact-page.contact.list.item2.part2")}</li>
+                  </ul>
+                </div>
 
-              <div className="contact-item display-flex align-items-center py-3">
-                <img src={phone} className="pb-2 px-1"/>
-                <ul>
-                  <li>
-                    {t("contact-page.contact.list.item2.part1")}
-                  </li>
-                  <li>
-                    {t("contact-page.contact.list.item2.part2")}
-                  </li>
-                </ul>
-              </div>
-
-              <div className="contact-item display-flex align-items-center py-3">
-                <img src={email} className="pb-2 px-1"/>
-                <ul>
-                  <li>
-                    {t("contact-page.contact.list.item3.part1")}
-                  </li>
-                  <li>
-                    {t("contact-page.contact.list.item3.part2")}
-                  </li>
-                </ul>
-              </div>
+                <div className="contact-item display-flex align-items-center py-3">
+                  <img src={email} className="pb-2 px-1" />
+                  <ul>
+                    <li>{t("contact-page.contact.list.item3.part1")}</li>
+                    <li>{t("contact-page.contact.list.item3.part2")}</li>
+                  </ul>
+                </div>
               </SlideIn>
             </div>
           </div>
@@ -94,12 +76,14 @@ export default function Contact() {
             </h3>
             <hr className="rounded-2" />
 
-            <form className="row my-4" >
+            <form className="row my-4">
               <div className="col-lg-6 my-2">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder={t("contact-page.contact-form.form.name-placeholder")}
+                  placeholder={t(
+                    "contact-page.contact-form.form.name-placeholder"
+                  )}
                 />
               </div>
 
@@ -107,22 +91,28 @@ export default function Contact() {
                 <input
                   type="email"
                   className="form-control"
-                  placeholder={t("contact-page.contact-form.form.email-placeholder")}
+                  placeholder={t(
+                    "contact-page.contact-form.form.email-placeholder"
+                  )}
                 />
               </div>
               <div className="col-lg-6 my-2">
                 <input
                   type="tel"
                   className="form-control"
-                  placeholder={t("contact-page.contact-form.form.phone-placeholder")}
+                  placeholder={t(
+                    "contact-page.contact-form.form.phone-placeholder"
+                  )}
                 />
-              </div>             
+              </div>
 
               <div className="col-lg-6 my-2">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder={t("contact-page.contact-form.form.subject-placeholder")}
+                  placeholder={t(
+                    "contact-page.contact-form.form.subject-placeholder"
+                  )}
                 />
               </div>
 
@@ -130,7 +120,9 @@ export default function Contact() {
                 <textarea
                   className="form-control"
                   rows="4"
-                  placeholder={t("contact-page.contact-form.form.contact-placeholder")}
+                  placeholder={t(
+                    "contact-page.contact-form.form.contact-placeholder"
+                  )}
                 ></textarea>
               </div>
 

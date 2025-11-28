@@ -19,8 +19,8 @@ export default function Footer() {
           <div className="col-sm-6 col-md-3">
             <div className="logo">
               <img
-                style={{ width: "250px", height: "120px" }}
-                src="/images/Logo.png"
+                style={{ width: "280px", height: "120px" }}
+                src="/images/LogoFooter.png"
                 alt="logo"
               />
             </div>

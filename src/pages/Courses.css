@@ -1,14 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-
 * {
   box-sizing: border-box;
   /* overflow-x: hidden; */
   /* position: relative; */
-  font-family: "Lexend Deca", sans-serif;
   margin: 0;
   padding: 0;
 }
-
 
 .babyblue {
   background-color: #e7effc !important;
@@ -25,15 +21,13 @@
   box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8) !important;
   transition: transform 0.3s ease, box-shadow 0.35s ease;
 }
-#course-card{
+#course-card {
   min-height: 400px;
-
 }
 .course-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 32px rgba(8, 42, 94, 1.2);
   transform: scale(1.03);
-  
 }
 .course-card .card-title {
   color: #024585 !important;
@@ -122,8 +116,8 @@ a.course-link-anim:hover::after {
     border-radius: 20px !important;
   }
 }
-.pag{
-  direction: ltr !important; 
+.pag {
+  direction: ltr !important;
 }
 .pagination .page-link {
   background-color: var(--color-primary) !important;

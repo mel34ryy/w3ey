@@ -1,31 +1,16 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-
-:root {
-  --primary: #082a5e;
-  --primary-600: #072243;
-  --bg: #ffffff;
-  --neutral-light: #f6f8fb;
-  --neutral-dark: #6c757d;
-  --bgb: #eaf2fb;
-  --radius: 14px;
-  --transition: 300ms cubic-bezier(0.2, 0.9, 0.3, 1);
-  --muted: #9aa6bf;
-}
-
-html,
-body {
+.checkout-page {
   height: 100%;
   background: linear-gradient(180deg, var(--bgb) 0%, #fbfdff 100%);
-  color: var(--primary);
+  color: var(--color-primary-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Lexend Deca", sans-serif;
   background: var(--bg);
   margin: 0;
   padding: 0;
+  --transition: 300ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
-.bg-page {
+.checkout-bg-page {
   background-image: linear-gradient(
     0deg,
     rgba(8, 42, 94, 0.02),
@@ -33,7 +18,7 @@ body {
   );
 }
 
-.glass-card {
+.checkout-glass-card {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
@@ -45,15 +30,15 @@ body {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.hover-float {
+.checkout-hover-float {
   transition: transform 240ms ease, box-shadow 240ms ease;
 }
-.hover-float:hover {
+.checkout-hover-float:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(8, 42, 94, 0.06);
 }
 
-.course-item .thumb {
+.checkout-course-item .checkout-thumb {
   width: 86px;
   height: 60px;
   overflow: hidden;
@@ -64,122 +49,102 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(8, 42, 94, 0.04);
 }
-.course-item .thumb img {
+.checkout-course-item .checkout-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform 500ms var(--transition);
 }
-.course-item:hover .thumb img {
+.checkout-course-item:hover .checkout-thumb img {
   transform: scale(1.06) rotate(-0.6deg);
 }
 
-.course-title {
-  color: var(--primary);
+.checkout-course-title {
+  color: var(--color-primary-dark);
   font-weight: 700;
 }
-.course-desc {
-  color: var(--muted);
-}
 
-.level-badge {
+.checkout-level-badge {
   background: rgba(8, 42, 94, 0.06);
-  color: var(--primary);
+  color: var(--color-primary-dark);
   border-radius: 8px;
   padding: 0.25rem 0.5rem;
   font-weight: 600;
   border: 1px solid rgba(8, 42, 94, 0.03);
 }
 
-.course-price {
-  color: var(--primary);
+.checkout-course-price {
+  color: var(--color-primary-dark);
   font-weight: 800;
   transition: color var(--transition), transform var(--transition);
 }
-.course-item:hover .course-price {
+.checkout-course-item:hover .checkout-course-price {
   transform: translateY(-4px);
   color: var(--primary-600);
 }
 
-.btn-primary,
-.btn.btn-primary {
-  background: var(--primary);
+.checkout-btn-primary {
+  background: var(--color-primary-dark);
   border: 1px solid rgba(8, 42, 94, 0.12);
   color: #fff;
   box-shadow: 0 10px 30px rgba(8, 42, 94, 0.08);
   transition: transform var(--transition), box-shadow var(--transition);
   border-radius: 12px;
 }
-.btn-primary:hover,
-.btn.btn-primary:focus {
+.checkout-btn-primary:hover,
+.checkout-btn-primary:focus {
   transform: translateY(-3px);
   background: var(--primary-600);
+  color: #ffffff;
   box-shadow: 0 16px 40px rgba(8, 42, 94, 0.1);
 }
 
-.btn-gradient {
+.checkout-btn-gradient {
   background: linear-gradient(90deg, var(--primary), var(--primary-600));
   color: #fff;
   border: none;
   box-shadow: 0 10px 30px rgba(8, 42, 94, 0.08);
 }
 
-.payment-btn {
+.checkout-payment-btn {
   border-radius: 12px;
   padding: 0.5rem 0.9rem;
   border: 1px solid rgba(8, 42, 94, 0.06);
   background: transparent;
-  color: var(--primary);
+  color: var(--color-primary-dark);
   transition: transform var(--transition), background var(--transition),
     box-shadow var(--transition);
 }
-.payment-btn.active {
-  background: var(--primary);
+.checkout-payment-btn.checkout-active {
+  background: var(--color-primary-dark);
   color: #fff;
   box-shadow: 0 10px 30px rgba(8, 42, 94, 0.08);
 }
 
-.sticky-card {
+.checkout-sticky-card {
   position: sticky;
   top: 96px;
 }
 
-.form-control-lg {
+.checkout-form-control-lg {
   padding: 0.86rem 1rem;
   border-radius: 12px;
   border: 1px solid rgba(8, 42, 94, 0.08);
   transition: box-shadow var(--transition), transform var(--transition),
     border-color var(--transition);
 }
-.form-control-lg:focus {
+.checkout-form-control-lg:focus {
   box-shadow: 0 12px 30px rgba(8, 42, 94, 0.06);
   transform: translateY(-2px);
   border-color: var(--primary-600);
   outline: none;
 }
 
-.text-muted {
+.checkout-text-muted {
   color: var(--neutral-dark) !important;
 }
 
-:focus {
-  outline: 3px solid rgba(8, 42, 94, 0.08);
-  outline-offset: 3px;
-}
-
-.card h3,
-.card h4 {
-  text-align: left;
-}
-
-.card:hover {
-  box-shadow: 0 28px 80px rgba(8, 42, 94, 0.06);
-  transform: translateY(-3px);
-  transition: var(--transition);
-}
-
-.modal-overlay {
+.checkout-modal-overlay {
   position: fixed;
   inset: 0;
   display: flex;
@@ -190,19 +155,18 @@ body {
   padding: 2rem;
 }
 
-.modal-card {
+.checkout-modal-card {
   max-width: 520px;
   width: 100%;
   background: #ffffff;
   border-radius: 14px;
-  border: 3.5px solid var(--primary);
+  border: 3.5px solid var(--color-primary-dark);
   box-shadow: 0 40px 120px rgba(8, 42, 94, 0.18);
   transform: translateY(0);
   transition: opacity 220ms ease, transform 220ms ease;
-  opacity: 1;
 }
 
-.icon-wrap {
+.checkout-icon-wrap {
   width: 96px;
   height: 96px;
   margin: -56px auto 6px;
@@ -212,19 +176,17 @@ body {
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 12px 30px rgba(8, 42, 94, 0.08);
-  border: 5px solid var(--primary);
-  transform: translateY(0);
+  border: 5px solid var(--color-primary-dark);
 }
 
-.success-icon {
+.checkout-success-icon {
   font-size: 70px;
-  color: var(--primary);
-  display: inline-block;
+  color: var(--color-primary-dark);
   transform-origin: center center;
   opacity: 0;
 }
 
-@keyframes checkPop {
+@keyframes checkout-checkPop {
   0% {
     transform: scale(0.2) rotate(-15deg);
     opacity: 0;
@@ -237,11 +199,12 @@ body {
     transform: scale(0.96) rotate(-3deg);
   }
   100% {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0);
     opacity: 1;
   }
 }
-@keyframes iconFloat {
+
+@keyframes checkout-iconFloat {
   0% {
     transform: translateY(0);
   }
@@ -253,10 +216,11 @@ body {
   }
 }
 
-.modal-card.show {
-  animation: modalPop 260ms cubic-bezier(0.2, 0.9, 0.3, 1);
+.checkout-modal-card.checkout-show {
+  animation: checkout-modalPop 260ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
-@keyframes modalPop {
+
+@keyframes checkout-modalPop {
   from {
     transform: translateY(8px) scale(0.995);
     opacity: 0;
@@ -266,131 +230,104 @@ body {
     opacity: 1;
   }
 }
-.modal-card.show .icon-wrap {
+
+.checkout-modal-card.checkout-show .checkout-icon-wrap {
   transform: translateY(-12px);
-  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
-.modal-card.show .success-icon {
-  animation: checkPop 420ms cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+
+.checkout-modal-card.checkout-show .checkout-success-icon {
+  animation: checkout-checkPop 420ms cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
   animation-delay: 80ms;
 }
 
-.modal-card.show .success-icon.float {
-  animation: iconFloat 2000ms ease-in-out 900ms infinite;
+.checkout-modal-card.checkout-show .checkout-success-icon.checkout-float {
+  animation: checkout-iconFloat 2000ms ease-in-out 900ms infinite;
 }
 
-.modal-body {
+.checkout-modal-body {
   padding-top: 28px;
   padding-bottom: 24px;
 }
-.modal-body h2 {
-  color: var(--primary);
+
+.checkout-modal-body h2 {
+  color: var(--color-primary-dark);
   font-weight: 700;
-  margin-top: 6px;
 }
-.modal-body p {
+
+.checkout-modal-body p {
   color: var(--neutral-dark);
-  margin-bottom: 14px;
 }
 
-.btn-outline-primary {
+.checkout-btn-outline-primary {
   border-radius: 10px;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-.btn-outline-primary:hover {
-  background: var(--primary);
-  color: var(--bg);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--color-primary-dark);
+  color: var(--color-primary-dark);
 }
 
+.checkout-btn-outline-primary:hover {
+  background: var(--color-primary-dark);
+  color: var(--bg);
+}
+
+/* Responsive breakpoints */
 @media (max-width: 992px) {
-  .sticky-card {
+  .checkout-sticky-card {
     position: static;
-    top: auto;
   }
-  .course-item .thumb {
+  .checkout-course-item .checkout-thumb {
     width: 72px;
     height: 50px;
   }
-  .modal-card {
+  .checkout-modal-card {
     margin: 0 12px;
-    width: 100%;
   }
-  .icon-wrap {
+  .checkout-icon-wrap {
     width: 84px;
     height: 84px;
-    margin-top: -46px;
   }
-  .success-icon {
+  .checkout-success-icon {
     font-size: 40px;
   }
 }
 
 @media (max-width: 768px) {
-  body {
-    padding: 0 10px;
-  }
-
-  .course-item {
+  .checkout-course-item {
     flex-direction: row;
     align-items: center;
     gap: 12px;
   }
-
-  .course-title {
+  .checkout-course-title {
     font-size: 1rem;
   }
-
-  .course-price {
+  .checkout-course-price {
     font-size: 1.1rem;
   }
-
-  .modal-card {
+  .checkout-modal-card {
     padding: 1rem;
   }
-
-  .form-control-lg {
+  .checkout-form-control-lg {
     padding: 0.75rem 0.9rem;
     font-size: 0.95rem;
   }
 }
 
 @media (max-width: 576px) {
-  .glass-card {
+  .checkout-glass-card {
     border-radius: 10px;
     padding: 1rem;
   }
-
-  .course-item .thumb {
+  .checkout-course-item .checkout-thumb {
     width: 60px;
     height: 44px;
   }
-
-  .course-title {
-    font-size: 0.92rem;
-  }
-
-  .course-desc {
-    font-size: 0.8rem;
-  }
-
-  .payment-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .modal-card {
+  .checkout-modal-card {
     border-width: 2px;
   }
-
-  .icon-wrap {
+  .checkout-icon-wrap {
     width: 70px;
     height: 70px;
-    margin-top: -40px;
   }
-
-  .success-icon {
+  .checkout-success-icon {
     font-size: 32px;
   }
-} */
+}
