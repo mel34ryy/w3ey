@@ -1,25 +1,42 @@
-.courses-sec1 {
-  background: #1c252e url("../assets/images/banner.jpg") no-repeat;
-  height: auto;
-  background-size: 100% 200px;
-  width: 100%;
-  color: aliceblue;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  /* position: relative; */
+  font-family: "Lexend Deca", sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.courses-text {
-  line-height: 50px;
-  padding: 40px;
-}
-.courses-sec1 .courses-text a {
-  text-decoration: none;
-}
-.courses-div {
-  height: auto;
-  width: 80%;
-  margin: 50px auto;
+
+
+.babyblue {
+  background-color: #e7effc !important;
+  font-size: 20px !important;
+  width: fit-content;
+  color: #024585;
+  font-size: 15.5px;
 }
 .course-card {
   position: relative;
   overflow: hidden;
+  border-radius: 25px;
+  border: 3px solid #082a5e;
+  box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8) !important;
+  transition: transform 0.3s ease, box-shadow 0.35s ease;
+}
+#course-card{
+  min-height: 400px;
+
+}
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1.2);
+  transform: scale(1.03);
+  
+}
+.course-card .card-title {
+  color: #024585 !important;
 }
 
 .course-card a img,
@@ -27,6 +44,7 @@
   width: 100%;
   display: block;
   transition: all 0.5s;
+  border-bottom: 3px solid #0a2f6a;
 }
 .course-card a img:hover,
 .course-card .a img:hover {
@@ -104,7 +122,9 @@ a.course-link-anim:hover::after {
     border-radius: 20px !important;
   }
 }
-
+.pag{
+  direction: ltr !important; 
+}
 .pagination .page-link {
   background-color: var(--color-primary) !important;
   color: #fff !important;

@@ -28,6 +28,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-i18next": "^16.0.0",
+    "react-intersection-observer": "^10.0.0",
     "react-router-dom": "^7.9.5",
     "react-spinners": "^0.17.0",
     "react-toastify": "^11.0.5",

@@ -80,10 +80,19 @@ body {
 /* Card */
 .my-courses-card {
   min-width: 300px;
-  height: 300px;
+  height: 400px !important;
+  width: 450px !important;
   perspective: 1000px;
   border-radius: 12px;
   background-color: transparent;
+  border: 3px solid #082a5e;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.35s ease;
+  background: #eaf0fab5;
+  box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8);
+  position: relative;
+
 }
 
 .my-courses-inner {
@@ -110,8 +119,10 @@ body {
 
 .my-courses-front img {
   width: 100%;
-  height: 75%;
+  height: 60%;
   object-fit: cover;
+  width: 100%;
+  border-bottom: 3px solid #0a2f6a;
 }
 
 .my-courses-front h3 {
@@ -119,7 +130,7 @@ body {
   color: #001a70;
   text-align: center;
   padding: 12px;
-  margin: 0;
+  margin-top: 10px;
 }
 
 .my-courses-back {
@@ -127,6 +138,8 @@ body {
   transform: rotateY(180deg);
   text-align: center;
   overflow-y: auto;
+  color: #082a5e;
+
 }
 .my-courses-back h3,
 .my-courses-back p {

@@ -44,6 +44,10 @@
 
   --highlight: var(--color-primary);
 }
+html, body {
+  overflow-x: hidden;
+}
+
 
 .chat-bg {
   background-color: var(--color-primary);
@@ -52,3 +56,7 @@
 .send:hover {
   background-color: var(--color-primary-dark);
 }
+.smooth-slide {
+  will-change: transform, opacity;
+}
+

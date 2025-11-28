@@ -32,6 +32,10 @@ import sub from "../assets/images/subscribe.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import imagesMap from "../assets/images/ins/imagesMap";
+import Reveal from "../components/effects/Reveal";
+import SlideIn from "../components/effects/SlideIn";
+
+
 
 export default function Home() {
   const { t } = useTranslation();
@@ -123,6 +127,8 @@ export default function Home() {
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
                 {t("home.hero.satisfaction")}
               </p>
+              <SlideIn direction="left">
+
               <h1 className="mb-4 mt-3 home-h1">
                 {t("home.hero.title.part1")}{" "}
                 <span className="highlight-text">
@@ -157,9 +163,13 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              </SlideIn>
             </div>
+
             <div className="photo col-12 col-lg-6 mt-5 mt-lg-0 text-center position-relative">
+            <SlideIn direction="right">
               <img src={hero} alt="hero" className="img-fluid w-100" />
+            </SlideIn>
               <div className="boxes">
                 <div className="first-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
                   <FontAwesomeIcon className="first" icon={faPeopleGroup} />
@@ -174,8 +184,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+            
+              
         </section>
         <div className="icons-carousel container text-center my-5 pt-3 pb-5 border-bottom border-2">
+          <Reveal>
+
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-4 col-sm-3 col-md-2 col-lg-auto">
               <img src="/images/udemy.png" alt="udemy" className="img-fluid" />
@@ -208,10 +222,12 @@ export default function Home() {
               />
             </div>
           </div>
+          </Reveal>
         </div>
         <section className="about container d-flex gap-5 mb-5">
           <div className="row align-items-center gy-5">
             <div className="col-12 col-md-5 text-center text-md-start">
+              <SlideIn direction="left">
               <div className="photo">
                 <img
                   src="/images/about1.png"
@@ -219,6 +235,7 @@ export default function Home() {
                   className="img-fluid rounded-3"
                 />
               </div>
+              </SlideIn>
             </div>
             <div className="content col-12 col-md-7">
               <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
@@ -239,7 +256,9 @@ export default function Home() {
                 <p>{t("home.about.p3")}</p>
                 <br />
               </div>
+                <SlideIn direction="right">
               <div className="icons d-grid mb-4">
+
                 <div className="icon d-flex gap-2">
                   <img
                     className="img-fluid w-15 w-md-20"
@@ -301,6 +320,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+                </SlideIn>
               <Link to="about">
                 <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
                   {t("home.about.button")}
@@ -325,7 +345,7 @@ export default function Home() {
           <p className="bg-babyblue paragraph px-4 py-1 rounded-1">
             {t("home.featured.badge")}
           </p>
-          <h2 className="mb-4 mt-3">
+          <h2 className="mb-5 mt-3">
             {t("home.featured.title.part1")}{" "}
             <span className="highlight-text">
               {t("home.featured.title.highlight")}
@@ -333,9 +353,11 @@ export default function Home() {
             {t("home.featured.title.part2")}
           </h2>
           <div className="row">
+
             {currentItems.map((course) => (
               <div className="col-md-6 col-lg-4 mb-4" key={course.id}>
-                <div className="course-card shadow-sm card h-100">
+                <Reveal>
+                <div className="course-card shadow-sm card h-100"id="course-card">
                   <Link to={`/course/${course.id}`} className="a">
                     <img
                       src={course.image}
@@ -368,6 +390,7 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
+                </Reveal>
               </div>
             ))}
           </div>
@@ -385,7 +408,9 @@ export default function Home() {
                 <p className="bg-babyblue paragraph px-4 py-1 rounded-1">
                   {t("home.w3ey.badge")}
                 </p>
+                <SlideIn direction="left">
                 <h2 className="mb-4 mt-3">
+
                   {t("home.w3ey.title.part1")}{" "}
                   <span className="highlight-text">
                     {t("home.w3ey.title.part2")}
@@ -400,8 +425,11 @@ export default function Home() {
                   <br /> {t("home.w3ey.description.p2")}
                   <br /> {t("home.w3ey.description.p3")}
                 </p>
+                </SlideIn>
               </div>
               <div className="col-md-6 col-lg-8 cards">
+                <SlideIn direction="right">
+
                 <div className="row justify-content-center h-100">
                   <div className="col-6 col-md-4 mb-3">
                     <div className="card h-100 d-flex justify-content-center align-items-center mx-auto">
@@ -434,6 +462,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                </SlideIn>
               </div>
             </div>
           </div>
@@ -530,6 +559,8 @@ export default function Home() {
                 <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
                   {t("home.instructors.badge")}
                 </p>
+                <SlideIn direction="left">
+
                 <h2 className="mb-4 mt-3">
                   {t("home.instructors.title.part1")}{" "}
                   <span className="highlight-text">
@@ -538,8 +569,11 @@ export default function Home() {
                   {t("home.instructors.title.part2")}
                 </h2>
                 <p>{t("home.instructors.description")}</p>
+                </SlideIn>
               </div>
+
               <div className="button mb-3 col-lg-4 col-md-5 text-lg-end text-center mt-3 mt-md-0">
+              <SlideIn direction="right">
                 <Link to="instructors">
                   <button className="px-3 py-2 text-uppercase rounded-2">
                     {t("home.instructors.button")}{" "}
@@ -549,11 +583,14 @@ export default function Home() {
                     />
                   </button>
                 </Link>
+              </SlideIn>
               </div>
             </div>
             <div className="row">
               {currentInstructors.map((inst, index) => (
                 <div key={index} className="col-sm-6 col-md-3">
+                  {/* <Reveal> */}
+
                   <div className="instructor-card h-100">
                     <img
                       src={inst.image}
@@ -603,6 +640,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                  {/* </Reveal> */}
                 </div>
               ))}
             </div>
@@ -733,16 +771,22 @@ export default function Home() {
           <div className="row align-items-center justify-content-between gx-3">
             <div className="join col-12 col-md-5 text-md-start text-center mb-3 mb-md-0">
               <h4>{t("home.mail.title")}</h4>
+              <SlideIn direction="left">
+
               <img src={sub} alt="join" className="img-fluid" />
+              </SlideIn>
             </div>
             <div className="col-12 col-md-6">
+              <SlideIn direction="right">
+
               <div className="subscribe-box d-flex w-100">
                 <input
                   type="email"
                   placeholder={t("home.mail.input.placeholder")}
-                />
+                  />
                 <button type="button">{t("home.mail.button")}</button>
               </div>
+                  </SlideIn>
             </div>
           </div>
         </div>

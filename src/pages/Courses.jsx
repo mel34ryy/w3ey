@@ -7,6 +7,7 @@ import axios from "axios";
 import Loader from "../components/layout/Loader";
 import { useTranslation } from "react-i18next";
 import Banner from "../components/layout/Banner";
+import Reveal from "../components/effects/Reveal";
 export default function Courses() {
   const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,22 +52,33 @@ export default function Courses() {
         <Banner>{t("courses.banner.title")}</Banner>
       </main>
       <div className="courses-div text-center container">
-        <div className="texts">
-          <span className="bg-primary-subtle py-2 px-4 rounded-pill fs-3 fw-bold text-uppercase shadow-sm">
+        <div className="texts mt-5">
+          <span className="babyblue blog-paragraph px-4 py-1 rounded-1 mx-auto text-center ">
             {t("courses.courses_badge")}
           </span>
-          <h6 className="m-3 p-1 fw-bold display-6">
-            {t("courses.courses_heading")}
-          </h6>
+          <Reveal>
+
+          <h2 className="instructor-title mb-5 mt-3 fw-bold fs-1">
+            {t("courses.courses_heading.part1")}
+            <span className="instructor-highlight-text">
+              {" "}
+              {t("courses.courses_heading.highlight")}{" "}
+            </span>{" "}
+            {t("courses.courses_heading.part2")}
+          </h2>
+          </Reveal>
+          
         </div>
 
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center align-content-center text-capitalize">
+        <div className="row row-cols-1 row-cols-md-2 mt-5 mb-5 row-cols-lg-3 g-4 justify-content-center align-content-center text-capitalize">
           {loading ? (
             <Loader />
           ) : (
             currentItems.map((course) => (
               <div className="col" key={course.id}>
-                <div className="course-card shadow-sm card h-100">
+                  <Reveal>
+
+                <div className="course-card shadow-sm card h-100" id="course-card">
                   <Link to={`/course/${course.id}`} className="a">
                     <img
                       src={course.image}
@@ -97,13 +109,18 @@ export default function Courses() {
                     >
                       {course.title}
                     </Link>
+                    <div className="instructor-rating">
+                      
+                      <span></span>
+                    </div>
                   </div>
                 </div>
+                  </Reveal>
               </div>
             ))
           )}
         </div>
-        <div className="d-flex justify-content-center mt-4">
+        <div className="pag d-flex justify-content-center mt-4">
           <div>
             <ul className="pagination">
               <li
@@ -154,10 +171,13 @@ export default function Courses() {
         </div>
       </div>
       <section className="py-5 text-center">
-        <span className="bg-primary-subtle py-2 px-4 rounded-pill fs-3 fw-bold text-uppercase shadow-sm">
+          <p className="babyblue blog-paragraph px-4 py-1 rounded-1 mx-auto text-center ">
           {t("courses.tracks")}
-        </span>
+          </p>
+        
         <div className="container mt-5">
+          <Reveal>
+
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
             <div className="col">
               <div className="course-card card h-100 border-0 shadow-lg rounded-4">
@@ -238,6 +258,7 @@ export default function Courses() {
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
     </>

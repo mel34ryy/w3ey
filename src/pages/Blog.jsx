@@ -2,6 +2,8 @@ import "./Blog.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Banner from "../components/layout/Banner";
+import Reveal from "../components/effects/Reveal";
+
 
 export default function Blog() {
   useEffect(() => {
@@ -39,6 +41,7 @@ export default function Blog() {
         <p className="blog-bg-babyblue blog-paragraph px-4 py-1 rounded-1 mx-auto text-center">
           Our Blog
         </p>
+        <Reveal>
         <h2 className="blog-title mb-4 mt-3 fw-bold fs-1">
           Insights from <span className="blog-highlight-text"> Experts</span>
         </h2>
@@ -62,6 +65,8 @@ export default function Blog() {
             </li>
           </ul>
         </div>
+
+        </Reveal>
       </div>
       <main className="main-content">
         <div className="container">

@@ -13,6 +13,8 @@ import communication from "../assets/images/communication-center.png";
 import img from "../assets/images/0003-650x355.png.png";
 import parent from "../assets/images/parent-communication-650x455.jpg.png";
 import Banner from "../components/layout/Banner";
+import Reveal from "../components/effects/Reveal";
+import SlideIn from "../components/effects/SlideIn";
 
 export default function About() {
   return (
@@ -22,6 +24,8 @@ export default function About() {
         <div className="row d-flex justify-content-between g-5 align-items-center">
           <div className="col-lg-5 col-md-12 mb-4 mb-md-0">
             <h6 className="rounded-2 px-3">Who we are</h6>
+            <SlideIn direction="left">
+
             <h2 className="fw-bold mb-4">
               W3ey Online <span className="about-highlight-text">School</span>{" "}
               For <br />
@@ -45,11 +49,15 @@ export default function About() {
               Thinking, Emotional Wellness), we nurture bright minds and growing
               spirits with confidence.
             </p>
+            </SlideIn>
           </div>
 
           <div className="col-lg-7 col-md-12 text-center">
+              <SlideIn direction="right">
             <div className="row g-3">
+
               <div className="col-6 py-2 my-2 py-md-5 my-md-5">
+
                 <img
                   src={img1}
                   className="img-fluid rounded shadow"
@@ -69,12 +77,15 @@ export default function About() {
                 />
               </div>
             </div>
+              </SlideIn>
           </div>
         </div>
       </div>
       <div className="vision container my-5">
+            <Reveal>
         <div className="row text-center">
           <div className="col-md-4 mb-4">
+
             <div className="card h-100 shadow border-0 p-4">
               <div className="card-body">
                 <div className="mb-3">
@@ -127,6 +138,7 @@ export default function About() {
             </div>
           </div>
         </div>
+            </Reveal>
       </div>
       <section className="about-academic text-center">
         <div className="container">
@@ -384,7 +396,9 @@ export default function About() {
       </section>
       <div className="about-Communication container my-5 py-5">
         <div className="row g-5 align-items-center">
+
           <div className="col-md-6 mb-4 mb-md-0">
+          <SlideIn direction="left">
             <h2 className="fw-bold mb-4">Parent Communication</h2>
 
             <p>
@@ -402,14 +416,18 @@ export default function About() {
                 development.
               </li>
             </ul>
+          </SlideIn>
           </div>
 
           <div className="col-md-6">
+          <SlideIn direction="right">
+            
             <img
               src={parent}
               className="img-fluid shadow rounded"
               alt="Parent communicating with school staff"
             />
+          </SlideIn>
           </div>
         </div>
       </div>

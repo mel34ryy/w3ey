@@ -6,6 +6,8 @@ import Loader from "../components/layout/Loader";
 import { useTranslation } from "react-i18next";
 import imagesMap from "../assets/images/ins/imagesMap";
 import Banner from "../components/layout/Banner";
+import Reveal from "../components/effects/Reveal";
+
 
 export default function InstructorsPage() {
   const [instructors, setInstructors] = useState([]);
@@ -34,6 +36,7 @@ export default function InstructorsPage() {
             return acc;
           }, {}),
         }));
+        
 
         const finalWithLocal = normalized.map((inst) => {
           const normalizedName = String(inst.name)
@@ -105,6 +108,8 @@ export default function InstructorsPage() {
         <p className="instructor-bg-babyblue instructor-paragraph px-4 py-1 rounded-1 mx-auto">
           {t("instructor.coverTag")}
         </p>
+        <Reveal>
+
         <h2 className="instructor-title mb-4 mt-3 fw-bold fs-1">
           {t("instructor.title.p1")}
           <span className="instructor-highlight-text">
@@ -113,18 +118,21 @@ export default function InstructorsPage() {
           </span>{" "}
           {t("instructor.title.p3")}
         </h2>
-        <div className="instructor-paragraph text-start">
+        <div className="instructor-paragraph d-flex justify-content-center align-items-center flex-column mx-auto mt-4">
           <p>{t("instructor.description")}</p>
-          <ul className="instructor-list mt-5 mb-5 fs-6">
+          <ul className="instructor-list mt-2 mb-5 fs-6">
             <li>• {t("instructor.points.onlineExperience")}</li>
             <li>• {t("instructor.points.eduPsyTraining")}</li>
             <li>• {t("instructor.points.teachingStyles")}</li>
             <li>• {t("instructor.points.personalFollowup")}</li>
           </ul>
         </div>
+        </Reveal>
       </div>
 
-      <div className="container py-5 mt-5">
+      <div className="container py-5 ">
+        <Reveal>
+
         <div className="d-flex justify-content-between align-items-center mt-1 mb-5">
           <input
             type="text"
@@ -145,6 +153,7 @@ export default function InstructorsPage() {
             <option value="low">{t("instructor.sort.low")}</option>
           </select>
         </div>
+        </Reveal>
 
         <div className="row g-4 mb-5">
           {loading ? (
@@ -152,6 +161,7 @@ export default function InstructorsPage() {
           ) : (
             currentItems.map((inst, index) => (
               <div key={index} className="col-md-3 fade-in">
+                <Reveal>
                 <div className="instructor-card h-100">
                   <img
                     src={inst.image}
@@ -206,11 +216,12 @@ export default function InstructorsPage() {
                     </div>
                   </div>
                 </div>
+              </Reveal>
               </div>
             ))
           )}
         </div>
-        <div className="d-flex justify-content-center mt-4">
+        <div className="pag d-flex justify-content-center mt-4">
           <div>
             <ul className="pagination">
               <li

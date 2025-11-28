@@ -4,6 +4,8 @@ import location from "../assets/images/location.png";
 import phone from "../assets/images/phone.png";
 import email from "../assets/images/email.png";
 import Banner from "../components/layout/Banner";
+import SlideIn from "../components/effects/SlideIn";
+
 
 export default function Contact() {
   return (
@@ -30,11 +32,14 @@ export default function Contact() {
           </div>
 
           <div className="col-lg-6 mb-4 mb-lg-0">
+            <SlideIn direction="right">
             <img
               src={communication}
               alt="Technical Support"
               className="img-fluid rounded shadow"
             />
+
+            </SlideIn>
           </div>
         </div>
       </section>
@@ -50,6 +55,8 @@ export default function Contact() {
               support every step of the learning journey.
             </p>
             <div className="container">
+              <SlideIn direction="left">
+
               <div className="contact-item">
                 <img src={location} />
                 <ul>
@@ -73,6 +80,7 @@ export default function Contact() {
                   <li>web@eduaraonlineschool.com</li>
                 </ul>
               </div>
+              </SlideIn>
             </div>
           </div>
           <div className="contact-form rounded shadow pt-4 px-5 col-lg-7">

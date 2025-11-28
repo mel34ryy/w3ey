@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
-.about-page {
+
+* {
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
   font-family: "Lexend Deca", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* .about-banner {
@@ -26,24 +31,41 @@
 /* about-us */
 .about-highlight-text {
   position: relative;
-  color: #2f548f;
+  color: #024585;
 }
 .about-highlight-text::after {
   content: url("../assets/images/row.svg");
   position: absolute;
-  bottom: -30px;
+  bottom: -25px;
   left: -20px;
   right: 0;
   opacity: 0;
-  transform: translateY(10px);
-  animation: showRow 0.8s ease forwards;
-  animation-delay: 0.5s;
+  transform: translateX(-25px);
+  animation: showRow 4s ease forwards infinite ;
+  animation-delay: 0.4s;
+  width: 0%;
 }
 
 @keyframes showRow {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+    width: 100%;
+  }
+  20% {
     opacity: 1;
     transform: translateY(0);
+    width: 100%;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+    width: 100%;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    width: 100%;
   }
 }
 
@@ -72,17 +94,19 @@
   font-weight: 400;
 }
 .about-us img {
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.32s ease-in-out;
 }
 .about-us img:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1)!important;
 }
 
 /*  our vision, Mission,Philosophy */
 
-.vision {
-  border-radius: 16px;
+.vision .card{
+  border-radius: 36px !important;
+  box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8) !important;
+
 }
 .vision .card-title {
   color: #2f548f;
@@ -97,11 +121,11 @@
   line-height: 1.5;
 }
 .vision .card {
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .vision .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1)!important;
 }
 
 /* Academic System */
@@ -111,11 +135,19 @@
   padding: 10vh;
 }
 .about-academic .system {
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px !important;
+  box-shadow: 0 4px 10px rgba(8, 42, 94, 0.8) !important;
+
 }
 .about-academic .system:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(8, 42, 94, 1)!important;
 }
 
 .about-academic .title h2 {
@@ -135,15 +167,15 @@
 }
 
 .about-academic .system-text {
-  color: #2f548f;
+  color: #024585;
 }
 /* offer */
 .hero-section {
   height: 60vh;
   background: linear-gradient(
       to top,
-      rgba(8, 35, 122, 0.6),
-      rgba(22, 64, 148, 0.6)
+      rgba(5, 20, 68, 0.948),
+      rgba(6, 21, 53, 0.893)
     ),
     url("../assets/images/about-pic3.jpg") center/cover fixed;
 }
@@ -243,13 +275,14 @@
   transition: transform 0.3s ease-in-out;
 }
 .about-Communication img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1)!important;
+
 }
 
 .about-highlight-text-ins {
   position: relative;
-  color: #2f548f;
+  color: #024585;
 }
 .about-highlight-text-ins::after {
   content: url("../assets/images/row.svg");
@@ -260,7 +293,8 @@
   left: 0;
   right: 0;
   opacity: 0;
-  transform: translateY(10px);
-  animation: showRow 0.8s ease forwards;
-  animation-delay: 0.5s;
+  transform: translateX(-25px);
+  animation: showRow 4s ease forwards infinite ;
+  animation-delay: 0.4s;
+  width: 0%;
 }

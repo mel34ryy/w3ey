@@ -254,7 +254,11 @@
     },
 
     "courses_badge": "courses",
-    "courses_heading": "Enrichment materials and interactive clubs",
+    "courses_heading":{
+      "part1": "Top",
+      "highlight": "Rated",
+      "part2": "Courses"
+    },
 
     "duration": "Duration",
     "students": "students",

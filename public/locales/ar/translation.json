@@ -2,7 +2,7 @@
   "navbar": {
     "home": "الرئيسية",
     "about": "من نحن",
-    "instructors": "المعلمين",
+    "instructors": "المدربين",
     "courses": "الكورسات",
     "all-courses": "جميع الكورسات",
     "my-courses": "كورساتي",
@@ -254,10 +254,14 @@
     },
 
     "courses_badge": "الدورات",
-    "courses_heading": "مواد إثرائية وأندية تفاعلية",
+    "courses_heading": {
+      "part1": "كورسات",
+      "highlight": "الأعلى",
+      "part2": "تقييماً"
+    },
 
     "duration": "المدة",
-    "students": "طلاب",
+    "students": "",
 
     "pagination_previous": "السابق",
     "pagination_next": "التالي",
