@@ -386,17 +386,17 @@
       }
     },
     "about-instructor": {
-      "heading": {
-        "part1": "Our Experts Matter",
-        "part2": "Top",
-        "part3": " Tech ",
-        "part4": "Instructors"
-      },
-      "paragraph": {
-        "p1": "At W3ey, we select instructors based on technical expertise and teaching ability.",
-        "p2": "They are committed to delivering high-value learning experiences from the very first session."
-      }
+    "heading": {
+      "part1": "The Minds Behind",
+      "part2": "W3ey",
+      "part3": " Platform ",
+      "part4": "Developers"
     },
+    "paragraph": {
+      "p1": "The W3ey platform is built by a dedicated team of developers and digital creators who specialize in modern web technologies.",
+      "p2": "Our development team combines technical expertise, UI/UX craftsmanship, and innovative problem-solving to deliver a seamless and powerful learning experience."
+    }
+  },
     "about-platform": {
       "heading": "W3ey Platform",
       "paragraph": {

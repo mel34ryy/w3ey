@@ -189,7 +189,7 @@
 }
 
 .about-instructor h2 {
-  color: #001a70;
+  color: #082a5e;
   margin-top: 10px;
   line-height: 1.8;
 }
@@ -198,18 +198,27 @@
   color: #2f548f;
 }
 .about-instructor .card {
-  transition: transform 0.3s ease-in-out;
+  border: 3px solid #082a5e !important;
+  border-radius: 30px !important;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.35s ease;
+  background: #eaf0fab5;
+  box-shadow: 0 4px 15px rgba(8, 42, 94, 0.8) !important;
+
 }
 .about-instructor .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 32px rgba(8, 42, 94, 1) !important;
+  transform: scale(1.03);
 }
 
-.about-instructor-card img {
+
+.card-img-top{
   width: 100%;
-  height: 35vh;
+  height: 40vh;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 3px solid #0a2f6a !important;
 }
 .about-instructor h5 {
   color: #001a70;

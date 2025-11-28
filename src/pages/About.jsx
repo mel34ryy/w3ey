@@ -242,7 +242,7 @@ export default function About() {
 
         <div className="row g-5">
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="card border-1 shadow instructor-card rounded">
+            <div className="card  shadow instructor-card ">
               <img src={mohamed} className="card-img-top" alt="Mohamed" />
               <div className="card-body">
                 <h5 className="fw-bold text-center">Mohamed El-Ashry</h5>
@@ -251,7 +251,7 @@ export default function About() {
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="card border-1 shadow instructor-card rounded">
+            <div className="card border-1  instructor-card ">
               <img src={youssef} className="card-img-top" alt="Youssef" />
               <div className="card-body">
                 <h5 className="fw-bold text-center">Youssef Bakir</h5>
