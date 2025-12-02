@@ -8,7 +8,7 @@
   --primary-600: #072243;
   --color-accent: #12bb6a;
   --color-purple: #8121fb;
-  --bg: #ffffff;
+  --bg: #f1f4f9;
   --neutral-light: #f6f8fb;
   --neutral-dark: #6c757d;
   --bgb: #eaf2fb;
@@ -18,7 +18,7 @@
   --color-text: #39557e;
 
   /* Backgrounds */
-  --color-bg: #ffffff;
+  --color-bg: #f1f4f9;
   --color-bg-alt: #e7effc;
   --color-section-bg: #f1f4f9;
 
@@ -71,6 +71,8 @@ body {
 html,
 body {
   font-family: "Lexend Deca", "Cairo", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
 }
 
 .lang-ar body {

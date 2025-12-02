@@ -242,19 +242,18 @@ export default function About() {
 
         <div className="row g-5">
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="card  shadow instructor-card ">
-              <img src={mohamed} className="card-img-top" alt="Mohamed" />
-              <div className="card-body">
-                <h5 className="fw-bold text-center">Mohamed El-Ashry</h5>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="card border-1  instructor-card ">
               <img src={youssef} className="card-img-top" alt="Youssef" />
               <div className="card-body">
-                <h5 className="fw-bold text-center">Youssef Bakir</h5>
+                <a href="https://www.linkedin.com/in/youssef-bakir/" className="fw-bold text-center mx-auto" target="_blank" >Youssef Bakir</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card  shadow instructor-card ">
+              <img src={mohamed} className="card-img-top" alt="Mohamed" />
+              <div className="card-body">
+                <a target="_blank" href="https://www.linkedin.com/in/mohamed-moustafa-elashry/" className="fw-bold text-center">Mohamed El-Ashry</a>
               </div>
             </div>
           </div>
@@ -263,7 +262,7 @@ export default function About() {
             <div className="card border-1 shadow instructor-card rounded">
               <img src={omar} className="card-img-top" alt="Omar" />
               <div className="card-body">
-                <h5 className="fw-bold text-center">Omar Ahmed</h5>
+                <a target="_blank" href="https://www.linkedin.com/in/omar-abozekry-5700aa279/" className="fw-bold text-center">Omar Ahmed</a>
               </div>
             </div>
           </div>
@@ -272,7 +271,7 @@ export default function About() {
             <div className="card border-1 shadow instructor-card rounded">
               <img src={yasmeen} className="card-img-top" alt="Yasmeen" />
               <div className="card-body">
-                <h5 className="fw-bold text-center">Yasmeen Waleed</h5>
+                <a target="_blank" href="https://www.linkedin.com/in/yasmeen-498426339/" className="fw-bold text-center">Yasmeen Waleed</a>
               </div>
             </div>
           </div>

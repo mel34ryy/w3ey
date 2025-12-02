@@ -16,8 +16,8 @@
     "hero": {
       "satisfaction": "100% Satisfaction Guarantee",
       "title": {
-        "part1": "Learn",
-        "highlight": "Programming Skills",
+        "part1": "Learn Programming ",
+        "highlight": "Skills",
         "part2": "From Industry Experts"
       },
       "description": "W3ey is your gateway to high-quality programming education. Our courses are designed to take you from beginner to job-ready with hands-on projects, structured learning paths, and real-world tech skills that companies look for.",
@@ -40,8 +40,8 @@
     "about": {
       "badge": "Get To Know W3ey",
       "title": {
-        "part1": "W3ey",
-        "highlight": "Tech Academy",
+        "part1": "W3ey Tech ",
+        "highlight": "Academy",
         "part2": "For Modern Skills"
       },
       "p1": "Welcome to W3ey — a platform dedicated to teaching programming, AI, software engineering, and today’s most in-demand tech skills.",

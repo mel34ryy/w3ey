@@ -115,7 +115,7 @@ export default function Home() {
   return (
     <>
       <div className="home">
-        <section className="hero container d-flex px-4 px-md-5 py-5 mb-5">
+        <section className="hero container d-flex px-4 px-md-5 py-2 mb-5">
           <img
             src={planet}
             alt="planet"
