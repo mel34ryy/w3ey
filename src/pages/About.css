@@ -93,7 +93,7 @@
   transition: all 0.32s ease-in-out;
 }
 .about-us img:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 6px 32px rgba(8, 42, 94, 1) !important;
 }
 
@@ -119,7 +119,7 @@
   transition: all 0.3s ease-in-out;
 }
 .vision .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 0 6px 32px rgba(8, 42, 94, 1) !important;
 }
 
@@ -140,7 +140,7 @@
   box-shadow: 0 4px 10px rgba(8, 42, 94, 0.8) !important;
 }
 .about-academic .system:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 6px 15px rgba(8, 42, 94, 1) !important;
 }
 
@@ -246,7 +246,7 @@
   background-color: #b7c0d328;
 }
 .about-platform .platform-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .about-platform-card img {
@@ -282,7 +282,7 @@
   font-weight: 500;
 }
 .about-Communication img {
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .about-Communication img:hover {
   transform: scale(1.03);

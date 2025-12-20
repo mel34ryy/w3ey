@@ -13,6 +13,7 @@
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   margin: -20px 0 0;
+  direction: ltr !important;
 }
 
 .auth-container {
@@ -183,4 +184,62 @@
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
+}
+
+/* ===============================
+   Responsive Fix (Keep Animation)
+================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .auth-container {
+    width: 95%;
+    min-height: 420px;
+  }
+
+  .auth-form {
+    padding: 0 30px;
+  }
+
+  .auth-title {
+    font-size: 22px;
+  }
+
+  .auth-input {
+    padding: 10px 12px;
+  }
+
+  .auth-button {
+    padding: 10px 35px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  .auth-container {
+    width: 95%;
+    min-height: 380px;
+  }
+
+  .auth-form {
+    padding: 0 20px;
+  }
+
+  .auth-title {
+    font-size: 20px;
+  }
+
+  .p {
+    font-size: 13px;
+    margin: 15px 0 20px;
+  }
+
+  .auth-overlay-panel {
+    padding: 0 20px;
+  }
+
+  .auth-button {
+    padding: 10px 30px;
+    font-size: 11px;
+  }
 }

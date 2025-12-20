@@ -11,20 +11,24 @@ export default function Navbar({ onToggle, lang }) {
   const { t } = useTranslation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("bs-theme") || "system"
-  );
+
+  // ✅ Default = light (system موجود عادي)
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("bs-theme") || "light";
+  });
 
   function applyTheme(mode = "system") {
     const validModes = ["light", "dark", "system"];
-    if (!validModes.includes(mode)) mode = "system";
+    if (!validModes.includes(mode)) mode = "light";
 
-    const sysLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const useSystem = mode === "system";
-    const finalMode = useSystem ? (sysLight ? "light" : "dark") : mode;
+    const sysLight = window.matchMedia(
+      "(prefers-color-scheme: light)"
+    ).matches;
+
+    const finalMode =
+      mode === "system" ? (sysLight ? "light" : "dark") : mode;
 
     localStorage.setItem("bs-theme", mode);
-
     document.documentElement.setAttribute("data-bs-theme", finalMode);
 
     if (finalMode === "dark") {
@@ -48,6 +52,7 @@ export default function Navbar({ onToggle, lang }) {
       offcanvasEl.addEventListener("hide.bs.offcanvas", handleHide);
     }
 
+    // 👇 يفضل شغال لو المستخدم مختار system
     const mq = window.matchMedia("(prefers-color-scheme: light)");
     const handleSystemChange = () => {
       if (localStorage.getItem("bs-theme") === "system") {
@@ -75,10 +80,7 @@ export default function Navbar({ onToggle, lang }) {
     };
 
     window.addEventListener("storage", handleStorageChange);
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   const handleLogout = () => {
@@ -92,25 +94,20 @@ export default function Navbar({ onToggle, lang }) {
         <Link to="/" className="navbar-brand">
           <img className="logo" src="/images/Logo.png" alt="logo" />
         </Link>
+
         <button
           className="navbar-toggler border-0"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
           aria-expanded={menuOpen}
-          aria-label="Toggle navigation"
         >
-          <img className="img-fluid" src={menu} alt="icon"></img>
+          <img className="img-fluid" src={menu} alt="icon" />
         </button>
-        <div
-          className="offcanvas offcanvas-end"
-          tabIndex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
+
+        <div className="offcanvas offcanvas-end" id="offcanvasNavbar">
           <div className="offcanvas-header">
-            <Link to="/" className="offcanvas-title" id="offcanvasNavbarLabel">
+            <Link to="/" className="offcanvas-title">
               <img
                 style={{ width: "250px", height: "120px" }}
                 src="/images/Logo.png"
@@ -119,37 +116,39 @@ export default function Navbar({ onToggle, lang }) {
             </Link>
             <button
               type="button"
-              className={`btn-close text-reset close-icon ${
+              className={`btn-close text-reset ${
                 menuOpen ? "rotated" : ""
               }`}
               data-bs-dismiss="offcanvas"
-              aria-label="Close"
             ></button>
           </div>
+
           <div className="offcanvas-body">
             <ul className="navbar-nav m-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link" aria-current="page">
+                <NavLink to="/" className="nav-link">
                   {t("navbar.home")}
                 </NavLink>
               </li>
+
               <li className="nav-item">
                 <NavLink to="about" className="nav-link">
                   {t("navbar.about")}
                 </NavLink>
               </li>
+
               <li className="nav-item">
                 <NavLink to="instructors" className="nav-link">
                   {t("navbar.instructors")}
                 </NavLink>
               </li>
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
                 >
                   {t("navbar.courses")}
                 </a>
@@ -166,21 +165,24 @@ export default function Navbar({ onToggle, lang }) {
                   </li>
                 </ul>
               </li>
+
               <li className="nav-item">
                 <NavLink to="blogs" className="nav-link">
                   {t("navbar.blogs")}
                 </NavLink>
               </li>
+
               <li className="nav-item">
                 <NavLink to="contact" className="nav-link">
                   {t("navbar.contact")}
                 </NavLink>
               </li>
+
+              {/* 🌗 Light / Dark / System */}
               <li className="nav-item">
                 <div className="mode-switch d-flex gap-2">
                   <button
                     title="Use light mode"
-                    id="light"
                     className={`btn btn-sm btn-default text-secondary ${
                       theme === "light" ? "active" : ""
                     }`}
@@ -188,9 +190,9 @@ export default function Navbar({ onToggle, lang }) {
                   >
                     <i className="bi bi-sun"></i>
                   </button>
+
                   <button
                     title="Use dark mode"
-                    id="dark"
                     className={`btn btn-sm btn-default text-secondary ${
                       theme === "dark" ? "active" : ""
                     }`}
@@ -198,9 +200,9 @@ export default function Navbar({ onToggle, lang }) {
                   >
                     <i className="bi bi-moon"></i>
                   </button>
+
                   <button
-                    title="Use system preferred mode"
-                    id="system"
+                    title="Use system mode"
                     className={`btn btn-sm btn-default text-secondary ${
                       theme === "system" ? "active" : ""
                     }`}
@@ -210,41 +212,30 @@ export default function Navbar({ onToggle, lang }) {
                   </button>
                 </div>
               </li>
+
               <li className="nav-item">
                 <button
                   onClick={onToggle}
                   className="nav-link d-flex align-items-center"
                 >
-                  {(() => {
-                    const current = (lang || "en").split("-")[0];
-                    const flagSrc = current === "en" ? ar : en;
-                    const altText = current === "en" ? "arabic" : "english";
-                    return (
-                      <img
-                        className="img-fluid"
-                        src={flagSrc}
-                        alt={altText}
-                        style={{
-                          height: "18px",
-                          width: "auto",
-                          margin: "0 5px",
-                        }}
-                      />
-                    );
-                  })()}
+                  <img
+                    className="img-fluid"
+                    src={(lang || "en").startsWith("en") ? ar : en}
+                    alt="lang"
+                    style={{ height: "18px", margin: "0 5px" }}
+                  />
                   <span>{t("navbar.lang")}</span>
                 </button>
               </li>
             </ul>
-            {!isLoggedIn && (
-              <Link to="signup" className="button">
+
+            {!isLoggedIn ? (
+              <Link to="signup">
                 <button className="register-btn bg-white">
                   {t("navbar.register")}
                 </button>
               </Link>
-            )}
-
-            {isLoggedIn && (
+            ) : (
               <button className="register-btn bg-white" onClick={handleLogout}>
                 {t("navbar.signout")}
               </button>

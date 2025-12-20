@@ -1,7 +1,8 @@
 .planet {
   position: relative;
   left: -8%;
-  top: 25%;
+  top: 35%;
+  height: 150px !important;
   animation: bounce 3s infinite alternate ease-in-out;
 }
 
@@ -297,7 +298,6 @@ html[dir="rtl"] .about .photo::after {
   font-size: 36px !important;
   font-weight: 600 !important;
   color: var(--color-primary-dark) !important;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 .about .highlight-text {
@@ -324,7 +324,6 @@ html[dir="rtl"] .about .photo::after {
 .about .icons .icon {
   font-size: 18px !important;
   font-weight: 600 !important;
-  font-family: "Lexend Deca", sans-serif;
   position: relative;
 }
 
@@ -412,7 +411,6 @@ html[dir="rtl"] .about .photo::after {
   font-size: 36px !important;
   font-weight: 600 !important;
   color: var(--color-primary-dark) !important;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 .featured .highlight-text {
@@ -471,7 +469,6 @@ html[dir="rtl"] .about .photo::after {
   font-size: 36px !important;
   font-weight: 600 !important;
   color: var(--color-primary-dark) !important;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 .w3ey .highlight-text {
@@ -657,7 +654,6 @@ html[dir="rtl"] .about .photo::after {
   font-size: 36px !important;
   font-weight: 600 !important;
   color: var(--color-primary-dark) !important;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 .instructors .header .text .highlight-text {
@@ -737,7 +733,6 @@ html[dir="rtl"] .about .photo::after {
   font-size: 36px !important;
   font-weight: 600 !important;
   color: var(--color-primary-dark) !important;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 .instructors .header .highlight-text {
@@ -754,7 +749,6 @@ html[dir="rtl"] .about .photo::after {
   color: var(--color-primary-dark);
   font-size: 30px !important;
   font-weight: 600 !important;
-  font-family: "Lexend Deca", sans-serif;
 }
 
 .subscribe-box {
