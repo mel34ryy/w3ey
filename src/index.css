@@ -34,24 +34,56 @@
 }
 
 .dark-theme {
-  --color-primary: #4b9fff;
-  --color-primary-dark: #1c74d9;
-  --color-accent: #18d08f;
-  --color-purple: #a273ff;
+  /* Primary Colors */
+  --color-primary: #5aa0f7;       /* أزرق فاتح قليلًا، مريح للعين على الداكن */
+  --color-primary-dark: #357ae8; 
+  --color-accent: #2dd36f;
+  --color-purple: #9b5de5;
 
-  --color-heading: #f5f9ff;
-  --color-text: #cbd5e1;
+  /* Backgrounds */
+  --color-bg: #0c0f19;            /* أسود داكن */
+  --color-bg-alt: #141825;        /* أقسام/كروت */
+  --color-section-bg: #1a2030;
 
-  --color-bg: #0b1120;
-  --color-bg-alt: #16213a;
-  --color-section-bg: #1e293b;
+  /* Text Colors - فاتحة وواضحة جدًا */
+  --color-heading: #ffffff;       /* العناوين بالابيض */
+  --color-text: #f5f5f5;          /* نص عادي فاتح جدًا */
+  --neutral-dark: #d1d1d1;        /* نصوص ثانوية فاتحة */
 
-  --btn-bg: var(--color-primary);
-  --btn-hover-bg: var(--color-primary-dark);
+  /* Buttons */
+  --btn-bg: #3a86ff;
+  --btn-hover-bg: #2c5fb8;
   --btn-text: #ffffff;
 
-  --highlight: var(--color-primary);
+  /* Highlight */
+  --highlight: #6ea8fe;
+
+  /* Borders / small backgrounds */
+  --bgb: #1b1f2e;
 }
+.dark-theme body {
+  background-color: var(--color-bg);
+}
+
+.dark-theme .card,
+.dark-theme .box,
+.dark-theme .section {
+  background-color: var(--color-bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* .dark-theme p,
+.dark-theme span {
+  color: var(--color-text);
+} */
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4 {
+  color: var(--color-heading);
+}
+
 html,
 body {
   overflow-x: hidden;
