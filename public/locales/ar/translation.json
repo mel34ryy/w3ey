@@ -249,12 +249,14 @@
     }
   },
   "courses": {
+    "search_placeholder": "ابحث عن الدورات..."
+    ,
     "banner": {
       "title": "الدورات"
     },
     "courses_badge": "الدورات",
     "courses_heading": {
-      "part1": "كورسات",
+      "part1": "الكورسات",
       "highlight": "الأعلى",
       "part2": "تقييماً"
     },

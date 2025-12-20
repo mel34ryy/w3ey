@@ -249,6 +249,8 @@
     }
   },
   "courses": {
+    "search_placeholder": "Search for courses..."
+    ,
     "banner": {
       "title": "Courses"
     },
