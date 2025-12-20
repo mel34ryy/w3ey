@@ -1,11 +1,25 @@
+/* الفوتر العام */
 .footer {
   background-color: #061e43;
   color: #b2bdcd;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
+/* الأعمدة داخل الفوتر */
+.footer .col-md-3 {
+  flex: 1 1 200px; /* يجعل الأعمدة مرنة */
+  min-width: 200px;
+}
+
+/* القوائم داخل الفوتر */
 .footer ul {
   list-style: none;
-  padding: 0 !important;
+  padding: 0;
+  margin: 0;
 }
 
 .footer ul li {
@@ -13,6 +27,7 @@
   transition: all 0.5s;
 }
 
+/* الروابط */
 .link {
   text-decoration: none;
   color: unset;
@@ -27,21 +42,70 @@
   transform: none;
 }
 
+/* الأيقونات */
 svg {
   transition: all 0.5s;
   cursor: pointer;
 }
 
-.footer .col-md-3:first-of-type ul li:first-of-type:hover,
+/* تخصيص ألوان لبعض العناصر */
+.footer .col-md-3:first-of-type ul li {
+  color: #e7effc;
+}
+
+.footer .col-md-3:first-of-type ul li:hover,
 .footer .col-md-3:first-of-type ul li:nth-of-type(2):hover,
 .footer .col-md-3:first-of-type ul li:last-of-type svg:hover {
   color: #024585;
 }
 
-.footer .col-md-3:first-of-type ul li {
-  color: #e7effc;
-}
-
 .footer .col-md-3:last-of-type .open span:first-of-type {
   color: #e7effc;
+}
+.footer img {
+  display: block;       /* تجعل الصورة في سطر منفصل */
+  max-width: 250px;     /* حجم مناسب للشاشات الصغيرة */
+  width: 100%;          /* لتكون متجاوبة داخل العمود */
+  height: auto;         /* تحافظ على النسبة */
+  margin: 0 auto 15px;  /* توسيط الصورة ومسافة أسفلها */
+}
+
+
+/* Media Queries لجعل الفوتر Responsive */
+@media (max-width: 992px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer .col-md-3 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .footer ul li {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .footer {
+    flex-direction: column;   /* ترتيب عمودي */
+    align-items: center;      /* توسيط المحتوى */
+    text-align: center;       /* النصوص تحت الصورة */
+  }
+
+  .footer .col-md-3 {
+    width: 100%;              /* كل عمود ياخد عرض كامل */
+    margin-bottom: 20px;      /* مسافة بين الأعمدة */
+  }
+
+  .footer img {
+    max-width: 150px;         /* حجم مناسب للموبايل */
+    margin-bottom: 20px;      /* مسافة بين الصورة والنصوص */
+  }
 }

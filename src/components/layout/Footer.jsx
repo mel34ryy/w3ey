@@ -17,26 +17,26 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-md-3">
-            <div className="logo">
-              <img
-                style={{ width: "280px", height: "120px" }}
-                src="/images/LogoFooter.png"
-                alt="logo"
-              />
-            </div>
-            <p>{t("footer.description")}</p>
-            <ul>
-              <li>{t("footer.location")}</li>
-              <li>{t("footer.phone")}</li>
-              <li className="d-flex gap-3 icons">
-                <FontAwesomeIcon icon={faFacebookF} />
-                <FontAwesomeIcon icon={faInstagram} />
-                <FontAwesomeIcon icon={faWhatsapp} />
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faTiktok} />
-              </li>
-            </ul>
-          </div>
+  <div className="logo">
+    <img
+      src="/images/LogoFooter.png"
+      alt="logo"
+    />
+  </div>
+  <p>{t("footer.description")}</p>
+  <ul>
+    <li>{t("footer.location")}</li>
+    <li>{t("footer.phone")}</li>
+    <li className="icons">
+      <FontAwesomeIcon icon={faFacebookF} />
+      <FontAwesomeIcon icon={faInstagram} />
+      <FontAwesomeIcon icon={faWhatsapp} />
+      <FontAwesomeIcon icon={faTwitter} />
+      <FontAwesomeIcon icon={faTiktok} />
+    </li>
+  </ul>
+</div>
+
           <div className="col-sm-6 col-md-3">
             <h4 className="mb-3">{t("footer.quickLinks.title")}</h4>
             <ul>
