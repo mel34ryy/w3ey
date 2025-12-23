@@ -108,8 +108,8 @@ svg {
     margin-bottom: 20px;      /* مسافة بين الأعمدة */
   }
 
-  .footer img {
-    max-width: 150px;         /* حجم مناسب للموبايل */
-    margin-bottom: 20px;      /* مسافة بين الصورة والنصوص */
+  .footer .logo {
+    margin: 0 auto 15px; 
   }
+  
 }
