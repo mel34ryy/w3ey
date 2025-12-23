@@ -109,7 +109,7 @@ export default function Navbar({ onToggle, lang }) {
           <div className="offcanvas-header">
             <Link to="/" className="offcanvas-title">
               <img
-                style={{ width: "250px", height: "120px" }}
+                style={{ width: "200px", height: "70px" }}
                 src="/images/Logo.png"
                 alt="logo"
               />

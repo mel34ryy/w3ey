@@ -105,6 +105,7 @@ body {
   font-family: "Lexend Deca", "Cairo", sans-serif;
   scroll-behavior: smooth;
   background-color: var(--color-bg);
+  line-height: 1.6;
 }
 
 .lang-ar body {

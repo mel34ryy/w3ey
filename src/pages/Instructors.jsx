@@ -131,7 +131,7 @@ export default function InstructorsPage() {
       </div>
 
       <div className="container py-5 ">
-        <Reveal>
+        
 
         <div className="d-flex justify-content-between align-items-center mt-1 mb-5">
           <input
@@ -153,7 +153,7 @@ export default function InstructorsPage() {
             <option value="low">{t("instructor.sort.low")}</option>
           </select>
         </div>
-        </Reveal>
+        
 
         <div className="row g-4 mb-5">
           {loading ? (

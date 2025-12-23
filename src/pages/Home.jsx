@@ -115,6 +115,9 @@ export default function Home() {
   return (
     <>
       <div className="home">
+        <div className="backg">
+
+        
         <section className="hero container d-flex px-4 px-md-5 py-2 mb-5">
           <img
             src={planet}
@@ -124,11 +127,12 @@ export default function Home() {
           />
           <div className="row align-items-center">
             <div className="intro mt-4 mt-lg-5 col-12 col-lg-6 text-center text-lg-start">
-              <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
+              <SlideIn direction="left" delay={0.2}>
+                <p className="bg-babyblue paragraph px-4 py-1 rounded-1 mx-auto mx-lg-0">
                 {t("home.hero.satisfaction")}
-              </p>
-              <SlideIn direction="left">
-
+                </p>
+              </SlideIn>                
+              <SlideIn direction="left" delay={0.4}>
               <h1 className="mb-4 mt-3 home-h1">
                 {t("home.hero.title.part1")}{" "}
                 <span className="highlight-text">
@@ -136,7 +140,12 @@ export default function Home() {
                 </span>{" "}
                 {t("home.hero.title.part2")}
               </h1>
-              <p className="lead mb-5">{t("home.hero.description")}</p>
+              <SlideIn />
+              <SlideIn direction="left" delay={0.6}>
+                <p className="lead mb-5">{t("home.hero.description")}</p>
+                </SlideIn>
+                <SlideIn direction="left" delay={0.85}>
+                  
               <div className="buttons d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start align-items-center gap-4">
                 <Link to="courses" className="buttons">
                   <button className="px-5 py-2 border-0 rounded-2 text-uppercase">
@@ -164,11 +173,12 @@ export default function Home() {
                 </div>
               </div>
               </SlideIn>
+              </SlideIn>
             </div>
 
             <div className="photo col-12 col-lg-6 mt-5 mt-lg-0 text-center position-relative">
             <SlideIn direction="right">
-              <img src={hero} alt="hero" className="img-fluid w-100" />
+              <img src={hero} alt="hero" className=" img-hero"  />
             </SlideIn>
               <div className="boxes">
                 <div className="first-box d-flex flex-column align-items-center rounded-4 p-3 p-md-4 shadow-sm">
@@ -184,9 +194,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-            
-              
+
         </section>
+        </div>
         <div className="icons-carousel container text-center my-5 pt-3 pb-5 border-bottom border-2">
           <Reveal>
 
