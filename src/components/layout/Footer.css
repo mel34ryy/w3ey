@@ -70,6 +70,10 @@ svg {
   margin: 0 auto 15px;  /* توسيط الصورة ومسافة أسفلها */
 }
 
+.footer p{
+  margin-top: 20px;
+  line-height: 1.5;
+}
 
 /* Media Queries لجعل الفوتر Responsive */
 @media (max-width: 992px) {
