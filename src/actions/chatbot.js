@@ -4,7 +4,7 @@ class ChatBotService {
   static async sendMessage(question) {
     try {
       const response = await axios.post(
-        "http://chatbot-production-d3ac.up.railway.app/chat-bot",
+        "https://chatbot-production-d3ac.up.railway.app/chat-bot",
         {
           question,
         }
